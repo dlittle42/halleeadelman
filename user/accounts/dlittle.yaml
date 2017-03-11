@@ -1,0 +1,11 @@
+email: dlittle42@gmail.com
+fullname: 'Derek Little'
+title: Admin
+state: enabled
+access:
+  admin:
+    login: true
+    super: true
+  site:
+    login: true
+hashed_password: $2y$10$DTiy1/ay/XDdJp5m7CXhkOznf4ZRTGqfAlaKOnOnWNE.8SoFAzd.i
