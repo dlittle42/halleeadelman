@@ -1,0 +1,70 @@
+<sidebar class="col-xs-12 col-lg-3">
+  <content role="complementary">
+    {% if page.header.sidebar.social.enabled %}
+      <widget class="social" style="order:{{ page.header.sidebar.social.order }}">
+        {% include 'partials/social.html.twig' %}
+      </widget>
+    {% endif %}
+    {% if config.plugins.simplesearch.enabled and page.header.sidebar.simplesearch.enabled %}
+      <widget class="search" style="order:{{ page.header.sidebar.simplesearch.order }}">
+        {% include 'partials/simplesearch_searchbox.html.twig' %}
+      </widget>
+    {% endif %}
+    {% if config.plugins.relatedpages.enabled and related_pages|length > 0 and page.header.sidebar.relatedpages.enabled %}
+      <widget class="meta" style="order:{{ page.header.sidebar.relatedpages.order }}">
+        <h4>Related posts</h4>
+        {% include 'partials/relatedpages.html.twig' %}
+      </widget>
+    {% endif %}
+    {% if config.plugins.random.enabled and page.header.sidebar.random.enabled %}
+      <widget class="text" style="order:{{ page.header.sidebar.random.order }}">
+        <h4>Random article</h4>
+        <a href="{{ base_url_relative }}/random"><icon class="ion ion-shuffle"></icon> Give it to me!</a>
+      </widget>
+    {% endif %}
+    {% if config.plugins.archives.enabled and page.header.sidebar.archives.enabled %}
+      <widget class="meta" style="order:{{ page.header.sidebar.archives.order }}">
+        <h4>Archives</h4>
+        {% include 'partials/archives.html.twig' %}
+      </widget>
+    {% endif %}
+    {% if config.plugins.taxonomylist.enabled and page.header.sidebar.taxonomylist.enabled %}
+      <widget class="meta" style="order:{{ page.header.sidebar.taxonomylist.order }}">
+        <h4>Popular Tags</h4>
+        {% include 'partials/taxonomylist.html.twig' with {'taxonomy':'tag'} %}
+      </widget>
+    {% endif %}
+    {% if config.plugins.feed.enabled and page.header.sidebar.feed.enabled %}
+      <widget class="meta" style="order:{{ page.header.sidebar.feed.order }}">
+        <h4>Subscripe</h4>
+        <buttons>
+          <a class="btn small" role="link" href="{{ feed_url }}.atom"><icon class="ion ion-ios-paper"></icon> Atom 1.0</a>
+          <a class="btn small" role="link" href="{{ feed_url }}.rss"><icon class="ion ion-social-rss"></icon> RSS</a>
+        </buttons>
+      </widget>
+    {% endif %}
+    {% if config.plugins.events.enabled and page.header.sidebar.events.enabled %}
+      <widget class="events" style="order:{{ page.header.sidebar.events.order }}">
+        <h4>Events</h4>
+        {% set events =
+          page.collection({
+            'items':{
+              '@taxonomy.type':'event'
+            }
+          })
+          .dateRange(datetools.startOfMonth, datetools.endOfMonth)
+          .order('date', 'asc')
+        %}
+        {% for event in events %}
+          <p><a href="{{ event.url }}">{{ event.title }}</a> {{ event.header.event.start|date('F j, Y') }}</p>
+        {% endfor %}
+      </widget>
+    {% endif %}
+    {# FUTURE WIDGET {% if config.plugins.events.enabled and page.header.sidebar.calendar.enabled %}
+      <widget class="events" style="order:{{ page.header.sidebar.calendar.order }}">
+        <h4>Calendar</h4>
+        {% include 'partials/calendar_small.html.twig' %}
+      </widget>
+    {% endif %}#}
+  </content>
+</sidebar>

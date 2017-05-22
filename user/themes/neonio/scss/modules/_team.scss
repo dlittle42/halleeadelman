@@ -1,0 +1,137 @@
+/*	-------------------------------
+ *	Team
+ *	Date: 08.03.16
+**	---------------------------- */
+
+
+team .owl-carousel {
+  .owl-item {
+
+    item {
+      height: auto;
+      padding: 20px;
+
+      figure {
+        position: relative;
+        float: left;
+        overflow: hidden;
+        width: 100%;
+        height: 200px;
+        margin-right: 0;
+        @include border-radius($border-radius);
+        border: 2px solid $color-light;
+        box-shadow: 0 0 30px rgba($color-dark, 0.3);
+        background: $color-light;
+        cursor: default;
+        cursor: n-resize;
+
+        &::after {
+          content:"\f2e3";
+          position: absolute;
+          z-index: 1;
+          bottom: 5px;
+          width: 100%;
+          text-align: center;
+          font-family: 'Ionicons';
+          @include font-size(18px);
+          color: $color-light;
+          @include transition(bottom 150ms linear);
+        }
+
+        img {
+          position: absolute;
+          width: 100%;
+          height: auto;
+          z-index: 0;
+          @include center(xy);
+          @include transition(top 150ms linear);
+        }
+
+        networks {
+          position: absolute;
+          width: 100.5%;
+          height: auto;
+          z-index: 2;
+          bottom: -50px;
+          background: $color-light;
+          text-align: center;
+          padding: 4px 2px;
+          @include transition(bottom 140ms linear);
+          @include positioning();
+
+          a {
+            @include font-size(18px);
+            vertical-align: middle;
+            padding: 1px 5px;
+            border: 1px solid;
+            @include border-radius($border-radius);
+            cursor: pointer;
+          }
+        }
+
+        &:hover {
+          &::after {
+            bottom: 40px;
+          }
+
+          img {
+            top: 40%;
+          }
+
+          networks {
+            bottom: 0;
+          }
+        }
+      }
+
+      h2 {
+        margin-bottom: 6px;
+      }
+
+      h5 {
+        @include font-size(22px);
+        letter-spacing: 5px;
+        font-weight: 400;
+        @include opacity(80);
+      }
+
+      divider {
+        display: none;
+        @include center(n);
+      }
+    }
+
+    @include MQ(M) {
+      item {
+        height: 350px;
+
+        figure {
+          width: 40%;
+          height: 100%;
+          margin-right: 20px;
+
+          img {
+            width: auto;
+            height: 100%;
+            top: 0;
+            @include center(x);
+          }
+
+          &:hover {
+            img {
+              top: -15px;
+            }
+          }
+        }
+
+        divider {
+          display: flex;
+        }
+      }
+    }
+  }
+
+  .owl-controls .owl-dots {
+    bottom: -20px;
+  }
+}

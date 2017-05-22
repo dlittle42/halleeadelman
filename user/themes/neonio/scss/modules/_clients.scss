@@ -1,0 +1,33 @@
+/*	-------------------------------
+ *	Clients
+ *	Date: 08.03.16
+**	---------------------------- */
+
+
+clients .owl-carousel {
+
+  .owl-stage {
+    height: 160px;
+  }
+
+  .owl-item item {
+    height: 100px;
+
+    > img {
+      position: absolute;
+      width: 85%;
+      height: 90%;
+      @include center(xy);
+    }
+  }
+
+  .owl-controls .owl-dots {
+    bottom: -20px;
+  }
+
+  @include MQ(M) {
+    .owl-stage {
+      height: 200px;
+    }
+  }
+}

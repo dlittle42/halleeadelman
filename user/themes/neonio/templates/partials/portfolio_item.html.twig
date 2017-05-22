@@ -1,0 +1,114 @@
+{% set rnd = random_string(10) %}
+
+<item class="{{ page.taxonomy.tag|join(' ') }}{% if truncate %} col-xs-12 col-sm-6 col-md-4 col-lg-{{ items }} item{% endif %}">
+  <container>
+
+    {% if not truncate %}
+      <header>
+        <div class="col-xs-5 text-xs-left">
+          {% if page.title %}
+            <h2><a href="{{ page.url }}">{{ page.title }}</a></h2>
+          {% endif %}
+          {% if page.taxonomy.tag %}
+            <div class="tags-links">
+              in
+              {% for tag in page.taxonomy.tag %}
+                <a href="{{ base_url }}/tag{{ config.system.param_sep }}{{ tag }}">{{ tag }}{% if not loop.last %},{% endif %}</a>
+              {% endfor %}
+            </div>
+          {% endif %}
+          {% if page.date %}
+            <div class="posted-on">
+              <p>{{ page.date|date(config.system.pages.dateformat.short) }}</p>
+            </div>
+          {% endif %}
+        </div>
+        <div class="text-xs-right">
+          {% if page.header.client %}
+            <p class="client">Client: {{ page.header.client }}</p>
+          {% endif %}
+          {% if page.header.technology %}
+            <p class="technology">Technology: {{ page.header.technology }}</p>
+          {% endif %}
+        </div>
+        <div class="col-xs-1 text-xs-right">
+          {% if page.header.link %}
+            <a class="btn flat link" href="{{ page.header.link }}">Website</a>
+          {% endif %}
+        </div>
+      </header>
+    {% endif %}
+
+    <screen>
+      <div class="col-xs-12">
+        <img src="{{ page.media[page.header.opener].url }}" title="{{ page.title }}">
+        {% if truncate %}
+          <div class="info">
+            <h4>{{ page.title }}</h4>
+            <a class="goto" href="{{ page.url }}">View</a>
+          </div>
+        {% else %}
+          {% set show_prev_next = true %}
+        {% endif %}
+      </div>
+    </screen>
+
+    {% if not truncate %}
+      <content class="col-xs-12">
+        {{ content }}
+      </content>
+
+      <carousel id="owl-{{ rnd }}">
+        {% for image in page.header.carousel %}
+          <item>
+            <screen class="col-xs-12">
+              <img src="{{ page.media[image.src].url }}" alt="{{ image.title|default(page.title) }}" />
+            </screen>
+            {% if image.title %}
+              <content class="col-xs-5">
+                <h4>{{ image.title }}</h4>
+                <p>{{ image.text }}</p>
+              </content>
+            {% endif %}
+          </item>
+        {% endfor %}
+      </carousel>
+    {% endif %}
+  </container>
+</item>
+
+{% if show_prev_next %}
+<navigation role="navigation">
+  {% if not page.isLast %}
+    <a href="{{ page.prevSibling.url }}" rel="prev" class="prev" {% if page.prevSibling.media.images %}style="background-image: url({{ page.prevSibling.media.images|first.cropZoom(1038,437).url }}");{% endif %}>
+      <div>
+        <icon class="ion ion-ios-arrow-back"></icon>
+        <span {% if page.nextSibling.media.images %}class="image"{% endif %}>{{ page.prevSibling.header.title }}</span>
+      </div>
+    </a>
+  {% endif %}
+  {% if not page.isFirst %}
+    <a href="{{ page.nextSibling.url }}" rel="next" class="next" {% if page.nextSibling.media.images %}style="background-image: url({{ page.nextSibling.media.images|first.cropZoom(1038,437).url }}");{% endif %}>
+      <div>
+        <span {% if page.nextSibling.media.images %}class="image"{% endif %}>{{ page.nextSibling.header.title }}</span>
+        <icon class="ion ion-ios-arrow-forward"></icon>
+      </div>
+    </a>
+  {% endif %}
+</navigation>
+{% endif %}
+
+{% if not truncate %}
+{% set owl = '
+$("#owl-' ~ rnd ~ '").owlCarousel({
+  items : 1,
+  margin: 0,
+  lazyLoad: true,
+  loop : true,
+  dots : false,
+  nav : true,
+  autoplay : false
+});
+' %}
+{% do assets.addInlineJs(owl) %}
+{% endif %}

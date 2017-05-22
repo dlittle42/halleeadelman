@@ -1,0 +1,233 @@
+/*	-------------------------------
+ *	Blog
+ *	Date: 14.03.16
+**	---------------------------- */
+
+blog {
+  margin-top: 50px;
+
+  article {
+    margin-bottom: 30px;
+    @include performance();
+
+    box {
+      position: relative;
+      display: block;
+      overflow: hidden;
+      @include border-radius($border-radius);
+      box-shadow: 0 0 30px rgba($color-dark, 0.3);
+      @include positioning();
+
+      container {
+        padding: 0;
+      }
+    }
+
+    thumbnail {
+      max-height: 250px;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+
+      img {
+        @include transition(all 1.6s ease-in-out);
+      }
+    }
+
+    headline {
+      width: 100%;
+      padding: 20px 30px 20px;
+      background: $color-grey;
+
+      h2 {
+        margin-bottom: 0;
+      }
+    }
+
+    content {
+      padding: 0 30px 15px;
+      background: $color-grey;
+      order:0;
+    }
+
+    info {
+      width: 100%;
+      padding: 20px 30px 20px;
+      background: $color-grey;
+      @include display(flex);
+      @include justify-content(space-between);
+      @include align-items(center);
+      flex-wrap: wrap;
+
+      avatar {
+        padding: 0 !important;
+    		@include flex(0 0 auto);
+        @include justify-content(flex-start);
+        order: 0;
+
+        div {
+          position: relative;
+          overflow: hidden;
+          width: 130px;
+          height: 130px;
+          margin-bottom: 25px;
+          border: 2px solid $color-light;
+          box-shadow: 0 0 30px rgba($color-dark, 0.3);
+          @include border-radius(50%);
+          @include center(x);
+        }
+
+        @include MQ(S) {
+          div {
+            width: 100%;
+            height: auto;
+            margin-bottom: 0;
+            @include center(0);
+          }
+
+          padding-right: 30px !important;
+        }
+      }
+
+      description {
+        padding: 0 !important;
+    		@include flex(1 1 auto);
+        @include justify-content(flex-end);
+        order: 1;
+
+        p { margin-bottom: 0; }
+      }
+    }
+
+    footer {
+      padding: 10px 15px;
+      color: $color-dark;
+      background: transparent;
+      @include opacity(60);
+    }
+
+    &:hover {
+      thumbnail img {
+        @include transform(scale(1.2));
+      }
+    }
+  }
+
+  navigation {
+    position: relative;
+    @include display(flex);
+    @include justify-content(space-between);
+    @include align-items(center);
+    flex-wrap: nowrap;
+    height: 120px;
+
+    icon {
+      @include font-size(60px);
+      vertical-align: middle;
+      margin: 0 20px;
+    }
+
+    .prev,
+    .next {
+      position: relative;
+      @include flex(1 0 auto);
+      @include justify-content(flex-start);
+      height: 100%;
+      color: $color-primary;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      @include transition(all 150ms ease);
+
+      &:hover {
+        @include opacity(80);
+      }
+    }
+
+    .prev {
+      order: 0;
+      text-align: left;
+    }
+
+    .next {
+      order: 1;
+      text-align: right;
+    }
+
+    .prev div,
+    .next div {
+      width: 100%;
+      padding: 20px;
+      @include font-size(18px);
+      position: absolute;
+      @include center(y);
+
+      span {
+        display: none;
+
+        @include MQ(S) {
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  &.single {
+    margin-top: 0;
+
+    article {
+      background-color: $color-grey;
+      margin-bottom: 0;
+      @include border-top-radius(0);
+
+      box {
+        @include border-radius(0);
+        box-shadow: none;
+      }
+
+      thumbnail {
+        min-height: 60px;
+        max-height: 400px;
+        background: $color-dark;
+
+        @include MQ(M) {
+          min-height: 90px;
+        }
+      }
+
+      headline {
+        padding: 60px .9375rem 30px;
+        text-align: center;
+
+        h2 {
+          @include font-size(40px);
+        }
+      }
+
+      content {
+        padding: 20px .9375rem;
+        @include border-bottom-radius(0);
+      }
+
+      container {
+
+        @include MQ(M) {
+          margin-left: 16.666667%;
+          width: 66.666667%;
+        }
+      }
+
+      info {
+        padding: 20px .9375rem;
+      }
+
+      footer {
+        padding: 20px 0 60px;
+      }
+
+      &:hover thumbnail img {
+        @include transform(none);
+      }
+    }
+  }
+}

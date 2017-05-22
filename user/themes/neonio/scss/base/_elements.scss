@@ -1,0 +1,199 @@
+/*	-------------------------------
+ *	Elements
+ *	Date: 18.02.16
+**	---------------------------- */
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin-top: 0;
+	font-weight: 300;
+}
+
+h2 {
+	@include font-size(30px);
+	color: $color-primary;
+	text-shadow:
+		0px 0px 5px $color-primary,
+		0px 0px 10px $color-primary;
+}
+
+h3 {
+	@include font-size(28px);
+}
+
+h5 {
+	margin-top: 25px;
+}
+
+p {
+	padding: 0;
+	font-weight: 400;
+	margin: 10px 0;
+}
+
+a {
+	padding: 0;
+	margin: 0;
+	text-decoration: none;
+	@include transition(color 200ms);
+	color: $color-primary;
+
+	&:hover,
+	&:focus {
+		text-decoration: none;
+		color: $color-secondary;
+	}
+}
+
+b, strong {
+  font-weight: 600;
+}
+
+ol, ul {
+	list-style: none;
+	margin: 0;
+  padding: 0;
+
+	li::before {
+  	content: "\2022";
+		margin-left: 3px;
+	  margin-right: 7px;
+	}
+}
+
+blockquote, q {
+	quotes: none;
+  border-left: 3px solid $color-primary;
+  padding-left: 10px;
+  line-height: normal;
+}
+
+pre,code {
+	padding: .2rem .4rem;
+	font-size: 90%;
+	@include border-radius($border-radius);
+	background: $color-grey;
+}
+
+pre {
+	border: 1px solid $color-mud;
+	word-wrap: break-word;
+	word-break: break-all;
+	white-space: pre-wrap;
+}
+
+code {
+	color: $color-secondary;
+}
+
+blockquote::before, blockquote::after,
+q::before, q::after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+img {
+	width: 100%;
+	height: auto;
+}
+
+.pagination li::before {
+	display: none;
+}
+
+divider {
+	position: relative;
+	background: $color-primary;
+  width: 3.2rem;
+  height: 2px;
+  margin: 15px 0 20px;
+	box-shadow:
+		inset 0 0 6px $color-primary,
+		inset 0 0 100px rgba($color-primary, 0.1),
+		0 0 6px $color-primary,
+		0 0 80px rgba($color-primary, 0.2);
+	@include filter(blur(1px));
+	@include center(x);
+}
+
+stick {
+	width: 2px;
+	height: 120%;
+	margin: 0 30px 0 10px;
+	background: $color-primary;
+	@include filter(blur(1px));
+}
+
+save {
+	@include font-size(20px);
+	color: $color-primary;
+	text-shadow:
+		0px 0px 5px $color-primary,
+		0px 0px 10px $color-primary;
+	vertical-align: middle;
+}
+
+@include MQ(M) {
+	h2 {
+		@include font-size(36px);
+	}
+
+	h3 {
+		@include font-size(34px);
+	}
+}
+
+/* Color styles */
+@each $key, $color in $styles {
+  .color-#{$key} {
+		save,
+		h2 {
+			color: $color;
+		}
+
+		save,
+		h2 {
+			color: $color;
+			text-shadow:
+				0px 0px 5px $color,
+				0px 0px 10px $color;
+		}
+
+		counter,
+		h3 {
+		  color: $color;
+		  text-shadow: 0px 0px 2px $color;
+		}
+
+		a {
+			color: $color;
+			&:hover,&:focus {
+				color: rgba($color,0.8);
+			}
+		}
+
+		item::after,
+		divider,
+		stick {
+			background: $color;
+		}
+
+		divider {
+			box-shadow:
+				inset 0 0 6px $color,
+				inset 0 0 100px rgba($color, 0.1),
+				0 0 6px $color,
+				0 0 80px rgba($color, 0.2);
+		}
+  }
+}

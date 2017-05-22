@@ -1,0 +1,46 @@
+/*	-------------------------------
+ *	Gallery
+ *	Date: 08.03.16
+**	---------------------------- */
+
+
+gallery {
+
+  carousel.owl-carousel {
+
+    .owl-item {
+      padding: 0;
+      margin-left: -1px;
+
+      img {
+        @include flickering();
+      }
+
+      wrapper {
+        position: absolute;
+        z-index: 1;
+        bottom: 0;
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+        @include positioning();
+
+        h3 {
+          padding: 8px 20px;
+          margin: 0;
+        }
+
+        img {
+          position: absolute;
+          z-index: -1;
+          top: auto;
+          bottom: -20px;
+          height: auto;
+          width: 100%;
+          @include center(x);
+          @include filter(blur(2px));
+        }
+      }
+    }
+  }
+}

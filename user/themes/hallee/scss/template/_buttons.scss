@@ -1,0 +1,10 @@
+.button {
+	@extend %button;
+	@include button-color($core-accent);
+	transition: all 300ms linear;
+}
+
+.button-secondary {
+	@extend %button;
+	@include button-color($secondary-link);
+}

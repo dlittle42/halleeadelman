@@ -1,0 +1,22 @@
+/*	-------------------------------
+ *	Page
+ *	Date: 08.03.16
+**	---------------------------- */
+
+
+page {
+
+  h1,h2,h3,h4,h5,h6 {
+    padding: 20px 0;
+  }
+
+  p {
+    padding: 5px 0;
+  }
+
+  blockquote {
+    padding: 0 15px;
+    border-left: 4px solid rgba($color-dark, 0.7);
+    @include opacity(60);
+  }
+}

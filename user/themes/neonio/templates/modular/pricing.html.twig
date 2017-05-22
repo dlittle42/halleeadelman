@@ -1,0 +1,29 @@
+<content class="text-xs-center">
+  {% if page.header.headline %}
+    <h2{% if page.header.headline_animation %} waypoint data-animation="{{ page.header.headline_animation }}"{% endif %}>{{ page.header.headline }}</h2>
+  {% endif %}
+  {% if page.header.divider in ['on', 'true', 1] %}
+    <divider{% if page.header.divider_animation %} waypoint data-animation="{{ page.header.divider_animation }}"{% endif %}></divider>
+  {% endif %}
+  {% if page.header.subheadline %}
+    <h5{% if page.header.subheadline_animation %} waypoint data-animation="{{ page.header.subheadline_animation }}"{% endif %}>{{ page.header.subheadline }}</h5>
+  {% endif %}
+</content>
+
+<screen class="col-xs-12">
+  {% for price in page.header.pricing %}
+    <item class="col-xs-4 text-xs-center"{% if price.animation %} waypoint data-animation="{{ price.animation }}"{% endif %}{% if price.recommend in ['on', 'true', 1] %}style="z-index:1"{% endif %}>
+      <box class="{% if price.recommend in ['on', 'true', 1] %}recommend{% endif %}">
+        {% if price.recommend in ['on', 'true', 1] %}<icon class="ion {{ price.icon }}"></icon>{% endif %}
+        <h2>{{ price.title }}</h2>
+        <divider></divider>
+        <div class="features">
+          {% for feature in price.features %}
+            <p>{{ feature }}</p>
+          {% endfor %}
+        </div>
+        <a href="{{ price.button.link }}" role="link" class="btn flat small {{ price.button.class }}">{{ price.button.text }}</a>
+      </box>
+    </item>
+  {% endfor %}
+</screen>

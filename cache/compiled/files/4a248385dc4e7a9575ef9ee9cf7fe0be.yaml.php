@@ -2,10 +2,10 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Applications/MAMP/htdocs/halleeadelman.com/user/plugins/form/blueprints.yaml',
-    'modified' => 1487354990,
+    'modified' => 1490411765,
     'data' => [
         'name' => 'Form',
-        'version' => '2.1.1',
+        'version' => '2.3.1',
         'description' => 'Enables the forms handling',
         'icon' => 'check-square',
         'author' => [

@@ -1,0 +1,39 @@
+{% set rnd = random_string(10) %}
+
+<content class="text-xs-center">
+  {% if page.header.headline %}
+    <h2{% if page.header.headline_animation %} waypoint data-animation="{{ page.header.headline_animation }}"{% endif %}>{{ page.header.headline }}</h2>
+  {% endif %}
+  {% if page.header.divider in ['on', 'true', 1] %}
+    <divider{% if page.header.divider_animation %} waypoint data-animation="{{ page.header.divider_animation }}"{% endif %}></divider>
+  {% endif %}
+  {% if page.header.subheadline %}
+    <h5{% if page.header.subheadline_animation %} waypoint data-animation="{{ page.header.subheadline_animation }}"{% endif %}>{{ page.header.subheadline }}</h5>
+  {% endif %}
+</content>
+
+<screen class="col-xs-12">
+  <carousel id="owl-{{ rnd }}"{% if page.header.team.options.animation %} waypoint data-animation="{{ page.header.team.options.animation }}"{% endif %}>
+    {% for member in page.header.team.items %}
+      <item>
+        <figure>
+          <img src="{{ page.media[member.image].url }}" alt="{{ member.name }}" />
+          <networks>
+            {% for network in member.networks %}
+              <a href="{{ network.url }}"><icon class="ion ion-{{ network.icon }}"></icon></a>
+            {% endfor %}
+          </networks>
+        </figure>
+        <h2>{{ member.name }}</h2>
+        <h5>{{ member.title }}</h5>
+        <divider></divider>
+        <p>{{ member.text }}</p>
+      </item>
+    {% endfor %}
+  </carousel>
+</screen>
+
+{% set owl = '
+$("#owl-'~rnd~'").owlCarousel({items:1,margin:0,navRewind:true,lazyLoad:true,loop:'~page.header.team.options.loop|default('false')~',dots:'~page.header.team.options.dots|default('false')~',nav:'~page.header.team.options.nav|default('false')~',autoplay:'~page.header.team.options.autoplay|default('false')~',autoplayTimeout:'~page.header.team.options.timeout|default('3100')~',autoplayHoverPause:'~page.header.team.options.pause|default('true')~',smartSpeed:'~page.header.team.options.speed|default('1100')~',responsive:{544:{items:'~page.header.team.options.items|default(2)~'}}});
+' %}
+{% do assets.addInlineJs(owl) %}

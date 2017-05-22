@@ -1,0 +1,15 @@
+<content class="col-xs-12 text-xs-center">
+  {% if page.header.headline %}
+    <h2{% if page.header.headline_animation %} waypoint data-animation="{{ page.header.headline_animation }}"{% endif %}>{{ page.header.headline }}</h2>
+  {% endif %}
+  {% if page.header.divider in ['on', 'true', 1] %}
+    <divider{% if page.header.divider_animation %} waypoint data-animation="{{ page.header.divider_animation }}"{% endif %}></divider>
+  {% endif %}
+  {% if page.header.subheadline %}
+    <h5{% if page.header.subheadline_animation %} waypoint data-animation="{{ page.header.subheadline_animation }}"{% endif %}>{{ page.header.subheadline }}</h5>
+  {% endif %}
+</content>
+
+<div class="col-xs-12 col-md-8 col-md-offset-2">
+  {{ page.content }}
+</div>

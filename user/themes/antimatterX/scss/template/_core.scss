@@ -1,0 +1,102 @@
+html, body {
+	height: 100%; // use !important to override slidebars.min.css
+}
+
+body {
+	background: $page-bg;
+	color: $core-text;
+	-webkit-font-smoothing: antialiased;
+  	-moz-osx-font-smoothing: grayscale;
+}
+
+a {
+	color: $core-accent;
+	&:hover {
+		color: darken($core-accent, 20%);
+	}
+}
+
+b, strong {
+	font-weight: $font-weight-bold
+}
+
+// Global Container
+#container {
+ 	min-height: 100%;
+  	position: relative;
+}
+
+// Fullwidth styles
+.fullwidth {
+	#body {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	#header, #breadcrumbs, .blog-header, .blog-content-item, .content-wrapper, ul.pagination, #body > .modular-row {
+		@extend .padding-horiz;
+	}
+}
+
+// Global body styling
+#body {
+	@extend .default-animation;
+	@extend .padding-horiz;
+	
+	background: $page-bg;
+	padding-top: 12rem;//$header-height + $padding-vert;
+	padding-bottom: $footer-height + $padding-vert + 2rem;
+}
+
+// Alignment
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.news h2{
+	text-align: center;
+}
+
+.news-col,
+.tweet-col{
+	width: 50%;
+	margin-top: 0;
+    padding-top: 0;
+
+}
+
+.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.flex-grid-thirds {
+  display: flex;
+  justify-content: space-between;
+}
+.flex-grid-thirds .col {
+ // width: 32%;
+}
+
+.contact-one,
+.contact-two{
+	text-align: left;
+    padding: 20px 20px 0;
+    margin: 5px;
+    border-left: 1px solid white;
+    line-height: 20px;
+}
+
+

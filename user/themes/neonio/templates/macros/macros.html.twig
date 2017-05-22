@@ -1,0 +1,8 @@
+{% macro wrapper(parallax, src, blur) %}
+	<wrapper{% if parallax in ['on', 'true', 1] %} class="parallax" data-parallax="scroll">
+		<div class="parallax-slider"{% endif %}>
+		{% set blur = 'style="-webkit-filter: blur(' ~ blur ~ 'px);filter: blur(' ~ blur ~ 'px)"' %}
+			<img src="{{ page.media[src].url }}" {{ blur }}>
+		{% if parallax in ['on', 'true', 1] %}</div>{% endif %}
+	</wrapper>
+{% endmacro %}

@@ -1,0 +1,15 @@
+/*	-------------------------------
+ *	Book
+ *	Date: 08.03.16
+**	---------------------------- */
+
+
+book container content {
+	@include flex(none);
+  background: rgba($color-dark, 0.5);
+  padding: 20% 10% !important;
+
+	@include MQ(M) {
+		padding: 10% 5% !important;
+	}
+}

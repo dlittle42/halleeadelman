@@ -1,0 +1,37 @@
+/*	-------------------------------
+ *	Background wrapper
+ *	Date: 21.03.16
+**	---------------------------- */
+
+wrapper {
+  position: absolute;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  @include user-select(none);
+  @include performance();
+  @include flickering();
+
+  img,
+  video {
+    position: absolute;
+    width: auto;
+    height: auto;
+    @include user-select(none);
+    @include performance();
+    @include flickering();
+    @include center(xy);
+  }
+
+  video[parallax] {
+    height: 120%;
+  }
+
+  @include MQ(1210px) {
+    img,
+    video {
+      // width: 110%;
+      // height: auto;
+    }
+  }
+}

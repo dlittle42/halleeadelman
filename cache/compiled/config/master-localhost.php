@@ -1,13 +1,53 @@
 <?php
 return [
     '@class' => 'Grav\\Common\\Config\\CompiledConfig',
-    'timestamp' => 1489197205,
-    'checksum' => '0087bccfda3cf150d665766ab2309e7c',
+    'timestamp' => 1490670516,
+    'checksum' => 'fac37c353d3654a623744be73362c3f3',
     'files' => [
         'user/config' => [
+            'ganalytics' => [
+                'file' => 'user/config/ganalytics.yaml',
+                'modified' => 1489550497
+            ],
             'media' => [
                 'file' => 'user/config/media.yaml',
                 'modified' => 1488752882
+            ],
+            'plugins/breadcrumbs' => [
+                'file' => 'user/config/plugins/breadcrumbs.yaml',
+                'modified' => 1490443686
+            ],
+            'plugins/email' => [
+                'file' => 'user/config/plugins/email.yaml',
+                'modified' => 1490452750
+            ],
+            'plugins/feed' => [
+                'file' => 'user/config/plugins/feed.yaml',
+                'modified' => 1490415842
+            ],
+            'plugins/form' => [
+                'file' => 'user/config/plugins/form.yaml',
+                'modified' => 1490411765
+            ],
+            'plugins/gravstrap' => [
+                'file' => 'user/config/plugins/gravstrap.yaml',
+                'modified' => 1490415824
+            ],
+            'plugins/highlight' => [
+                'file' => 'user/config/plugins/highlight.yaml',
+                'modified' => 1490411687
+            ],
+            'plugins/langswitcher' => [
+                'file' => 'user/config/plugins/langswitcher.yaml',
+                'modified' => 1490415849
+            ],
+            'plugins/shortcode-owl-carousel' => [
+                'file' => 'user/config/plugins/shortcode-owl-carousel.yaml',
+                'modified' => 1490322499
+            ],
+            'plugins/simplesearch' => [
+                'file' => 'user/config/plugins/simplesearch.yaml',
+                'modified' => 1490411622
             ],
             'security' => [
                 'file' => 'user/config/security.yaml',
@@ -15,7 +55,7 @@ return [
             ],
             'site' => [
                 'file' => 'user/config/site.yaml',
-                'modified' => 1488753064
+                'modified' => 1490669399
             ],
             'streams' => [
                 'file' => 'user/config/streams.yaml',
@@ -23,7 +63,7 @@ return [
             ],
             'system' => [
                 'file' => 'user/config/system.yaml',
-                'modified' => 1489197205
+                'modified' => 1490670514
             ]
         ],
         'system/config' => [
@@ -49,6 +89,18 @@ return [
                 'file' => 'user/plugins/admin/admin.yaml',
                 'modified' => 1487354990
             ],
+            'plugins/archives' => [
+                'file' => 'user/plugins/archives/archives.yaml',
+                'modified' => 1490411115
+            ],
+            'plugins/blog-injector' => [
+                'file' => 'user/plugins/blog-injector/blog-injector.yaml',
+                'modified' => 1490411102
+            ],
+            'plugins/breadcrumbs' => [
+                'file' => 'user/plugins/breadcrumbs/breadcrumbs.yaml',
+                'modified' => 1490411116
+            ],
             'plugins/email' => [
                 'file' => 'user/plugins/email/email.yaml',
                 'modified' => 1487354990
@@ -57,9 +109,29 @@ return [
                 'file' => 'user/plugins/error/error.yaml',
                 'modified' => 1487354990
             ],
+            'plugins/feed' => [
+                'file' => 'user/plugins/feed/feed.yaml',
+                'modified' => 1490411106
+            ],
             'plugins/form' => [
                 'file' => 'user/plugins/form/form.yaml',
-                'modified' => 1487354990
+                'modified' => 1490411765
+            ],
+            'plugins/ganalytics' => [
+                'file' => 'user/plugins/ganalytics/ganalytics.yaml',
+                'modified' => 1489550191
+            ],
+            'plugins/gravstrap' => [
+                'file' => 'user/plugins/gravstrap/gravstrap.yaml',
+                'modified' => 1490411016
+            ],
+            'plugins/highlight' => [
+                'file' => 'user/plugins/highlight/highlight.yaml',
+                'modified' => 1490411118
+            ],
+            'plugins/langswitcher' => [
+                'file' => 'user/plugins/langswitcher/langswitcher.yaml',
+                'modified' => 1490411100
             ],
             'plugins/login' => [
                 'file' => 'user/plugins/login/login.yaml',
@@ -69,9 +141,41 @@ return [
                 'file' => 'user/plugins/markdown-notices/markdown-notices.yaml',
                 'modified' => 1487354990
             ],
+            'plugins/pagination' => [
+                'file' => 'user/plugins/pagination/pagination.yaml',
+                'modified' => 1490411111
+            ],
             'plugins/problems' => [
                 'file' => 'user/plugins/problems/problems.yaml',
                 'modified' => 1487354990
+            ],
+            'plugins/relatedpages' => [
+                'file' => 'user/plugins/relatedpages/relatedpages.yaml',
+                'modified' => 1490411108
+            ],
+            'plugins/shortcode-core' => [
+                'file' => 'user/plugins/shortcode-core/shortcode-core.yaml',
+                'modified' => 1490322489
+            ],
+            'plugins/shortcode-owl-carousel' => [
+                'file' => 'user/plugins/shortcode-owl-carousel/shortcode-owl-carousel.yaml',
+                'modified' => 1490322490
+            ],
+            'plugins/simplesearch' => [
+                'file' => 'user/plugins/simplesearch/simplesearch.yaml',
+                'modified' => 1490411104
+            ],
+            'plugins/sitemap' => [
+                'file' => 'user/plugins/sitemap/sitemap.yaml',
+                'modified' => 1489550596
+            ],
+            'plugins/taxonomylist' => [
+                'file' => 'user/plugins/taxonomylist/taxonomylist.yaml',
+                'modified' => 1490411113
+            ],
+            'plugins/youtube' => [
+                'file' => 'user/plugins/youtube/youtube.yaml',
+                'modified' => 1490442634
             ]
         ]
     ],
@@ -128,33 +232,74 @@ return [
                     ]
                 ]
             ],
+            'archives' => [
+                'enabled' => true,
+                'built_in_css' => true,
+                'date_display_format' => 'F Y',
+                'show_count' => true,
+                'limit' => 12,
+                'order' => [
+                    'by' => 'date',
+                    'dir' => 'desc'
+                ],
+                'filter_combinator' => 'and',
+                'filters' => [
+                    'category' => 'blog'
+                ],
+                'taxonomy_names' => [
+                    'month' => 'archives_month',
+                    'year' => 'archives_year'
+                ]
+            ],
+            'blog-injector' => [
+                'enabled' => true,
+                'framework' => 'pure',
+                'add_default_css' => true,
+                'add_framework_assets' => true
+            ],
+            'breadcrumbs' => [
+                'enabled' => false,
+                'show_all' => false,
+                'built_in_css' => false,
+                'include_home' => false,
+                'icon_home' => '',
+                'icon_divider_classes' => 'fa fa-angle-right',
+                'link_trailing' => false
+            ],
             'email' => [
                 'enabled' => true,
-                'from' => NULL,
-                'from_name' => NULL,
-                'to' => NULL,
-                'to_name' => NULL,
+                'from' => 'halleehost@halleeadelman.com',
+                'from_name' => 'Hallee Adelman',
+                'to' => 'halleehost@halleeadelman.com',
+                'to_name' => 'Hallee Adelman',
                 'mailer' => [
-                    'engine' => 'mail',
+                    'engine' => 'smtp',
                     'smtp' => [
-                        'server' => 'localhost',
+                        'server' => 'mail.halleeadelman.com',
                         'port' => 25,
                         'encryption' => 'none',
-                        'user' => '',
-                        'password' => ''
+                        'user' => 'halleehost',
+                        'password' => '@Wszzfbi&0y@Jd'
                     ],
                     'sendmail' => [
                         'bin' => '/usr/sbin/sendmail'
                     ]
                 ],
                 'content_type' => 'text/html',
-                'debug' => false
+                'debug' => true
             ],
             'error' => [
                 'enabled' => true,
                 'routes' => [
                     404 => '/error'
                 ]
+            ],
+            'feed' => [
+                'enabled' => false,
+                'limit' => 10,
+                'description' => 'My Feed Description',
+                'lang' => 'en-us',
+                'length' => 500
             ],
             'form' => [
                 'enabled' => true,
@@ -170,6 +315,35 @@ return [
                         0 => 'image/*'
                     ]
                 ]
+            ],
+            'ganalytics' => [
+                'enabled' => true,
+                'trackingId' => '',
+                'position' => 'head',
+                'objectName' => 'ga',
+                'forceSsl' => false,
+                'async' => false,
+                'anonymizeIp' => false,
+                'blockedIps' => [
+                    
+                ],
+                'cookieConfig' => false,
+                'cookieName' => '_ga',
+                'cookieDomain' => '',
+                'cookieExpires' => 63072000,
+                'debugStatus' => false,
+                'debugTrace' => false
+            ],
+            'gravstrap' => [
+                'enabled' => false
+            ],
+            'highlight' => [
+                'enabled' => false,
+                'theme' => 'default'
+            ],
+            'langswitcher' => [
+                'enabled' => false,
+                'built_in_css' => true
             ],
             'login' => [
                 'enabled' => true,
@@ -221,9 +395,132 @@ return [
                     3 => 'green'
                 ]
             ],
+            'pagination' => [
+                'enabled' => true,
+                'built_in_css' => true,
+                'delta' => 0
+            ],
             'problems' => [
                 'enabled' => true,
                 'built_in_css' => true
+            ],
+            'relatedpages' => [
+                'enabled' => true,
+                'limit' => 5,
+                'show_score' => true,
+                'score_threshold' => 20,
+                'filter' => [
+                    'items' => [
+                        '@page' => '/blog'
+                    ],
+                    'order' => [
+                        'by' => 'date',
+                        'dir' => 'desc'
+                    ]
+                ],
+                'page_in_filter' => true,
+                'explicit_pages' => [
+                    'process' => true,
+                    'score' => 100
+                ],
+                'taxonomy_match' => [
+                    'taxonomy' => 'tag',
+                    'taxonomy_taxonomy' => [
+                        'process' => true,
+                        'score_scale' => [
+                            1 => 50,
+                            2 => 75,
+                            3 => 100
+                        ]
+                    ],
+                    'taxonomy_content' => [
+                        'process' => true,
+                        'score_scale' => [
+                            1 => 20,
+                            2 => 30,
+                            3 => 45,
+                            4 => 60,
+                            5 => 70,
+                            6 => 80,
+                            7 => 90,
+                            8 => 100
+                        ]
+                    ]
+                ],
+                'content_match' => [
+                    'process' => false
+                ]
+            ],
+            'shortcode-core' => [
+                'enabled' => true,
+                'active' => true,
+                'active_admin' => true,
+                'parser' => 'regex',
+                'fontawesome' => [
+                    'load' => true,
+                    'url' => '//maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css'
+                ]
+            ],
+            'shortcode-owl-carousel' => [
+                'enabled' => true,
+                'built_in_css' => true
+            ],
+            'simplesearch' => [
+                'enabled' => false,
+                'built_in_css' => true,
+                'display_button' => false,
+                'min_query_length' => 3,
+                'route' => '/search',
+                'template' => 'simplesearch_results',
+                'filters' => [
+                    'category' => [
+                        0 => 'blog'
+                    ]
+                ],
+                'filter_combinator' => 'and',
+                'ignore_accented_characters' => true,
+                'order' => [
+                    'by' => 'date',
+                    'dir' => 'desc'
+                ]
+            ],
+            'sitemap' => [
+                'enabled' => true,
+                'route' => '/sitemap',
+                'changefreq' => 'daily',
+                'priority' => 1.0,
+                'ignores' => [
+                    0 => '/blog/blog-post-to-ignore',
+                    1 => '/ignore-this-route'
+                ]
+            ],
+            'taxonomylist' => [
+                'enabled' => true,
+                'route' => '/blog'
+            ],
+            'youtube' => [
+                'enabled' => true,
+                'built_in_css' => true,
+                'add_editor_button' => true,
+                'player_parameters' => [
+                    'autoplay' => 0,
+                    'cc_load_policy' => 0,
+                    'color' => 'red',
+                    'controls' => 1,
+                    'disablekb' => 0,
+                    'enablejsapi' => 0,
+                    'fs' => 1,
+                    'hl' => '',
+                    'iv_load_policy' => 1,
+                    'loop' => 0,
+                    'modestbranding' => 0,
+                    'origin' => '',
+                    'playsinline' => 0,
+                    'rel' => 1,
+                    'showinfo' => 1,
+                    'vq' => 'default'
+                ],
+                'privacy_enhanced_mode' => false
             ]
         ],
         'media' => [
@@ -488,12 +785,14 @@ return [
             'title' => 'Hallee Adelman',
             'default_lang' => 'en',
             'author' => [
-                'name' => 'Joe Bloggs',
-                'email' => 'joe@test.com'
+                'name' => 'Derek Little',
+                'email' => 'dlittle42@gmail.com'
             ],
             'taxonomies' => [
-                0 => 'category',
-                1 => 'tag'
+                0 => 'year',
+                1 => 'author',
+                2 => 'category',
+                3 => 'tag'
             ],
             'metadata' => [
                 'description' => 'Grav is an easy to use, yet powerful, open source flat-file CMS'
@@ -558,7 +857,7 @@ return [
                 'hide_in_urls' => false
             ],
             'pages' => [
-                'theme' => 'antimatter',
+                'theme' => 'hallee',
                 'order' => [
                     'by' => 'default',
                     'dir' => 'asc'
@@ -585,7 +884,7 @@ return [
                 'markdown' => [
                     'extra' => true,
                     'auto_line_breaks' => false,
-                    'auto_url_links' => false,
+                    'auto_url_links' => true,
                     'escape_markup' => false,
                     'special_chars' => [
                         '>' => 'gt',
@@ -607,7 +906,7 @@ return [
                 'etag' => false,
                 'vary_accept_encoding' => false,
                 'redirect_default_route' => false,
-                'redirect_default_code' => 301,
+                'redirect_default_code' => '301',
                 'redirect_trailing_slash' => true,
                 'ignore_files' => [
                     0 => '.DS_Store'
@@ -642,7 +941,7 @@ return [
                 ]
             ],
             'twig' => [
-                'cache' => true,
+                'cache' => false,
                 'debug' => true,
                 'auto_reload' => true,
                 'autoescape' => false,
@@ -667,7 +966,7 @@ return [
                 ]
             ],
             'errors' => [
-                'display' => true,
+                'display' => '1',
                 'log' => true
             ],
             'debugger' => [
@@ -709,6 +1008,24 @@ return [
                 'method' => 'auto',
                 'verify_peer' => true
             ]
+        ],
+        'ganalytics' => [
+            'enabled' => true,
+            'trackingId' => 'UA-93777014-1',
+            'position' => 'head',
+            'objectName' => 'ga',
+            'forceSsl' => false,
+            'async' => false,
+            'anonymizeIp' => false,
+            'blockedIps' => [
+                
+            ],
+            'cookieConfig' => false,
+            'cookieName' => '_ga',
+            'cookieDomain' => '',
+            'cookieExpires' => 63072000,
+            'debugStatus' => false,
+            'debugTrace' => false
         ],
         'security' => [
             'salt' => 'YjdJlpkOGNW80Q'

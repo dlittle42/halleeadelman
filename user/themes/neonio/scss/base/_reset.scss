@@ -1,0 +1,104 @@
+/*	-------------------------------
+ *	Reset
+ *	Date: 18.02.16
+**	---------------------------- */
+
+*, *::after, *::before {
+	@include box-sizing(border-box);
+}
+
+::selection {
+	color: $color-primary;
+	text-shadow: none;
+	background: $color-light;
+}
+::-moz-selection {
+	color: $color-primary;
+	text-shadow: none;
+	background: $color-light;
+}
+
+body {
+	background: $color-light;
+	margin: 0;
+	color: $color-dark;
+	line-height: 1.6;
+	font {
+		size: 100%;
+		family: $font;
+	}
+	@include font-smoothing();
+}
+
+main {
+	@include performance();
+}
+
+container,
+container-fluid,
+row,
+blog,
+case,
+buttons,
+status,
+avatar,
+parallax,
+widget,
+item,
+filter,
+grid,
+events,
+event,
+calendar,
+content,
+screen,
+box,
+menu,
+burger,
+title,
+movie,
+divider,
+caption,
+subtitle,
+button,
+play,
+slide,
+slider,
+trigger,
+wrapper,
+headline,
+field,
+thumbnail,
+col,
+sidebar,
+description,
+avatar,
+author,
+info,
+logo,
+block,
+book,
+clients,
+contact,
+bottom,
+features,
+gallery,
+error,
+maps,
+milestones,
+portfolio,
+pricing,
+promo,
+services,
+showcase,
+team,
+testimonials,
+video {
+  display: block;
+}
+
+counter,
+networks,
+stick {
+  display: inline-block;
+}

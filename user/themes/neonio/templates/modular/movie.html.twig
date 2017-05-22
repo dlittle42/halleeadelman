@@ -1,0 +1,23 @@
+{% set rnd = random_string(10) %}
+
+<screen id="player-{{ rnd }}">
+  <video
+    {% if page.header.video.autoplay in ['on', 'true', 1] %}autoplay{% endif %}
+    preload="{{ page.header.video.preload|default('auto') }}"
+    {% if page.header.video.poster is defined %}poster="{{ page.media[page.header.video.poster].url }}"{% endif %}
+    muted="{{ page.header.video.muted|default('true') }}"
+    {% if page.header.video.loop in ['on', 'true', 1] %}loop{% endif %} class="modular">
+    <source src="{{ page.media[page.header.video.src].url }}" type="video/{{ page.header.video.type }}">
+    <p>{{ page.header.video.nosupport|default('Your browser does not support the html 5 video tag.') }}</p>
+  </video>
+  {% if page.header.video.button in ['on', 'true', 1] %}
+    <play class="{% if not autoplay %}visible{% endif %}">
+      <icon class="ion ion-{% if autoplay %}pause{% else %}play{% endif %}"></icon>
+    </play>
+  {% endif %}
+</screen>
+
+{% set controlPlayer = '
+function controlPlayer(){var a=$("#player-' ~ rnd ~ ' video").get(0),s=$(this).find("icon");a.paused?($(this).removeClass("visible"),s.removeClass("ion-play"),s.addClass("ion-pause"),a.play()):($(this).addClass("visible"),s.removeClass("ion-pause"),s.addClass("ion-play"),a.pause())}$("#player-' ~ rnd ~ ' play").click(controlPlayer);
+' %}
+{% do assets.addInlineJs(controlPlayer) %}

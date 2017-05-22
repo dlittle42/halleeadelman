@@ -1,0 +1,34 @@
+// Main colors
+$color-primary:			#24D689;
+$color-secondary:		#21B374;
+$color-dark:				#161616;
+$color-mud:				  #CDCDCD;
+$color-grey:				#F3F5F8;
+$color-light:				#FFFFFF;
+
+// Styles
+$color-red: #FE3D50;
+$color-blue: #2283F6;
+$color-yellow: #F8E71C;
+$color-pink: #FC4CAB;
+
+$styles: (
+	red:$color-red,
+	blue:$color-blue,
+	yellow:$color-yellow,
+	pink:$color-pink
+);
+
+// Highlight colors
+$color-error: #D62424;
+$color-info: #2492D6;
+
+// section space
+$section-space: 80px;
+
+// border-radius
+$border-radius: 4px;
+
+//Img path
+$icons-path: '../images/icons/';
+$textures-path: '../images/textures/';

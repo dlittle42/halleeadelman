@@ -1,0 +1,28 @@
+{% set rnd = random_string(10) %}
+
+<content class="col-xs-12 text-xs-center">
+  {% if page.header.headline %}
+    <h2{% if page.header.headline_animation %} waypoint data-animation="{{ page.header.headline_animation }}"{% endif %}>{{ page.header.headline }}</h2>
+  {% endif %}
+  {% if page.header.divider in ['on', 'true', 1] %}
+    <divider{% if page.header.divider_animation %} waypoint data-animation="{{ page.header.divider_animation }}"{% endif %}></divider>
+  {% endif %}
+  {% if page.header.subheadline %}
+    <h5{% if page.header.subheadline_animation %} waypoint data-animation="{{ page.header.subheadline_animation }}"{% endif %}>{{ page.header.subheadline }}</h5>
+  {% endif %}
+</content>
+
+<screen class="col-xs-12">
+  <carousel id="owl-{{ rnd }}"{% if page.header.clients.options.animation %} waypoint data-animation="{{ page.header.clients.options.animation }}"{% endif %}>
+    {% for client in page.header.clients.items %}
+      <item>
+        <img src="{{ page.media[client.src].url }}" alt="{{ client.title|default('No title defined') }}" />
+      </item>
+    {% endfor %}
+  </carousel>
+</screen>
+
+{% set owl = '
+$("#owl-'~rnd~'").owlCarousel({items:1,margin:0,navRewind:true,lazyLoad:true,loop:'~page.header.clients.options.loop|default('false')~',dots:'~page.header.clients.options.dots|default('false')~',nav:'~page.header.clients.options.nav|default('false')~',autoplay:'~page.header.clients.options.autoplay|default('false')~',autoplayTimeout:'~page.header.clients.options.timeout|default('3100')~',smartSpeed:'~page.header.clients.options.speed|default('1100')~',responsive:{544:{items:3},992:{items:'~page.header.clients.options.items|default(4)~'}}});
+' %}
+{% do assets.addInlineJs(owl) %}

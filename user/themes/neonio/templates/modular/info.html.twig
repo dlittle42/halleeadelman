@@ -1,0 +1,12 @@
+{% for info in page.header.infos %}
+  <item class="col-xs-12 col-sm-4 text-xs-center text-sm-left"{% if info.animation %} waypoint data-animation="{{ info.animation }}"{% endif %}>
+    <content>
+      <icon class="ion {{ info.icon }}"></icon>
+      <stick></stick>
+      <div>
+        <h2>{{ info.title }}</h2>
+        <h5>{{ info.subtitle }}</h5>
+      </div>
+    </content>
+  </item>
+{% endfor %}

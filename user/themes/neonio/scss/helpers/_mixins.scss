@@ -1,0 +1,80 @@
+// rem fallback - credits: http://zerosixthree.se/
+
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
+// center vertically and/or horizontally an absolute positioned element
+
+@mixin center($xy:xy) {
+  @if $xy == xy {
+    left: 50%;
+    top: 50%;
+    bottom: auto;
+    right: auto;
+    @include transform(translateX(-50%) translateY(-50%));
+  }
+  @else if $xy == x {
+    left: 50%;
+    right: auto;
+    @include transform(translateX(-50%));
+  }
+  @else if $xy == y {
+    top: 50%;
+    bottom: auto;
+    @include transform(translateY(-50%));
+  }
+  @else if $xy == n {
+    top: auto;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    @include transform(translate(0));
+  }
+}
+
+// border radius
+
+@mixin border-radius($radius:.25em) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+// antialiasing mode font rendering
+
+@mixin font-smoothing {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// opacity
+
+@mixin opacity($op:60) {
+  $cop: $op / 100;
+  opacity: $cop;
+  filter: alpha(opacity=#{$op});
+}
+
+// Position fix
+@mixin positioning() {
+  @include transform(translateZ(0));
+}
+
+// 3D performance
+@mixin performance() {
+  @include transform-style(preserve-3d);
+  @include transform(translate3d(0,0,0));
+}
+
+// Flickering fix
+@mixin flickering() {
+  @include backface-visibility(hidden);
+  @include perspective(1000);
+}

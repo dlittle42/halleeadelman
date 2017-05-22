@@ -1,0 +1,90 @@
+{% set rnd = random_string(10) %}
+
+<content class="col-xs-12 col-md-6">
+  {% if page.header.headline %}
+    <h2{% if page.header.headline_animation %} waypoint data-animation="{{ page.header.headline_animation }}"{% endif %}>{{ page.header.headline }}</h2>
+  {% endif %}
+  <div{% if page.header.headline_animation %} waypoint data-animation="{{ page.header.headline_animation }}"{% endif %}>
+    <p>{{ content }}</p>
+  </div>
+  {% if page.header.buttons %}
+    <buttons{% if page.header.buttons_animation %} waypoint data-animation="{{ page.header.buttons_animation }}"{% endif %}>
+      {% for button in page.header.buttons %}
+        <a
+          href="{{ button.link }}"
+          role="button"
+          {% if button.target %}target="_{{ button.target }}"{% endif %}
+          class="btn flat">{% if button.icon %}<icon class="ion ion-ios-{{ button.icon }}"></icon> {% endif %}{{ button.title }}</a>
+      {% endfor %}
+    </buttons>
+  {% endif %}
+</content>
+
+<screen class="col-xs-12 col-md-6"{% if page.header.screen.options.animation %} waypoint data-animation="{{ page.header.screen.options.animation }}"{% endif %}>
+  {% set carousel = page.header.screen.options.carousel %}
+
+  {% if page.header.screen.options.kind|lower == "carousel" %}
+    <carousel id="owl-{{ rnd }}">
+      {% for item in page.header.screen.items %}
+        {% if item.enabled in ['on', 'true', 1] %}
+        <item>
+          {% if item.kind|lower == "image" %}
+            <img src="{{ page.media[item.src].url }}" alt="{{ item.title|default('No title defined') }}" />
+          {% elseif item.kind|lower == "video" %}
+            <video
+              {% if item.controls in ['on', 'true', 1] %}controls{% endif %}
+              {% if item.autoplay in ['on', 'true', 1] %}autoplay{% endif %}
+              preload="{{ item.preload|default('auto') }}"
+              {% if item.poster is defined %}poster="{{ page.media[item.poster].url }}"{% endif %}
+              {% if item.autoplay in ['on', 'true', 1] %}muted{% endif %}
+              {% if item.loop in ['on', 'true', 1] %}loop{% endif %}
+              class="{{ item.class }}">
+              <source src="{{ page.media[item.src].url }}" type="video/{{ item.type }}">
+              <p>{{ item.nosupport|default('Your browser does not support the html 5 video tag.') }}</p>
+            </video>
+          {% elseif item.kind|lower == "youtube" %}
+            <iframe
+              src="https://www.youtube.com/embed/{{ item.src }}?rel=0&controls={{ item.controls|default('0') }}&showinfo=0&disablekb=1&modestbranding=1&autoplay={{ item.autoplay|default('0')|e }}&loop={{ item.loop|default('0') }}"
+              class="{{ item.class }}"
+              frameborder="0">
+            </iframe>
+          {% elseif item.kind|lower == "vimeo" %}
+            <iframe
+              src="https://player.vimeo.com/video/{{ item.src }}?&badge=0&title=0&byline=0&portrait=0&autoplay={{ item.autoplay|default('0') }}&loop={{ item.loop|default('0') }}"
+              class="{{ item.class }}"
+              frameborder="0">
+            </iframe>
+          {% endif %}
+        </item>
+        {% endif %}
+      {% endfor %}
+    </carousel>
+  {% elseif page.header.screen.options.kind|lower == "skillbar" %}
+   {% for bar in page.header.screen.skillbar %}
+      <div class="skillbar sbid-{{ rnd }}" data-percent="{{ bar.percent }}%" waypoint data-animation="{{ page.header.screen.options.animation|default('fadeIn') }}">
+        <div class="skillbar-title" style="background: {{ bar.color }};">
+          <span>{{ bar.title }}</span>
+        </div>
+        <div class="skillbar-bar" style="background: {{ bar.color }};"></div>
+        <div class="skill-bar-percent">{{ bar.percent }}%</div>
+      </div>
+    {% endfor %}
+  {% endif %}
+</screen>
+
+{% if carousel.enabled in ['on', 'true', 1] %}
+  {% set owl = '
+  $("#owl-' ~ rnd ~ '").owlCarousel({
+    items : 1,
+    margin : 20,
+    lazyLoad : true,
+    loop : ' ~ carousel.loop|default('false') ~ ',
+    dots : ' ~ carousel.dots|default('false') ~ ',
+    nav : ' ~ carousel.nav|default('false') ~ ',
+    autoplay : ' ~ carousel.autoplay|default('false') ~ ',
+    autoplayTimeout : ' ~ carousel.timeout|default('3100') ~ ',
+    smartSpeed : ' ~ carousel.speed|default('1100') ~ '
+  });
+  ' %}
+  {% do assets.addInlineJs(owl) %}
+{% endif %}

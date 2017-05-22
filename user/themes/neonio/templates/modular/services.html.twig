@@ -1,0 +1,22 @@
+<content class="col-xs-12 text-xs-center">
+  {% if page.header.headline %}
+    <h2{% if page.header.headline_animation %} waypoint data-animation="{{ page.header.headline_animation }}"{% endif %}>{{ page.header.headline }}</h2>
+  {% endif %}
+  {% if page.header.divider in ['on', 'true', 1] %}
+    <divider{% if page.header.divider_animation %} waypoint data-animation="{{ page.header.divider_animation }}"{% endif %}></divider>
+  {% endif %}
+  {% if page.header.subheadline %}
+    <h5{% if page.header.subheadline_animation %} waypoint data-animation="{{ page.header.subheadline_animation }}"{% endif %}>{{ page.header.subheadline }}</h5>
+  {% endif %}
+</content>
+
+<screen class="col-xs-12">
+  {% for service in page.header.services %}
+    <item class="col-xs-12 col-sm-4 text-xs-left"{% if service.animation %} waypoint data-animation="{{ service.animation }}"{% endif %}>
+      <div>
+        <h3>{% if service.icon %}<icon class="ion {{ service.icon }}"></icon>{% endif %}{{ service.title }}</h3>
+        <p>{{ service.text }}</p>
+      </div>
+    </item>
+  {% endfor %}
+</screen>

@@ -1,0 +1,6 @@
+{% for milestone in page.header.milestones %}
+  <item class="col-xs-6 col-sm-6 col-md-3 text-xs-center counter"{% if milestone.animation %} waypoint data-animation="{{ milestone.animation }}"{% endif %}>
+    <counter>{% if milestone.icon %}<icon class="ion {{ milestone.icon }}"></icon>{% endif %}<tweening-counter>{{ milestone.number }}</tweening-counter> {{ milestone.numtext }}</counter>
+    <h4>{{ milestone.title }}</h4>
+  </item>
+{% endfor %}

@@ -1,0 +1,19 @@
+{% extends 'partials/base.html.twig' %}
+{% block header %}{% endblock %}
+{% block showcase %}{% endblock %}
+{% block content %}
+  <main>
+    <error style="background: url('{{ page.media[page.header.background].url }}');">
+      <container>
+        <div class="col-xs-12 text-xs-center">
+          <title class="blink">{{ page.header.http_response_code }}</title>
+          <divider></divider>
+          <subtitle>{{ page.content }}</subtitle>
+          <a href="{{ base_url }}" role="link" class="btn">Back</a>
+        </div>
+      </container>
+    </error>
+  </main>
+{% endblock %}
+{% block bottom %}{% endblock %}
+{% block footer %}{% endblock %}

@@ -1,0 +1,13 @@
+email: hallee@adelmans.net
+access:
+  admin:
+    login: true
+    pages: true
+    cache: true
+    statistics: true
+  site:
+    login: true
+fullname: 'Hallee Adelman'
+title: 'Site owner'
+state: enabled
+hashed_password: $2y$10$1UU9djTPN.F612r.pmOe3ulZSu0DITMVdKEaOCuvE/n9G3KqhQl6.

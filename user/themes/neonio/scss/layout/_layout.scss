@@ -1,0 +1,137 @@
+/*	-------------------------------
+ *	Layout
+ *	Date: 16.02.16
+**	---------------------------- */
+
+section {
+	position: relative;
+	background: $color-light;
+	z-index: 0;
+	overflow: hidden;
+
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+	box {
+		background: $color-light;
+	}
+
+  &.dark {
+    background: $color-grey;
+
+		box,
+		container {
+			background: $color-grey;
+		}
+  }
+
+	&.light-content {
+		color: $color-light;
+		border-color: $color-light;
+	}
+
+	// Half padding
+	&.p-m-h {
+	  padding-top: 60px;
+	  padding-bottom: 60px;
+	}
+
+	// No padding
+	&.p-m-n {
+	  padding-top: 0;
+	  padding-bottom: 0;
+	}
+}
+
+
+container,
+container-fluid,
+row {
+	&::after{
+		display:table;
+		clear:both;
+		content:"";
+	}
+}
+
+container {
+	width: 100%;
+	max-width: none;
+	padding: 0 .9375rem;
+	margin-right:auto;
+	margin-left:auto;
+  @include display(flex);
+  @include justify-content(space-between);
+  @include align-items(top);
+  flex-wrap: wrap;
+
+	> blog,
+  > content {
+		@include flex(1 1 auto);
+    @include justify-content(flex-start);
+    order: 1;
+  }
+
+	> sidebar,
+  > screen {
+		@include flex(0 1 auto);
+		@include justify-content(flex-end);
+    order: 2;
+    margin-top: 50px;
+  }
+
+	@include MQ(544px) {
+		max-width:576px;
+	}
+
+	@include MQ(768px) {
+		max-width:720px;
+	}
+
+	@include MQ(992px) {
+		max-width:940px;
+	}
+
+	@include MQ(1200px) {
+		max-width:1140px;
+	}
+}
+
+container-fluid {
+	width: 100%;
+	margin-right:auto;
+	margin-left:auto;
+}
+
+@include MQ(768px) {
+  container.reverse {
+    content {
+      order: 2;
+      text-align: right;
+
+      p {
+        text-align: inherit;
+      }
+    }
+    screen {
+      order: 1;
+    }
+  }
+}
+
+@include MQ(M) {
+  section {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+
+  container {
+    content {
+      text-align: left;
+
+      p {
+        text-align: inherit;
+      }
+    }
+  }
+}

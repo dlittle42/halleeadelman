@@ -1,0 +1,13 @@
+<div id="{{ id }}"></div>
+
+{% if not instances %}
+<script async src="//maps.googleapis.com/maps/api/js?sensor=false"></script>
+<script async>
+var kmap={init:function(e){var o=document.getElementById(e.element);if(!o)return!1;var t=document.createElement("div");t.setAttribute("id",e.element),t.setAttribute("class",e.uclass),t.style.width=e.width,t.style.height=e.height,o.parentNode.replaceChild(t,o);var a,n;switch(e.zoom||(e.zoom=12),e.type||(e.type="roadmap"),e.type=e.type.toUpperCase(),e.type){case"ROADMAP":case"SATELLITE":case"HYBRID":case"TERRAIN":break;default:e.type="ROADMAP"}n=new google.maps.Map(t,{zoom:e.zoom,mapTypeId:google.maps.MapTypeId[e.type]}),a=new google.maps.Geocoder,a.geocode({address:e.address},function(o,t){t==google.maps.GeocoderStatus.OK&&(n.setCenter(o[0].geometry.location),new google.maps.Marker({position:o[0].geometry.location,map:n,icon:e.uclass}))})},load:function(e){var o=window.onload;window.onload=function(){"function"==typeof o&&o(),kmap.init(e)}}};
+kmap.load({address:'{{address}}',zoom:{{zoom}},element:'{{id}}',type:'{{type}}',width:'{{width}}',height:'{{height}}',uclass:'{{class}}'});
+</script>
+{% endif %}
+
+<noscript id="{{ id }}" class="{{ class }}">
+  <img src="http://maps.google.com/maps/api/staticmap?center={{ address|e }}&zoom={{ zoom }}&size={{ width }}x{{ height }}&maptype={{ type }}&markers=color:red|color:red|{{ address|e }}&sensor=false" width="{{ width }}" height="{{ height }}" class="{{ class }}" alt="{{ address }}" />
+</noscript>

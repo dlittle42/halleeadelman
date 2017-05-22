@@ -1,0 +1,12 @@
+<networks>
+  {% for item in site.social %}
+    <a href="{{ item.url }}">
+      {% if item.icon %}
+        <icon class="ion ion-{{ item.icon }}"></icon>
+      {% endif %}
+      {% if item.text %}
+        <span>{{ item.text }}</span>
+      {% endif %}
+    </a>
+  {% endfor %}
+</networks>

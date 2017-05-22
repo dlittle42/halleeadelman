@@ -1,0 +1,87 @@
+/*	-------------------------------
+ *	Video
+ *	Date: 16.02.16
+**	---------------------------- */
+
+
+movie container-fluid {
+  padding: 0;
+  height: 250px;
+  @include performance();
+
+  @include MQ(M) {
+    height: 400px;
+  }
+
+  screen {
+
+    video,iframe {
+      position: absolute;
+      z-index: 0;
+      @include center(xy);
+    }
+
+    video {
+      width: auto;
+      height: 101%;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+    }
+
+    @include MQ(445px) {
+      video {
+        width: 101%;
+        height: auto;
+      }
+
+      iframe {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    play {
+      position: absolute;
+      z-index: 1;
+      width: 50px;
+      height: 50px;
+      padding-left: 2px;
+      color: $color-primary;
+      text-align: center;
+      line-height: 45px;
+      @include font-size(30px);
+      border: 2px solid $color-primary;
+      @include border-radius($border-radius);
+      @include center(xy);
+      box-shadow:
+        inset 0 0 6px $color-primary,
+        inset 0 0 20px rgba($color-primary, 0.3),
+        inset 0 0 100px rgba($color-primary, 0.1),
+        0 0 6px $color-primary,
+        0 0 30px rgba($color-primary, 0.2),
+        0 0 80px rgba($color-primary, 0.2);
+      text-shadow:
+        0px 0px 5px $color-primary,
+        0px 0px 10px $color-primary;
+      cursor: pointer;
+      @include transition(all 200ms);
+      @include opacity(0);
+      @include flickering();
+
+      &.visible {
+        @include opacity(100);
+      }
+    }
+
+    &:hover play {
+      @include opacity(100);
+
+      &:hover {
+        @include opacity(80);
+      }
+    }
+  }
+}

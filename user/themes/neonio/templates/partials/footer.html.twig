@@ -1,0 +1,23 @@
+<footer>
+  <container>
+
+    <content class="col-xs-12 col-sm-6">
+      <p class="text-xs-center text-sm-left">
+        {{ site.author.copyright }}
+      </p>
+    </content>
+
+    <content class="col-xs-12 col-sm-6">
+      <p class="text-xs-center text-sm-right">
+        {% if site.author.contribute %}
+          {{ site.author.contribute }}
+        {% else %}
+          {% for module in site.othermenu %}
+             <a href="{{ module.url }}">{{ module.text }}</a>
+          {% endfor %}
+        {% endif %}
+      </p>
+    </content>
+
+  </container>
+</footer>

@@ -1,0 +1,38 @@
+{% if form.message %}<div class="alert">{{ form.message }}</div>{% endif %}
+{% set multipart = '' %}
+{% set method = form.method|upper|default('POST') %}
+
+
+<content class="text-xs-center">
+  {% if page.header.headline %}
+    <h2{% if page.header.headline_animation %} waypoint data-animation="{{ page.header.headline_animation }}"{% endif %}>{{ page.header.headline }}</h2>
+  {% endif %}
+  {% if page.header.divider in ['on', 'true', 1] %}
+    <divider{% if page.header.divider_animation %} waypoint data-animation="{{ page.header.divider_animation }}"{% endif %}></divider>
+  {% endif %}
+  {% if page.header.subheadline %}
+    <h5{% if page.header.subheadline_animation %} waypoint data-animation="{{ page.header.subheadline_animation }}"{% endif %}>{{ page.header.subheadline }}</h5>
+  {% endif %}
+</content>
+
+<screen class="col-xs-12 col-lg-8 col-lg-offset-2">
+  <form name="{{ form.name }}"
+        action="{{ form.action ? base_url ~ form.action : page.url }}"
+        method="{{ method }}"{{ multipart }}>
+
+    {% for field in form.fields %}
+      {% set value = form.value(field.name) %}
+      <field class="col-sm-{{ field.size }} {{ field.classes }}">
+        {% include "forms/fields/#{field.type}/#{field.type}.html.twig" %}
+      </field>
+    {% endfor %}
+
+  	<buttons>
+  	{% for button in form.buttons %}
+      <button role="button" class="btn {{ button.classes|default('flat') }}" type="{{ button.type|default('submit') }}">{{ button.value|t|default('Submit') }}</button>
+  	{% endfor %}
+  	</buttons>
+
+    {{ nonce_field('form', 'form-nonce') }}
+  </form>
+</screen>

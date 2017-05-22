@@ -1,0 +1,14 @@
+
+{# --------------------------------------------
+ # Configure MAPS Plugin
+ # Change class var to marker in gmaps.htm.twig
+##}
+{% set params = {
+  'address': page.header.maps.address,
+  'zoom': page.header.maps.zoom|default(16),
+  'class': page.media[page.header.maps.marker].url,
+  'height': page.header.maps.height|default('500px'),
+  'width': page.header.maps.width|default('100%')
+  }
+%}
+{{ gmaps(params) }}

@@ -1,0 +1,151 @@
+/*	-------------------------------
+ *	Carousel
+ *	Date: 18.02.16
+**	---------------------------- */
+
+carousel {
+  @include performance();
+
+  .owl-stage {
+    height: auto;
+    overflow: hidden;
+  }
+
+  .owl-item {
+    padding: 25px;
+    height: auto;
+    @include positioning();
+    overflow: hidden;
+  }
+
+  item {
+    position: relative;
+    overflow: hidden;
+    width: auto;
+    height: 250px;
+    @include performance();
+
+    > img {
+      height: 270px;
+      width: auto;
+    }
+    > iframe,video {
+      width: 100%;
+      height: 100%
+    }
+
+    @include MQ(S) {
+      height: 300px;
+
+      > img {
+        height: 320px;
+        width: auto;
+      }
+    }
+
+    @include MQ(M) {
+      height: 350px;
+
+      > img {
+        height: 370px;
+        width: auto;
+      }
+    }
+  }
+
+  &.enable-navigation .owl-controls .owl-prev,
+  &.enable-navigation .owl-controls .owl-next {
+    display: block !important;
+  }
+
+  .owl-controls {
+
+    .owl-nav {
+
+      .owl-prev, .owl-next {
+        position: absolute;
+        padding: 15px;
+        @include transition(opacity 300ms ease);
+        @include center(y);
+
+        &:hover {
+          @include opacity(80);
+        }
+      }
+
+      .owl-prev {
+        left: -30px;
+      }
+      .owl-next {
+        right: -30px;
+      }
+    }
+
+    .owl-dots {
+      display: block !important;
+      position: absolute;
+      width: auto;
+      bottom: -5px;
+      @include center(x);
+
+      .owl-dot {
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        background: rgba($color-light, 0.5);
+        border-radius: 50px;
+        margin-right: 10px;
+
+        &:hover {
+          background: rgba($color-light, 0.65);
+        }
+
+        &.active {
+          background: rgba($color-light, 0.8);
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  .owl-video-play-icon {
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    left: 50%;
+    top: 50%;
+    margin-left: -40px;
+    margin-top: -40px;
+    background: url("owl.video.play.png") no-repeat;
+    cursor: pointer;
+    z-index: 1;
+    -webkit-backface-visibility: hidden;
+    -webkit-transition: scale 100ms ease;
+    -moz-transition: scale 100ms ease;
+    -ms-transition: scale 100ms ease;
+    -o-transition: scale 100ms ease;
+    transition: scale 100ms ease;
+  }
+}
+
+.dark-content carousel,
+.dark-content .owl-carousel {
+  .owl-controls {
+    .owl-dots {
+      .owl-dot {
+        background: rgba($color-dark, 0.5);
+
+        &:hover {
+          background: rgba($color-dark, 0.65);
+        }
+
+        &.active {
+          background: rgba($color-dark, 0.8);
+        }
+      }
+    }
+  }
+}

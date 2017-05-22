@@ -1,0 +1,37 @@
+/*	-------------------------------
+ *	Footer
+ *	Date: 16.02.16
+**	---------------------------- */
+
+footer {
+  background: darken($color-dark, 2%);
+  color: $color-light;
+
+  container {
+    @include align-items(center);
+    padding: 15px 0;
+    @include opacity(70);
+
+
+    p {
+      margin: 5px 0;
+
+      stick {
+        height: 19px;
+        vertical-align: sub;
+        margin: 0 10px;
+      }
+    }
+
+    content {
+      position: relative;
+      order:0;
+
+      icon,
+      a {
+        position: relative;
+       	@include positioning();
+      }
+    }
+  }
+}

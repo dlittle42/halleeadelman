@@ -1,0 +1,22 @@
+<content class="text-xs-center">
+  {% if page.header.headline %}
+    <h2{% if page.header.headline_animation %} waypoint data-animation="{{ page.header.headline_animation }}"{% endif %}>{{ page.header.headline }}</h2>
+  {% endif %}
+  {% if page.header.divider in ['on', 'true', 1] %}
+    <divider{% if page.header.divider_animation %} waypoint data-animation="{{ page.header.divider_animation }}"{% endif %}></divider>
+  {% endif %}
+  {% if page.header.subheadline %}
+    <h5{% if page.header.subheadline_animation %} waypoint data-animation="{{ page.header.subheadline_animation }}"{% endif %}>{{ page.header.subheadline }}</h5>
+  {% endif %}
+  {% if page.header.buttons %}
+    <div class="buttons"{% if page.header.buttons_animation %} waypoint data-animation="{{ page.header.buttons_animation }}"{% endif %}>
+      {% for button in page.header.buttons %}
+        <a
+          href="{{ button.link }}"
+          role="link"
+          {% if button.target %}target="_{{ button.target }}"{% endif %}
+          class="btn">{% if button.icon %}<icon class="ion ion-{{ button.icon }}"></icon> {% endif %}{{ button.title }}</a>
+      {% endfor %}
+    </div>
+  {% endif %}
+</content>

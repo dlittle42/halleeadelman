@@ -1,0 +1,276 @@
+/*	-------------------------------
+ *	Portfolio
+ *	Date: 16.02.16
+**	---------------------------- */
+
+
+portfolio {
+  width: 100%;
+
+  menu {
+    width: 100%;
+    text-align: center;
+    margin: 80px auto 50px;
+    padding: 0;
+
+    filter {
+      @include font-size(18px);
+      display: inline-block;
+      cursor: pointer;
+      color: $color-primary;
+      background: $color-grey;
+      @include border-radius($border-radius);
+      padding: 5px 17px 4px 17px;
+      margin: 0 7px 10px;
+      @include transition(all 120ms ease-in-out);
+      @include user-select(none);
+
+      &.selected {
+        color: $color-grey;
+        background: $color-primary;
+
+        &:hover {
+          color: $color-secondary;
+          @include opacity(80);
+        }
+      }
+
+      &:hover {
+        color: $color-mud;
+        @include opacity(60);
+      }
+    }
+  }
+
+  grid {
+    position: relative;
+    width: 100%;
+    margin-bottom: 80px;
+
+    .sizer {
+      position: absolute;
+      float: left;
+      padding: .75em;
+    }
+
+    &.loading {
+      item {
+      	visibility: hidden;
+      }
+      loader {
+      	display: block;
+      }
+    }
+  }
+
+  item {
+  	position: relative;
+  	float: left;
+    padding: .75em !important;
+
+    screen {
+      margin-top: 0;
+      position: relative;
+      overflow: hidden;
+      @include border-radius($border-radius);
+      box-shadow: 0 5px 15px -2px rgba($color-dark, 0.3);
+      @include positioning();
+
+      > div {padding:0 !important;}
+
+      .info {
+        position: absolute;
+        background: rgba($color-dark, 0.8);
+        bottom: 0;
+        width: 100%;
+        padding: 14px 17px;
+        @include display(flex);
+        @include align-items(center);
+        flex-wrap: nowrap;
+
+        h4 {
+          @include flex(1 1 auto);
+          margin: 0;
+          color: $color-light;
+          white-space: nowrap;
+          overflow: hidden;
+          margin-right: 20px;
+        }
+
+        a {
+          @include flex(1 1 auto);
+          text-transform: uppercase;
+          text-align: right;
+        }
+      }
+    }
+  }
+
+  &.single {
+    padding: 0;
+    @include display(block);
+
+    item {
+      max-width: 100%;
+      padding: 0 !important;
+      float: none;
+    }
+
+    header {
+      @include display(flex);
+      @include justify-content(space-between);
+      @include align-items(center);
+      flex-wrap: nowrap;
+      order: 0;
+      margin-top: 45px;
+
+      h2 {
+        margin-bottom: 5px;
+      }
+
+      p {
+        padding: 0;
+        margin: 0;
+        color: $color-mud;
+      }
+
+      div {
+        height: 100%;
+    		@include flex(1 1 auto);
+        @include justify-content(flex-start);
+      }
+    }
+
+    screen {
+      order: 1;
+      margin: 30px auto;
+      width: 100%;
+
+      div {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        height: 400px;
+        border: 2px solid $color-light;
+        @include border-radius($border-radius);
+        box-shadow: 0 0 30px rgba($color-dark, 0.3);
+      }
+
+      img {
+        position: absolute;
+        width: 100%;
+        height: auto;
+        @include center(xy);
+      }
+    }
+
+    content {
+      order: 2;
+    }
+
+    carousel {
+      order: 3;
+      margin: 50px 0;
+
+      item {
+        position: relative;
+        padding: 0;
+        overflow: hidden;
+        @include border-radius($border-radius);
+        box-shadow: 0 0 30px rgba($color-dark, 0.3);
+        @include display(flex);
+        @include justify-content(space-between);
+        @include align-items(center);
+        flex-wrap: nowrap;
+        @include positioning();
+      }
+
+      screen {
+        position: relative;
+        height: 100%;
+        overflow: hidden;
+        margin: 0;
+
+        img {
+          position: absolute;
+          width: 100.1%;
+          height: auto;
+          @include center(xy);
+        }
+      }
+
+      content {
+        position: relative;;
+        height: 100%;
+        background: $color-dark;
+        color: $color-grey;
+        padding: 30px;
+        top: 0;
+        right: 0;
+      }
+    }
+
+    navigation {
+      order: 4;
+    }
+  }
+
+  navigation {
+    position: relative;
+    @include display(flex);
+    @include justify-content(space-between);
+    @include align-items(center);
+    flex-wrap: nowrap;
+    height: 120px;
+
+    icon {
+      @include font-size(60px);
+      vertical-align: middle;
+      margin: 0 20px;
+    }
+
+    .prev,
+    .next {
+      position: relative;
+      @include flex(1 0 auto);
+      @include justify-content(flex-start);
+      height: 100%;
+      color: $color-primary;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      @include transition(all 150ms ease);
+
+      &:hover {
+        @include opacity(80);
+      }
+    }
+
+    .prev {
+      order: 0;
+      text-align: left;
+    }
+
+    .next {
+      order: 1;
+      text-align: right;
+    }
+
+    .prev div,
+    .next div {
+      width: 100%;
+      padding: 20px;
+      @include font-size(18px);
+      position: absolute;
+      @include center(y);
+
+      span {
+        display: none;
+
+        @include MQ(S) {
+          display: inline-block;
+        }
+      }
+    }
+  }
+}

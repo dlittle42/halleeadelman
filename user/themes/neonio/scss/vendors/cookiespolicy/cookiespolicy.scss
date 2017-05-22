@@ -1,0 +1,27 @@
+/*	-------------------------------
+ *	Cookies policy
+ *	Date: 23.03.16
+**	---------------------------- */
+
+body #cookieChoiceInfo {
+  background-color: $color-dark !important;
+  padding: 10px 20px !important;
+  top: auto !important;
+  bottom: 0;
+
+  span {
+    text-align: left;
+    @include font-size(14px);
+  }
+
+  a {
+    padding: 6px 10px;
+    border: 0;
+    background-color: $color-grey;
+    color: $color-dark;
+    margin-top: 2px;
+    float: right;
+    @include font-size(14px);
+    @include border-radius($border-radius);
+  }
+}

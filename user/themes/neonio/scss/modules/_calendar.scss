@@ -1,0 +1,102 @@
+/*	-------------------------------
+ *	Calendar
+ *	Date: 14.03.16
+**	---------------------------- */
+
+calendar {
+  position: relative;
+  margin: 50px 0;
+  @include center(x);
+  overflow: hidden;
+  background: $color-grey;
+  box-shadow: 0 0 30px rgba($color-dark, 0.3);
+  padding: 0 !important;
+  @include font-size(12px);
+
+  @include MQ(S) {
+    @include font-size(18px);
+    @include border-radius($border-radius);
+  }
+
+  table {
+    border: none;
+    width: 100%;
+
+    thead {
+      background: $color-primary;
+      color: $color-grey;
+      vertical-align: middle;
+
+      a {
+        color: darken($color-secondary, 20%);
+      }
+
+      tr {
+
+        th {
+          text-align: left;
+          padding: 10px;
+          border:none;
+
+          &.controls {
+            text-align: center;
+
+            span {
+              margin: 0 6px;
+            }
+
+            .calendar-control {
+              margin: 0 5px;
+            }
+          }
+          &:last-child {
+            text-align: right;
+          }
+        }
+
+        &.headings {
+          th {
+            text-align: left;
+          }
+        }
+      }
+    }
+
+    tbody {
+      vertical-align: top;
+
+      tr {
+
+        td {
+          padding: 10px;
+          border: 1px solid $color-mud;
+
+          &:nth-child(odd) {
+            background: lighten($color-grey, 20%);
+          }
+
+          &.current {
+            background: $color-primary;
+          }
+
+          .event {
+            display: block;
+            padding: 2px 6px;
+            background: $color-light;
+            border: 1px solid $color-grey;
+            @include border-radius($border-radius);
+
+            &:not(:last-child) {
+              margin-bottom: 5px;
+            }
+
+            .time {
+              @include font-size(10px);
+              color: lighten($color-dark, 20%);
+            }
+          }
+        }
+      }
+    }
+  }
+}

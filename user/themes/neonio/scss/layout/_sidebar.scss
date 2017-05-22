@@ -1,0 +1,113 @@
+/*	-------------------------------
+ *	Sidebar
+ *	Date: 07.03.16
+**	---------------------------- */
+
+sidebar {
+  margin-top: 50px;
+
+  content {
+    padding: 20px;
+    background: $color-grey;
+    @include border-radius($border-radius);
+    @include display(flex);
+    flex-wrap: wrap;
+  }
+
+  networks {
+    width: 100%;
+    margin-bottom: -10px;
+
+    a {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      background: $color-primary;
+      border-radius: 4px;
+      color: $color-grey;
+      font-size: 20px;
+      vertical-align: middle;
+      text-align: center;
+      margin-right: 7px;
+    }
+  }
+
+  widget {
+    width: 100%;
+		@include flex(0 0 auto);
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    &.search button {
+      position: absolute;
+      z-index: 1;
+      right: 12px;
+      @include font-size(21px);
+      line-height: 0;
+      color: $color-primary;
+      background: transparent;
+      border: none;
+      @include center(y);
+      cursor: pointer;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    p {
+      white-space: nowrap;
+      overflow: hidden;
+      padding: 0;
+      margin-right: 20px;
+
+      &::after {
+        content: "...";
+        position: absolute;
+        right: 0;
+      }
+    }
+  }
+
+  calendar {
+    @include font-size(12px);
+    border: none;
+    box-shadow: none;
+    margin: 5px 0 0;
+
+    tr th,
+    tr td {
+      text-align: center;
+    }
+  }
+
+  input {
+    margin: 0;
+    background: transparent;
+
+    &.error {
+      border-color: $color-error;
+    }
+  }
+
+  .btn {
+  	border-color: $color-mud;
+    margin-right: 12px;
+  	box-shadow:none;
+  	text-shadow:none;
+
+  	&:focus,
+  	&:hover,
+  	&:active,
+  	&:active:focus,
+  	&:active:hover {
+  	  color: $color-dark;
+  		border-color: $color-dark;
+  	  box-shadow:none;
+  		text-shadow:none;
+  		@include animation(none);
+      @include opacity(70);
+  	}
+  }
+}

@@ -1,0 +1,41 @@
+<header role="banner" class="{% if page.header.history.header %}{{ page.header.history.header }}{% else %}{{ site.history.header }}{% endif %}{% if page.header.history.fluid in ['on', 'true', 1] %} fluid{% elseif site.history.fluid in ['on', 'true', 1]  %} fluid{% endif %}">
+  <container>
+
+    <logo role="img">
+      <a href="{% if "base_url:" in site.history.logo.link %}{{ base_url_absolute }}/{{ link.url|replace({"base_url:": ""}) }}{% else %}{{ link.url }}{% endif %}">
+        <img
+          src="{{ url('theme://images/logo.svg') }}"
+          alt="{{ site.history.logo.alt|default(site.title|e('html')) }}"
+          height="40">
+      </a>
+    </logo>
+
+    <menu role="menu">
+      <trigger><div></div><div></div></trigger>
+
+      <nav data-page="{% if site.history.onepage in ['on', 'true', 1] %}true{% else %}false{% endif %}" role="navigation">
+        <ul>
+        {% if site.history.onepage in ['on', 'true', 1] %}
+          {% set countLoop = 0 %}
+          {% for module in page.collection %}
+            {% if not module.header.hidemenu %}
+              {% set countLoop = countLoop + 1 %}
+              <li>
+                <a href="#{{ module.menu|lower|replace({' ':'_'}) }}" data-number="{{ countLoop }}">{{ module.menu }}</a>
+              </li>
+            {% endif %}
+          {% endfor %}
+        {% else %}
+          {% for page in pages.children.visible %}
+            {% set current_page = (page.active or page.activeChild) ? 'active' : '' %}
+            <li>
+              <a href="{{ page.url }}" {% if current_page %}class="{{ current_page }}"{% endif %}>{{ page.menu }}</a>
+            </li>
+          {% endfor %}
+        {% endif %}
+        </ul>
+      </nav>
+    </menu>
+
+  </container>
+</header>

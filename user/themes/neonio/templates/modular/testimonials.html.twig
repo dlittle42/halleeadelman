@@ -1,0 +1,46 @@
+{% set rnd = random_string(10) %}
+
+<content class="col-xs-12 text-xs-center">
+  {% if page.header.headline %}
+    <h2{% if page.header.headline_animation %} waypoint data-animation="{{ page.header.headline_animation }}"{% endif %}>{{ page.header.headline }}</h2>
+  {% endif %}
+  {% if page.header.divider in ['on', 'true', 1] %}
+    <divider{% if page.header.divider_animation %} waypoint data-animation="{{ page.header.divider_animation }}"{% endif %}></divider>
+  {% endif %}
+  {% if page.header.subheadline %}
+    <h5{% if page.header.subheadline_animation %} waypoint data-animation="{{ page.header.subheadline_animation }}"{% endif %}>{{ page.header.subheadline }}</h5>
+  {% endif %}
+</content>
+
+<screen class="col-xs-12 text-xs-center">
+  <carousel id="owl-{{ rnd }}"{% if page.header.testimonials.options.animation %} waypoint data-animation="{{ page.header.testimonials.options.animation }}"{% endif %}>
+    {% for monial in page.header.testimonials.items %}
+      <item>
+        <avatar class="col-xs-12 col-sm-3 col-md-3">
+          <img src="{{ page.media[monial.image].url }}" alt="{{ monial.name }}" />
+        </avatar>
+        <info class="col-xs-12 col-sm-9 col-md-9">
+          <h3>{{ monial.name }}</h3>
+          <divider></divider>
+          <p>{{ monial.text }}</p>
+        </info>
+      </item>
+    {% endfor %}
+  </carousel>
+</screen>
+
+{% set owl = '
+$("#owl-' ~ rnd ~ '").owlCarousel({
+  items : ' ~ page.header.testimonials.options.items|default(1) ~ ',
+  margin: 0,
+  navRewind: true,
+  loop : ' ~ page.header.testimonials.options.loop|default('false') ~ ',
+  dots : ' ~ page.header.testimonials.options.dots|default('false') ~ ',
+  nav : ' ~ page.header.testimonials.options.nav|default('false') ~ ',
+  autoplay : ' ~ page.header.testimonials.options.autoplay|default('false') ~ ',
+  autoplayHoverPause : ' ~ page.header.testimonials.options.pause|default('true') ~ ',
+  autoplayTimeout : ' ~ page.header.testimonials.options.timeout|default('3100') ~ ',
+  smartSpeed : ' ~ page.header.testimonials.options.speed|default('1100') ~ '
+});
+' %}
+{% do assets.addInlineJs(owl) %}

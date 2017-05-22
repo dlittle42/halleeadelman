@@ -1,0 +1,828 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "user/config/system.yaml",
+			"settings":
+			{
+				"buffer_size": 2401,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "user/pages/05.contact/form.md",
+			"settings":
+			{
+				"buffer_size": 1322,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "user/config/site.yaml",
+			"settings":
+			{
+				"buffer_size": 318,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "user/themes/hallee/templates/partials/base.html.twig",
+			"settings":
+			{
+				"buffer_size": 4336,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "user/themes/hallee/templates/item.html.twig",
+			"settings":
+			{
+				"buffer_size": 421,
+				"encoding": "UTF-8",
+				"line_ending": "Unix",
+				"name": "{% embed 'partials/base.html.twig' %}"
+			}
+		},
+		{
+			"file": "user/themes/hallee/templates/partials/blog_item.html.twig",
+			"settings":
+			{
+				"buffer_size": 3316,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "user/themes/hallee/templates/blog.html.twig",
+			"settings":
+			{
+				"buffer_size": 1266,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "user/themes/hallee/templates/news.html.twig",
+			"settings":
+			{
+				"buffer_size": 1135,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "user/themes/hallee/templates/modular/mainimage.html.twig",
+			"settings":
+			{
+				"buffer_size": 381,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "user/pages/01.home/modular.md",
+			"settings":
+			{
+				"buffer_size": 142,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "user/themes/antimatter/templates/modular.html.twig",
+			"settings":
+			{
+				"buffer_size": 1776,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "user/pages/01.home/_main-image/mainimage.md",
+			"settings":
+			{
+				"buffer_size": 51,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "---\ntitle: Home\ncontent:\n    items: '@self.modular'\n    order:\n        by: date\n        dir: desc\nmetadata:\n    description: 'Gravstrap Theme helps you to start a new Grav CMS site with Bootstrap support and several ready to use modules. It is also perfect to extend to start a new Bootstrap custom theme, to fit your needs.'\n    author: Gian\ntaxonomy:\n    category:\n        - blog\n    tag:\n        - sample\n        - demo\n        - grav\nslug: welcome-to-gravstrap-theme\nfoo: bar\n---\n\n[g-jumbotron name=\"jumbotron1\" fullwidth=\"true\" image=\"bg_home.jpg\" render=false]\n# Gravstrap\n\nGravstrap is a powerful Grav CMS plugin which simplifies Bootstrap components usage, implementing them as shortcodes. This theme, built on top of Gravstrap, helps you to start a new Bootstrap custom theme, to create your unique design.\n\n[Download Gravstrap Plugin](http://diblas.net/plugins/use-bootstrap-components-as-shortcodes-in-grav-cms/how-to-install-the-gravstrap-plugin){.btn .btn-outline-inverse .btn-lg}\n[Download Gravstrap Theme](http://diblas.net/themes/gravstrap-theme-helps-to-start-a-new-grav-cms-site-with-bootstrap-support/how-to-install-gravstrap-theme){.btn .btn-outline-inverse .btn-lg}\n[Learn Gravstrap](http://diblas.net/plugins/use-bootstrap-components-as-shortcodes-in-grav-cms){.btn .btn-outline-inverse .btn-lg}\n\n[/g-jumbotron]\n\n[g-what-we-do name=\"what_we_do\" attributes=\"class:what-we-do module\" column_attributes=\"class:col-md-12\"]\n\n## Explain your business\nUse the `What we do module` to explain your customers the services you offer.\n___\n\n[g-what-we-do-item attributes=\"class:col-md-4\"]\n\n<div class=\"item-icon\">\n[g-icon icon=\"bullhorn fa-5x\" icon_type=\"fontawesome\"][/g-icon]\n</div>\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n\n[/g-what-we-do-item]\n\n[g-what-we-do-item attributes=\"class:col-md-4\"]\n<div class=\"item-icon\">\n[g-icon icon=\"bolt fa-5x\" icon_type=\"fontawesome\"][/g-icon]\n</div>\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n\n[/g-what-we-do-item]\n\n[g-what-we-do-item attributes=\"class:col-md-4\"]\n\n<div class=\"item-icon\">\n[g-icon icon=\"heart fa-5x\" icon_type=\"fontawesome\"][/g-icon]\n</div>\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n[/g-what-we-do-item]\n\n[/g-what-we-do]\n\n\n[g-portfolio name=portfolio attributes=\"class:portfolio module\"]\n\n## Showcase your work\nUse the `Portfolio module` to spread your works to the world\n\n___\n\n[g-thumbnail]\n[g-thumbnail-item image=\"coffee.jpg\" url=\"http://diblas.net\"][/g-thumbnail-item]\n[g-thumbnail-item image=\"farmerboy.jpg\" url=\"http://diblas.net\"][/g-thumbnail-item]\n[g-thumbnail-item image=\"girl.jpg\" url=\"http://diblas.net\"][/g-thumbnail-item]\n[g-thumbnail-item image=\"judah.jpg\" url=\"http://diblas.net\"][/g-thumbnail-item]\n[g-thumbnail-item image=\"origami.jpg\" url=\"http://diblas.net\"][/g-thumbnail-item]\n[g-thumbnail-item image=\"retrocam.jpg\" url=\"http://diblas.net\"][/g-thumbnail-item]\n[/g-thumbnail]\n\n[/g-portfolio]\n\n\n[g-clients name=clients attributes=\"class:clients module\"]\n\n## Show out the clients who trust your business\nUse the `Clients module` to show your customers, the clients who already trust your business\n\n___\n\n[g-clients-item image=\"apple.svg\" attributes=\"class:col-md-3\"][/g-clients-item]\n[g-clients-item image=\"canon.svg\" attributes=\"class:col-md-3\"][/g-clients-item]\n[g-clients-item image=\"forbes.svg\" attributes=\"class:col-md-3\"][/g-clients-item]\n[g-clients-item image=\"hp.svg\" attributes=\"class:col-md-3\"][/g-clients-item]\n[g-clients-item image=\"intel.svg\" attributes=\"class:col-md-3\"][/g-clients-item]\n[g-clients-item image=\"samsung.svg\" attributes=\"class:col-md-3\"][/g-clients-item]\n[g-clients-item image=\"siemens.svg\" attributes=\"class:col-md-3\"][/g-clients-item]\n[g-clients-item image=\"vaio.svg\" attributes=\"class:col-md-3\"][/g-clients-item]\n\n[/g-clients]\n\n[g-team name=team attributes=\"class:team module\"]\n\n## Introduce your awesome team\nUse the `Team module` to introduce your awesome team.\n\n___\n\n[g-team-item image=\"jane.jpg\" attributes=\"class:col-md-4\"]\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n<div class=\"item-social\">\n[g-link url=\"#\" icon=\"twitter\" icon_type=\"fontawesome\" stacked=true][/g-link]\n[g-link url=\"#\" icon=\"facebook\" icon_type=\"fontawesome\" stacked=true][/g-link]\n[g-link url=\"#\" icon=\"linkedin\" icon_type=\"fontawesome\" stacked=true][/g-link]\n</div>\n\n[/g-team-item]\n\n[g-team-item image=\"mark.jpg\" attributes=\"class:col-md-4\"]\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n<div class=\"item-social\">\n[g-link url=\"#\" icon=\"twitter\" icon_type=\"fontawesome\" stacked=true][/g-link]\n[g-link url=\"#\" icon=\"facebook\" icon_type=\"fontawesome\" stacked=true][/g-link]\n[g-link url=\"#\" icon=\"linkedin\" icon_type=\"fontawesome\" stacked=true][/g-link]\n</div>\n\n[/g-team-item]\n\n[g-team-item image=\"julia.jpg\" attributes=\"class:col-md-4\"]\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n<div class=\"item-social\">\n[g-link url=\"#\" icon=\"twitter\" icon_type=\"fontawesome\" stacked=true][/g-link]\n[g-link url=\"#\" icon=\"facebook\" icon_type=\"fontawesome\" stacked=true][/g-link]\n[g-link url=\"#\" icon=\"linkedin\" icon_type=\"fontawesome\" stacked=true][/g-link]\n</div>\n\n[/g-team-item]\n[/g-team]\n\n[g-where-we-are name=where-we-are attributes=\"class:module where-we-are\"]\n\n## Show your customers where you are\nUse the `Where we are` module to tell your customers where you are\n\n___\n\n[g-map id=map zoom=12 center=\"41.90278,12.49637\"]\n[g-map-marker location=\"41.90278, 12.49637\" title=\"Gravstrap theme\"]\n**Meet Us**\nWe are there!\n[/g-map-marker]\n[/g-map]\n\n[/g-where-we-are]\n\n[g-contacts name=contacts attributes=\"class:module contacts\" info_attributes=\"class:col-md-4\" form_attributes=\"class:col-md-8\"]\n\n## Let your customers contact you\nUse the Contact module to let your customers contact you\n\n___\n\n[g-section name=\"form\"]\n##### Get in touch\nNeed some information? Ask us a question filling the form below\n\n[g-simple-form token=\"xxxxx\" redirect_to=\"/thank-you-for-my-page\" render=true][/g-simple-form]\n[/g-section]\n\n[g-section name=\"info\"]\n#####OFFICE\n\n9 - 3815 Thatcher Avenue  \nSaskatoon, Saskatchewan  \nS7R 1A3\n\n#####CONTACT INFORMATION\n\n**Primary Phone:** 1 (555) 555 - 6666  \n**Alternate Phone:** 1 (555) 555 - 7777  \n**Fax:** 1 (555) 555 - 8888\n\n\n#####OFFICE HOURS\n\nMonday - Friday 8 am - 5 pm  \nSaturday - Sunday Closed  \n[/g-section]\n[/g-contacts]\n",
+			"file": "user/pages/01.home/default.md",
+			"file_size": 7670,
+			"file_write_time": 131349182520000000,
+			"settings":
+			{
+				"buffer_size": 7670,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "user/pages/03.writing/blog.md",
+			"settings":
+			{
+				"buffer_size": 170,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "\n---\ntitle: Writing\nbody_classes: writing\n---\n\n# Art Fuels Art\n\nWhen I develop characters or prepare to revise a manuscript, I often stop writing and turn to other forms of art.  I’ve found that switching arts helps me either dig deeper on the “feelings level” or stay connected to my story. \n\nWhile crafting characters for my recent teen novel, Frayed, I signed up for a local drawing class. I’m not an artist, so there was no pressure to create “good work.” For me, this was key. It allowed me to simply explore. When models or still-life were presented, I focused on feelings, and I drew.  Here are some of my pieces and what they represent: \n\n![](PicOne-2.JPG)\n \nUsing fashion magazines and charcoal, this piece helped me think through my main character: her pain, her fear, and ultimately her strength.   \n\n![](Pic2-2.JPG)\n \nThis drawing allowed me to channel Milo, a character suffering from addiction. I used a heavy hand to represent her intensity and drew the crumbled bags to show how she felt on the inside. \n\n![](Pic3-2.JPG) \n \nThis charcoal drawing brought to life one of the characters telling her story in an Al-Anon meeting that my main character attends. \n \n![](Pic4-2.JPG)\n\nThis piece represents my main character’s mentor. I wanted to show the point when the mentor couldn’t continue to go with Hope on her journey. I used pastels and charcoal. \n\n\nAs authors, we hold so much our heads about our stories. When I knew I needed to step away to revise Frayed, I still wanted to stay connected to the project and scenes. I focused on music. I began a “Fraylist” or playlist that could represent the events or emotions in my chapter or become theme songs for my characters.  For example, I chose “BREATHE ME” by Sia for one scene where Milo admits that she’s been relapsing. Listening back to the playlist gives me an emotional starting point when I return to the story. \n\nDuring my last break from my draft, I went one step further. I wrote my own song lyrics and music to capture the pain of watching someone struggle from addiction. The song is called Round and Round. I even recorded a demo with the help two musicians that I know. I will be posting the demo and more about this experience in another post. \n\n\nUnpressured art experiences provide a vulnerability that help to deepen a story. Whether it’s drawing, song writing, photographing, pottery painting, or set building, I’ve found that writing can be fueled and enhanced by engaging in all forms of art. \n\n\n**Special thanks: \nTo my amazing art teacher**\n\n![](teacher.png)\n\n**These awesome instrumentalist**\n\n**Other art I created for this novel **\n\n[owl-carousel loop=true autoplay=true autoplayHoverPause=true nav=true]\n![](Bottomart.JPG?cropZoom=800,800)\n![](BottomArtImage1.JPG?cropZoom=800,800)\n![](BottomArtImage2.JPG?cropZoom=800,800)\n![](BottomArtImage3.JPG?cropZoom=800,800)\n![](BottomArtImage5.JPG?cropZoom=800,800)\n![](Bottomartimage6.JPG?cropZoom=800,800)\n[/owl-carousel]\n\n\n\n\n\n\n\n",
+			"settings":
+			{
+				"buffer_size": 2965,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "user/themes/hallee/templates/partials/navigation.html.twig",
+			"settings":
+			{
+				"buffer_size": 1869,
+				"encoding": "UTF-8",
+				"line_ending": "Unix",
+				"name": "{% macro loop(page) %}"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 367.0,
+		"last_filter": "Package Control: ",
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 392.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Applications/MAMP/htdocs/halleeadelman.com",
+		"/Applications/MAMP/htdocs/halleeadelman.com/user",
+		"/Applications/MAMP/htdocs/halleeadelman.com/user/01.home",
+		"/Applications/MAMP/htdocs/halleeadelman.com/user/02.home_single",
+		"/Applications/MAMP/htdocs/halleeadelman.com/user/07.components",
+		"/Applications/MAMP/htdocs/halleeadelman.com/user/07.components/04.dynamic",
+		"/Applications/MAMP/htdocs/halleeadelman.com/user/config/plugins",
+		"/Applications/MAMP/htdocs/halleeadelman.com/user/pages",
+		"/Applications/MAMP/htdocs/halleeadelman.com/user/pages/01.home",
+		"/Applications/MAMP/htdocs/halleeadelman.com/user/pages/01.home/_main-image",
+		"/Applications/MAMP/htdocs/halleeadelman.com/user/pages/03.writing",
+		"/Applications/MAMP/htdocs/halleeadelman.com/user/pages/05.contact",
+		"/Applications/MAMP/htdocs/halleeadelman.com/user/plugins/simplesearch",
+		"/Applications/MAMP/htdocs/halleeadelman.com/user/themes",
+		"/Applications/MAMP/htdocs/halleeadelman.com/user/themes/antimatter/templates",
+		"/Applications/MAMP/htdocs/halleeadelman.com/user/themes/antimatter/templates/modular",
+		"/Applications/MAMP/htdocs/halleeadelman.com/user/themes/antimatter/templates/partials",
+		"/Applications/MAMP/htdocs/halleeadelman.com/user/themes/antimatterX/templates",
+		"/Applications/MAMP/htdocs/halleeadelman.com/user/themes/antimatterX/templates/modular",
+		"/Applications/MAMP/htdocs/halleeadelman.com/user/themes/gravstrap-theme/templates",
+		"/Applications/MAMP/htdocs/halleeadelman.com/user/themes/gravstrap-theme/templates/modular",
+		"/Applications/MAMP/htdocs/halleeadelman.com/user/themes/gravstrap-theme/templates/partials",
+		"/Applications/MAMP/htdocs/halleeadelman.com/user/themes/halcyon/templates",
+		"/Applications/MAMP/htdocs/halleeadelman.com/user/themes/halcyon/templates/modular",
+		"/Applications/MAMP/htdocs/halleeadelman.com/user/themes/halcyon/templates/partials",
+		"/Applications/MAMP/htdocs/halleeadelman.com/user/themes/hallee",
+		"/Applications/MAMP/htdocs/halleeadelman.com/user/themes/hallee/scss/configuration",
+		"/Applications/MAMP/htdocs/halleeadelman.com/user/themes/hallee/scss/nucleus",
+		"/Applications/MAMP/htdocs/halleeadelman.com/user/themes/hallee/scss/template",
+		"/Applications/MAMP/htdocs/halleeadelman.com/user/themes/hallee/scss/template/modular",
+		"/Applications/MAMP/htdocs/halleeadelman.com/user/themes/hallee/scss/template/modules",
+		"/Applications/MAMP/htdocs/halleeadelman.com/user/themes/hallee/templates",
+		"/Applications/MAMP/htdocs/halleeadelman.com/user/themes/hallee/templates/modular",
+		"/Applications/MAMP/htdocs/halleeadelman.com/user/themes/hallee/templates/partials"
+	],
+	"file_history":
+	[
+		"/Applications/MAMP/htdocs/halleeadelman.com/user/themes/antimatter/templates/partials/navigation.html.twig",
+		"/Applications/MAMP/htdocs/halleeadelman.com/user/themes/hallee/scss/custom.scss",
+		"/Applications/MAMP/htdocs/halleeadelman.com/user/pages/05.contact/thankyou/formdata.md"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"navbar",
+			"logo",
+			".png",
+			"hallee",
+			"png",
+			"jpg",
+			"backg",
+			"15 rem"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 7,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "user/config/system.yaml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2401,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								413,
+								413
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/YAML/YAML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "user/pages/05.contact/form.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1322,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								967,
+								967
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/MarkdownHighlighting/Markdown.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 155.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 15,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "user/config/site.yaml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 318,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								318,
+								318
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/YAML/YAML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "user/themes/hallee/templates/partials/base.html.twig",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4336,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2638,
+								2638
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP-Twig/Syntaxes/HTML (Twig).tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 541.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "user/themes/hallee/templates/item.html.twig",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 421,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								420,
+								420
+							]
+						],
+						"settings":
+						{
+							"auto_name": "{% embed 'partials/base.html.twig' %}",
+							"syntax": "Packages/PHP-Twig/Syntaxes/HTML (Twig).tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "user/themes/hallee/templates/partials/blog_item.html.twig",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3316,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2305,
+								2305
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP-Twig/Syntaxes/HTML (Twig).tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 709.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "user/themes/hallee/templates/blog.html.twig",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1266,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								1266
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP-Twig/Syntaxes/HTML (Twig).tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "user/themes/hallee/templates/news.html.twig",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1135,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								654,
+								651
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP-Twig/Syntaxes/HTML (Twig).tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "user/themes/hallee/templates/modular/mainimage.html.twig",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 381,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								97,
+								97
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP-Twig/Syntaxes/HTML (Twig).tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "user/pages/01.home/modular.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 142,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								34,
+								34
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/MarkdownHighlighting/Markdown.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "user/themes/antimatter/templates/modular.html.twig",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 1776,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								441,
+								425
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP-Twig/Syntaxes/HTML (Twig).tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 200.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "user/pages/01.home/_main-image/mainimage.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 51,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								51,
+								51
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/MarkdownHighlighting/Markdown.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "user/pages/01.home/default.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7670,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/MarkdownHighlighting/Markdown.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "user/pages/03.writing/blog.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 170,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								170,
+								170
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/MarkdownHighlighting/Markdown.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2965,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2547,
+								2547
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/MarkdownHighlighting/Markdown.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 14.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 15,
+					"file": "user/themes/hallee/templates/partials/navigation.html.twig",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1869,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1382,
+								1382
+							]
+						],
+						"settings":
+						{
+							"auto_name": "{% macro loop(page) %}",
+							"syntax": "Packages/PHP-Twig/Syntaxes/HTML (Twig).tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 140.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 14,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "halleeadelman.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 263.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

@@ -1,0 +1,74 @@
+/*	-------------------------------
+ *	Block
+ *	Date: 18.02.16
+**	---------------------------- */
+
+.skillbar {
+	position:relative;
+	display:block;
+	margin:25px 0;
+	width:100%;
+	background:$color-light;
+	height:35px;
+  @include border-radius($border-radius);
+  @include transition(0.4s linear);
+  @include transition-property(width, background-color);
+  box-shadow: 0 0 30px rgba($color-dark, 0.3);
+
+	&:first-child {
+		margin-top: 0;
+	}
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.skillbar-title {
+	position:absolute;
+	top:0;
+	left:0;
+  width:110px;
+	font-weight:bold;
+	font-size:13px;
+	color:$color-light;
+	-webkit-border-top-left-radius:$border-radius;
+	-webkit-border-bottom-left-radius:$border-radius;
+	-moz-border-radius-topleft:$border-radius;
+	-moz-border-radius-bottomleft:$border-radius;
+	border-top-left-radius:$border-radius;
+	border-bottom-left-radius:$border-radius;
+}
+
+.skillbar-title span {
+	display:block;
+	background:rgba(0, 0, 0, 0.2);
+	padding:0 20px;
+	height:35px;
+	line-height:35px;
+	-webkit-border-top-left-radius:$border-radius;
+	-webkit-border-bottom-left-radius:$border-radius;
+	-moz-border-radius-topleft:$border-radius;
+	-moz-border-radius-bottomleft:$border-radius;
+	border-top-left-radius:$border-radius;
+	border-bottom-left-radius:$border-radius;
+}
+
+.skillbar-bar {
+	height:35px;
+	width:0px;
+	background:$color-primary;
+	border-radius:$border-radius;
+	-moz-border-radius:$border-radius;
+	-webkit-border-radius:$border-radius;
+}
+
+.skill-bar-percent {
+	position:absolute;
+	right:10px;
+	top:0;
+	font-size:11px;
+	height:35px;
+	line-height:35px;
+	color:$color-light;
+	color:rgba($color-dark, 0.3);
+}

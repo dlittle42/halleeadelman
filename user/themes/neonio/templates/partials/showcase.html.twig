@@ -1,0 +1,105 @@
+{% set carousel = page.header.showcase.options.carousel %}
+{% if page.header.showcase.options.small in ['on', 'true', 1] %}
+  {% set small = true %}
+{% endif %}
+
+<showcase
+  role="application"
+  class="{{ page.header.class }}{% if small %} small{% endif %}">
+{% for item in page.header.showcase.items %}
+{% if not carousel.enabled and loop.index > 1 %}
+  {# Do nothin cause we dont need more items if carousel is not enabled #}
+{% else %}
+  {% if item.enabled in ['on', 'true', 1] %}
+    <item>
+      {% if item.wrapper %}
+        <wrapper>
+          {% set blur = 'style="-webkit-filter: blur(' ~ item.wrapper.blur ~ 'px);filter: blur(' ~ item.wrapper.blur ~ 'px)"' %}
+          {% if item.parallax.enabled in ['on', 'true', 1] %}
+            {% set parallax = 'parallax data-0="top:' ~ item.parallax.begin ~ ';" data-end="top:' ~ item.parallax.end ~ ';"' %}
+          {% endif %}
+
+          {% if item.wrapper.kind|lower == "image" %}
+            <img
+              src="{{ page.media[item.wrapper.src].url }}"
+              {{ blur }} {{ parallax }}>
+          {% elseif item.wrapper.kind|lower == "video" %}
+            <video
+              {% if item.wrapper.autoplay in ['on', 'true', 1] %}autoplay{% endif %}
+              {% if item.wrapper.loop in ['on', 'true', 1] %}loop{% endif %}
+              poster="{{ page.media[item.poster].url }}"
+              preload="none"
+              muted="true"
+              {{ blur }} {{ parallax }}>
+              <source src="{{ page.media[item.wrapper.src].url }}" type="video/{{ item.wrapper.type }}">
+              <p>{{ item.wrapper.nosupport|default('Your browser does not support the html 5 video tag.') }}</p>
+            </video>
+          {% endif %}
+        </wrapper>
+      {% endif %}
+
+      <case>
+        <container{% if item.reverse %} class="reverse"{% endif %}>
+          <content class="col-xs-12 col-md-6 text-xs-center text-sm-{{ item.alignment|default('left') }}">
+            {% if item.title.text %}
+              <title{% if item.title.animation %} waypoint data-animation="{{ item.title.animation }}"{% endif %}{% if item.title.effect in ['on', 'true', 1] %} data-effect="blink"{% endif %}>{{ item.title.text }}</title>
+            {% endif %}
+            {% if item.subtitle.text %}
+              <subtitle{% if item.subtitle.animation %} waypoint data-animation="{{ item.subtitle.animation }}"{% endif %}>{{ item.subtitle.text }}</subtitle>
+            {% endif %}
+            {% if item.buttons %}
+              <buttons{% if item.buttons_animation %} waypoint data-animation="{{ item.buttons_animation }}"{% endif %}>
+                {% for button in item.buttons %}
+                  <a
+                    href="{{ button.link }}"
+                    role="link"
+                    target="{{ button.target|default('_self') }}"
+                    class="btn large">{% if button.icon %}<icon class="ion ion-{{ button.icon }}"></icon> {% endif %}{{ button.title }}</a>
+                {% endfor %}
+              </buttons>
+            {% endif %}
+          </content>
+          {% if item.screen %}
+            <screen class="col-md-6"{% if item.screen.animation %} waypoint data-animation="{{ item.screen.animation }}"{% endif %}>
+              {% if item.screen.kind|lower == "image" %}
+                <img src="{{ page.media[item.screen.src].url }}" alt="{{ item.screen.title|default('No title defined') }}" />
+              {% elseif item.screen.kind|lower == "video" %}
+                <video
+                  {% if item.screen.controls in ['on', 'true', 1] %}controls{% endif %}
+                  {% if item.screen.autoplay in ['on', 'true', 1] %}autoplay{% endif %}
+                  preload="{{ item.screen.preload|default('none') }}"
+                  {% if item.screen.poster is defined %}poster="{{ page.media[item.poster].url }}"{% endif %}
+                  muted="{{ item.screen.muted|default('true') }}"
+                  {% if item.screen.loop in ['on', 'true', 1] %}loop{% endif %}>
+                  <source src="{{ page.media[item.screen.src].url }}" type="video/{{ item.screen.type }}">
+                  <p>{{ item.screen.nosupport|default('Your browser does not support the html 5 video tag.') }}</p>
+                </video>
+              {% elseif item.screen.kind|lower == "youtube" %}
+                <iframe
+                  src="https://www.youtube.com/embed/{{ item.screen.src }}?rel=0&controls=0&showinfo=0&disablekb=1&modestbranding=1&autoplay={{ item.autoplay|default('false') }}&loop={{ item.screen.loop|default('true') }}"
+                  frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+                </iframe>
+              {% elseif item.screen.kind|lower == "vimeo" %}
+                <iframe
+                  src="https://player.vimeo.com/video/{{ item.screen.src }}?&badge=0&title=0&byline=0&portrait=0&autoplay={{ item.screen.autoplay|default('false') }}&loop={{ item.screen.loop|default('true') }}"
+                  frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+                </iframe>
+              {% endif %}
+            </screen>
+          {% endif %}
+        </container>
+      </case>
+    </item>
+  {% endif %}
+{% endif %}
+{% endfor %}
+</showcase>
+
+{% if carousel.enabled in ['on', 'true', 1] %}
+{% set owl = '
+/** Owl Carousel functions for waypoint animations */
+function owlOnDrag(a){for(var n=$(a)[0],i=n._current,t=n._items,e=t.length,o=0;e>o;o++)if(o!=i){var d=$(t[o][0]).find(".animated");d.each(function(a,n){var i=$(n).data("animation");$(n).removeClass("animated blink glow glow-light"),$(n).removeClass(i)})}}function owlOnDragged(a){var n=$(a)[0].$element,i=n.find("[waypoint]");i.each(function(a,n){var i=$(n).data("animation");$(n).addClass("animated"),$(n).addClass(i)})}
+$("showcase").owlCarousel({items:1,lazyLoad:true,loop:'~carousel.loop|default('false')~',dots:'~carousel.dots|default('false')~',nav:'~carousel.nav|default('false')~',autoplay:'~carousel.autoplay|default('false')~',autoplayTimeout:'~carousel.timeout|default('3100')~',smartSpeed:'~carousel.speed|default('1100')~',onDrag:function(){owlOnDrag(this);},onDragged:function(){owlOnDragged(this);}});
+' %}
+{% do assets.addInlineJs(owl) %}
+{% endif %}

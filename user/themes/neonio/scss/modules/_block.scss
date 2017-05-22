@@ -1,0 +1,57 @@
+/*	-------------------------------
+ *	Block
+ *	Date: 08.03.16
+**	---------------------------- */
+
+
+block container {
+  @include align-items(center);
+
+  content {
+    text-align: center;
+
+    buttons {
+      margin-top: 20px;
+    }
+  }
+
+  screen {
+
+    carousel {
+      .owl-item {
+        height: 100%;
+      }
+      item > *:not(iframe) {
+        position: absolute;
+        width: auto !important;
+        height: 100%;
+        @include center(xy);
+      }
+    }
+
+    item {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      border: 2px solid $color-light;
+      @include border-radius($border-radius);
+      box-shadow: 0 0 30px rgba($color-dark, 0.3);
+
+      iframe {
+        margin-bottom: -7px;
+      }
+    }
+  }
+
+  @include MQ(768px) {
+    flex-wrap: nowrap;
+
+    content {
+      text-align: left;
+    }
+
+    screen {
+      margin-top: 0;
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+<main>
+  {% for module in page.collection %}
+    {% if module.header.enabled in ['on', 'true', 1] %}
+
+    {% set pagename = module.header.title|lower|replace({' ':'_'}) %}
+    {% set modulename = module.template|slice(8) %}
+    {% set headerColor = '' %}
+    {% set headerWrapper = '' %}
+    {% set headerStyle = '' %}
+    {% set moduleFluid = '' %}
+
+    {% if module.header.color %}
+      {% set headerColor = ' ' ~ module.header.color ~ '-content' %}
+    {% endif %}
+    {% if module.header.background %}
+      {% set headerWrapper = ' wrapper' %}
+    {% endif %}
+    {% if module.header.style %}
+      {% set headerStyle = ' color-' ~ module.header.style %}
+    {% endif %}
+    {% if module.header.fluid in ['on', 'true', 1] %}
+      {% set moduleFluid = '-fluid' %}
+    {% endif %}
+
+    {# Create individual comment #}
+    <!-- begin {{ pagename }} -->
+
+    <section id="{{ pagename }}" class="{{ module.header.class }}{{ headerColor }}{{ headerWrapper }}{{ headerStyle }}">
+      {% if module.header.wrapper %}
+        <wrapper>
+          {% set blur = 'style="-webkit-filter: blur(' ~ module.header.wrapper.blur ~ 'px);filter: blur(' ~ module.header.wrapper.blur ~ 'px)"' %}
+          {% if module.header.wrapper.parallax in ['on', 'true', 1] and page.header.parallax.enabled|default(true) in ['on', 'true', 1] %}
+            {% set parallax = 'parallax data-0="top:' ~ page.header.parallax.begin ~ ';" data-end="top:' ~ page.header.parallax.end ~ ';"' %}
+          {% endif %}
+          <img src="{{ module.media[module.header.wrapper.src].url }}" {{ blur }} {{ parallax }}>
+        </wrapper>
+      {% endif %}
+      <{{ modulename }}>
+        <container{{ moduleFluid }}{% if module.header.reverse in ['on', 'true', 1] %} class="reverse"{% endif %}>
+          {{ module.content }}
+        </container{{ moduleFluid }}>
+      </{{ modulename }}>
+    </section>
+
+    <!-- end {{ pagename }} -->
+
+    {% endif %}
+  {% endfor %}
+</main>
+{% endblock %}

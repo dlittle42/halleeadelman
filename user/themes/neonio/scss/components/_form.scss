@@ -1,0 +1,52 @@
+/*	-------------------------------
+ *	Form
+ *	Date: 06.03.16
+**	---------------------------- */
+
+
+form {
+  position: relative;
+
+  [type="hidden"] {
+    display: none;
+    overflow: hidden;
+    text-indent: -9999;
+    @include backface-visibility(none);
+  }
+
+  field {
+    @include font-size(18px);
+    padding: 0;
+
+    label {
+      .required {
+      	color: $color-primary;
+      	margin-left: 5px;
+      	text-shadow:
+      		0px 0px 5px $color-primary,
+      		0px 0px 10px $color-primary;
+      }
+    }
+  }
+
+  buttons {
+    display: inline-block;
+    padding-right: .9375rem;
+    padding-left: .9375rem;
+  }
+}
+
+input,select,textarea {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 10px 16px;
+  color: $color-dark;
+  border: 1px solid $color-primary;
+  @include border-radius($border-radius);
+  @include transition(all 120ms linear);
+
+  &:focus {
+    outline: none;
+    border-color: rgba($color-dark, 0.5);
+  }
+}

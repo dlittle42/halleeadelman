@@ -1,0 +1,85 @@
+/*	-------------------------------
+ *	Footer
+ *	Date: 16.02.16
+**	---------------------------- */
+
+bottom {
+  background: $color-dark;
+  padding: 70px 0;
+  color: $color-light;
+  @include font-size(18px);
+
+  content {
+    margin-bottom: 20px;
+  }
+
+  h4 {
+    height: 60px;
+    @include font-size(28px);
+  }
+
+  p {
+    @include font-size(16px);
+    word-wrap: break-word;
+  }
+
+  logo {
+    height: 60px;
+
+    img {
+      height: 100%;
+      width: auto;
+    }
+  }
+
+  networks {
+    @include font-size(22px);
+
+    a { margin-right: 7px; }
+  }
+
+
+  input {
+    margin: 0;
+    color: $color-primary;
+    padding: 5px 12px;
+    background: transparent;
+
+    &:focus,
+    &:hover,
+    &:active,
+    &:active:focus,
+    &:active:hover {
+      color: $color-primary;
+      border-color: $color-secondary;
+    }
+  }
+
+  button.btn {
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    @include font-size(21px);
+    line-height: 0;
+    color: $color-primary;
+    background: transparent;
+    border: none;
+    @include center(y);
+    cursor: pointer;
+    box-shadow:none;
+    text-shadow:none;
+
+    &:focus,
+    &:hover,
+    &:active,
+    &:active:focus,
+    &:active:hover {
+      color: $color-primary;
+      border: none;
+      box-shadow:none;
+      text-shadow:none;
+      @include animation(none);
+      @include opacity(70);
+    }
+  }
+}

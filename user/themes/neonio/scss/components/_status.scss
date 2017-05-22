@@ -1,0 +1,50 @@
+/*	-------------------------------
+ *	Status
+ *	Date: 24.03.16
+**	---------------------------- */
+
+status {
+  position: fixed;
+  overflow: hidden;
+  z-index: 999999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $color-dark;
+
+  .progress {
+    display: block;
+    position: absolute;
+    margin-top: -30px;
+    @include center(xy);
+  }
+
+  progress[value] {
+    display: block;
+    position: absolute;
+    margin-top: -30px;
+    @include center(xy);
+  }
+
+  info {
+    position: absolute;
+    display: none;
+    color: $color-mud;
+    white-space: pre-wrap;
+    width: 95%;
+    text-align: center;
+    margin: 30px auto 0;
+    @include font-size(20px);
+    font-weight:500;
+    @include center(xy);
+  }
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
