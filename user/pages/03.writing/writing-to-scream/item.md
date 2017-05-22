@@ -1,0 +1,28 @@
+---
+title: 'Writing to Scream'
+content:
+    items: '@self.children'
+    limit: '5'
+    order:
+        by: date
+        dir: desc
+    pagination: '1'
+    url_taxonomy_filters: '1'
+---
+
+_by Hallee Adelman on May 2017_
+
+I interviewed Tina* for my YA novel involving heroin addiction. A week ago, Tina overdosed. She has overdosed before.  In fact, she had been in and out of over a dozen rehabs. Heroin’s pull is powerful.  So powerful, Tina once explained, that when she heard about a “laced” batch that was stronger or deadly, she’d seek it out, craving a “better high” and assuming the others who died from it were simply “rookie users.”  
+
+Last week, Tina snorted “heroin” that turned out to be almost pure carfentanil, an opioid used to sedate elephants. Like I said, Tina had overdosed before.  But this time, she was over 100 days sober.  This time, it took six Narcan™ injections to bring her back from a place of no return. This time, I want to scream. I want to scream for Tina and her family about how heartbreaking it must be: one moment of weakness completely unraveled 100 days of sobriety. There is a reason the word “over” is in overdose. Tina’s overdose marks the point where she has to start over-- detox, rehabilitation, struggled fight.  
+
+To fully grasp this “over” concept, I thought about dieting. What if someone lost 100 pounds and then ate one piece of chocolate? What if the dieter instantly put back every single pound lost?  Would the dieter start over? Would he be that strong? 
+
+Tina is that strong. She is back in rehab facing her demon despite the fact that some label her a “stupid junkie” and many don’t understand addiction and the importance of mental health outlets for children and teens.  These outlets are crucial. Tina and other young addicts told me they had deep feelings of loneliness or inadequacy long before they took drugs for the first time. Some of them talked about past trauma or abuse. Many had a family history of addiction (parents or relatives with eating disorders, gambling issues, drug problems, etc.) that sometimes makes the difference between trying a drug and becoming addicted. One interviewee also discussed being prescribed an excessive amount of painkillers after an injury.
+
+All of this makes me want to scream…so I write.  I write because often people keep quiet or feel embarrassed to talk about addiction and mental health.  I write because teens deserve support to combat tough feelings, get proper mental healthcare and get what they need before they have to fight as hard as Tina just to make it through one day or one hundred. I write in hopes that my readers will scream with me because screaming is more powerful…when we scream together.  
+
+
+
+
+*Names and dates have been changed to protect privacy. 

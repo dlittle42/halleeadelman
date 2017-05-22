@@ -1,24 +1,21 @@
 ---
 title: 'Art Fuels Art'
-taxonomy:
-    author:
-        - 'Hallee Adelman'
 header_image: '0'
-header_image_file: Pic2-2.JPG
+header_image_file: BottomArtImage1.JPG
 header_image_height: 450
 summary:
     enabled: '0'
     format: short
 ---
 
-_by Hallee Adelman_
+_by Hallee Adelman on March 2017_
 
 
 When I develop characters or prepare to revise a manuscript, I often stop writing and turn to other forms of art.  I’ve found that switching arts helps me either dig deeper on the “feelings level” or stay connected to my story. 
 
 While crafting characters for my recent teen novel, _Frayed_, I signed up for a local drawing class. I’m not an artist, so there was no pressure to create “good work.” For me, this was key. It allowed me to simply explore. When I saw models or still-life, I focused on feelings, and I drew.  Here are some of my pieces: 
 
-![](PicOne-2.JPG?resize=400)
+![](PicOne-2.JPG)
 **_Using fashion magazines and charcoal, this piece helped me think through my main character: her pain, her fear, and ultimately her strength._   
 **
 ![](Pic2-2.JPG)
