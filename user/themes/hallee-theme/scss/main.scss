@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 $color: #000;
 
 $light-pink:                    #EACCCC;
@@ -17,26 +19,27 @@ $header-text:                   #423C35; //dark grey
 $text-color:                   #423C35; //dark grey
 $navbar-bg:                     #FFFFFF;
 
-@import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond:600');
+@import url("https://fonts.googleapis.com/css?family=Cormorant+Garamond:600");
 
 @font-face {
-    font-family: 'Nueva Std Bold';
-    src: url('../fonts/NuevaStd-BoldItalic.eot');
-    src: url('../fonts/NuevaStd-BoldItalic.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/NuevaStd-BoldItalic.woff') format('woff'),
-        url('../fonts/NuevaStd-BoldItalic.ttf') format('truetype');
-    font-weight: bold;
-    font-style: italic;
+    font-family:NuevaStdBold;
+    src: url(../fonts/NuevaStd-BoldItalic.eot);
+    src: url(../fonts/NuevaStd-BoldItalic.eot?#iefix) format("embedded-opentype"),
+        url(../fonts/NuevaStd-BoldItalic.woff2) format("woff2"),
+        url(../fonts/NuevaStd-BoldItalic.woff) format("woff"),
+        url(../fonts/NuevaStd-BoldItalic.ttf) format("truetype");
+    font-weight: normal;//bold;
+    font-style: normal;//italic;
 }
 
 // Font Family
 
-$font-family-default:           'Cormorant Garamond', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
-$font-family-header:            'Cormorant Garamond', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
-$font-family-mono:              'Cormorant Garamond', monospace;
-$font-family-serif:             'Cormorant Garamond', "Times", "Times New Roman", serif;
+$font-family-default:           "Cormorant Garamond", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+$font-family-header:            "Cormorant Garamond", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+$font-family-mono:              "Cormorant Garamond", monospace;
+$font-family-serif:             "Cormorant Garamond", "Times", "Times New Roman", serif;
 
-$font-family-bold:            'Nueva Std Bold', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+$font-family-bold:            NuevaStdBold, "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
 
 $icons:                         "FontAwesome";
 
@@ -51,6 +54,18 @@ $wallpaper: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAFCAYAAABmWJ3mA
   -ms-transition: $args;
   -o-transition: $args;
   transition: $args;
+}
+
+@mixin transform($transforms) {
+       -moz-transform: $transforms;
+         -o-transform: $transforms;
+        -ms-transform: $transforms;
+    -webkit-transform: $transforms;
+          transform: $transforms;
+}
+
+@mixin translate ($x, $y) {
+   @include transform(translate($x, $y));
 }
 
 /* Core Stuff */
@@ -132,7 +147,9 @@ blockquote {
     font-size: 40px;
     line-height: 42px;
     width: 70%;
-    transform: translateX(-50px);
+   // transform: translateX(-50px);
+
+    @include translate(-50px,0);
    // overflow: hidden;
 
 
@@ -273,7 +290,8 @@ The content `<div>` is where all your content goes.
 #logo {
         //float: left;
         //height: 100px;
-        transform: translateY(0px);
+       // transform: translateY(0px);
+        @include translate(0,0);
         margin-top: 100px;
 
         h3 {
@@ -291,7 +309,8 @@ The content `<div>` is where all your content goes.
 
             img{
                 margin-left: 50%;
-                transform: translateX(-50%);
+                //transform: translateX(-50%);
+                @include translate(-50%,0);
                 width: 90%;
                 
   
@@ -337,9 +356,10 @@ appears on the left side of the page.
     bottom: 0;
     z-index: 1000; /* so the menu or its navicon stays above all content */
     background: #fff;
-    overflow-y: auto;
+    overflow: hidden;
     -webkit-overflow-scrolling: touch;
     line-height: 1.7;
+
 }
     /*
     All anchors inside the menu should be styled like this.
@@ -432,8 +452,9 @@ appears on the left side of the page.
         width: 150px;
         position: absolute;
         left: 50%;
-        transform: translateX(-50%);
-        bottom: 30px;
+       // transform: translateX(-50%);
+        @include translate(-50%,0);
+        bottom: 40px;
     }
 
 
@@ -474,8 +495,8 @@ small screens.
 .menu-link {
     position: fixed;
     display: block;
-    bottom: 10px;
-    right: 5px;
+    bottom: 35px;
+    right: 10px;
     background: #000;
     background: rgb(224, 218, 167);
     font-size: 10px;
@@ -486,6 +507,7 @@ small screens.
     width: 50px;
     height: 50px;
     border-radius: 25px;
+    transition: all 300ms linear;
 
     -webkit-box-shadow: 3px 4px 10px 0px rgba(0,0,0,0.34);
 -moz-box-shadow: 3px 4px 10px 0px rgba(0,0,0,0.34);
@@ -494,7 +516,7 @@ box-shadow: 3px 4px 10px 0px rgba(0,0,0,0.34);
 
 .menu-link:hover,
 .menu-link:focus {
-    background: #000;
+    background: #fff;
 }
 
 .menu-link span {
@@ -543,12 +565,14 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAFCAYAAABmWJ3mAAAAI0lEQVQYV2
 }
 
 .header-bkgd{
-    transform: translate(140px, 60px);
+   // transform: translate(140px, 60px);
+    @include translate(140px,60px);
     height: 43vw;
   //  width: 100%;
     img.desk{
         width: 70%;
-        transform: translateY(-90%);
+       // transform: translateY(-90%);
+        @include translate(0,-90%);
     }
 }
 
@@ -631,7 +655,8 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAFCAYAAABmWJ3mAAAAI0lEQVQYV2
     position: absolute;
     top: 20px;
     left: 50%;
-    transform: translateX(-50%);
+    //transform: translateX(-50%);
+    @include translate(-50%,0);
     z-index: 9999;
     width: 70%;
 
@@ -666,7 +691,7 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAFCAYAAABmWJ3mAAAAI0lEQVQYV2
     margin: 20px;
     position: relative;
     z-index: 1;
-    height: 250px;
+    height: 280px;
 
     p{
        // transform: translate(-20px, -20px);
@@ -694,8 +719,8 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAFCAYAAABmWJ3mAAAAI0lEQVQYV2
 
     content: '';
     position: absolute;
-    width: 400px;
-    height: 240px;
+    width: 100%;
+    height: 280px;
    // margin-left: -10px;
    // margin-top: 18px;
     top: 0;
@@ -717,7 +742,8 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAFCAYAAABmWJ3mAAAAI0lEQVQYV2
    // background-color: $tan;
 
     p{
-        transform: translate(-60px, 10px);
+        //transform: translate(-60px, 10px);
+        @include translate(-60px,10px);
     }
 }
 
@@ -725,7 +751,8 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAFCAYAAABmWJ3mAAAAI0lEQVQYV2
    // background-color: $grey-brown;
 
     p{
-        transform: translate(40px, 20px);
+       // transform: translate(40px, 20px);
+        @include translate(40px,20px);
     }
 }
 
@@ -834,7 +861,8 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAFCAYAAABmWJ3mAAAAI0lEQVQYV2
             margin-top: -20px;
 
             .textbox{
-                transform: translate(-20px, -20px);
+               // transform: translate(-20px, -20px);
+                @include translate(-20px,-20px);
             }
         }
 
@@ -842,7 +870,8 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAFCAYAAABmWJ3mAAAAI0lEQVQYV2
             background-color: $peach;
 
             .textbox{
-                transform: translate(80px, 0);
+               // transform: translate(80px, 0);
+                @include translate(80px,0);
             }
 
             a{
@@ -873,7 +902,8 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAFCAYAAABmWJ3mAAAAI0lEQVQYV2
                 width: 100%;
                 margin: 0 auto;
                 height: 60px;
-                transform: translateY(-70px);
+               // transform: translateY(-70px);
+                @include translate(0,-70px);
 
             }
         }
@@ -908,7 +938,8 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAFCAYAAABmWJ3mAAAAI0lEQVQYV2
 
     #content > blockquote:first-of-type{
         width: 120%;
-        transform: translateX(0);
+        //transform: translateX(0);
+        @include translate(0,0);
         
     }
     
@@ -943,7 +974,8 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAFCAYAAABmWJ3mAAAAI0lEQVQYV2
 .left-img{
     float: left;
    // margin: 0px 40px 20px 0px;
-    transform: translate(-40px, -30px);
+   // transform: translate(-40px, -30px);
+    @include translate(-40px,-30px);
     padding: 0;
 
 }
@@ -953,7 +985,8 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAFCAYAAABmWJ3mAAAAI0lEQVQYV2
 .right-img{
     float: right;
    // margin: 0px 0px 20px 20px;
-    transform: translate(40px, 0px);
+   // transform: translate(40px, 0px);
+    @include translate(40px,0);
     padding: 0;
 
 }
@@ -979,7 +1012,8 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAFCAYAAABmWJ3mAAAAI0lEQVQYV2
     background-position: center;
     background-size: contain;
     left: 50%;
-    transform: translateX(-300px);
+  //  transform: translateX(-300px);
+    @include translate(-300px,0);
    // border: 2px solid red;
    
 }
@@ -1114,7 +1148,8 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAFCAYAAABmWJ3mAAAAI0lEQVQYV2
         z-index: -1;
         bottom: 0px;
         margin-bottom: -30px;
-        transform: translateX(-50%);
+      //  transform: translateX(-50%);
+        @include translate(-50%,0);
         left: 50%;
         background: $light-pink;
 
@@ -1144,7 +1179,20 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAFCAYAAABmWJ3mAAAAI0lEQVQYV2
     width: 100%;
     height: 100%;
     margin: 20px 0 10px;
+   // height: 100% !important;
 }
+
+/* Firefox 37+ */
+
+@supports (-moz-appearance:none) and (display:contents) {
+    .grav-youtube{
+        width: 100%;
+       // height: 100%;
+        margin: 20px 0 10px;
+        height: 400px !important;
+    }
+}
+
 
 .videoWrapper {
     position: relative;
@@ -1253,6 +1301,18 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAFCAYAAABmWJ3mAAAAI0lEQVQYV2
 .mobile-hide{
         display: inline-block;
 }
+
+.list-item blockquote{
+    //background-color: red;
+    padding: 0;
+    width:100%;
+   // transform: none;
+    @include translate(0,0);
+    &:before{
+        content:none;
+    }
+}
+
 /*
 .news .p-summary > p:first-of-type:before{
 
@@ -1303,6 +1363,7 @@ Hides the menu at `48em`, but modify this based on your app's needs.
     .home .mainlogo{
         display: inline-block;
     }
+
 }
 
 @media (min-width: 48em) and (max-width: 60em){
@@ -1319,7 +1380,7 @@ Hides the menu at `48em`, but modify this based on your app's needs.
         left: 140px;
         width: 140px;
         margin-left: -140px;
-        overflow: hidden;
+        
 
     }
 
@@ -1376,12 +1437,14 @@ Hides the menu at `48em`, but modify this based on your app's needs.
     }
 
     .home-callout.books p {
-            transform: translate(-30px, 10px);
+          //  transform: translate(-30px, 10px);
+            @include translate(-30px,10px);
     }
 
     .home-callout.projects p{
        // text-align:right;
-        transform: translate(50px, 20px);
+      //  transform: translate(50px, 20px);
+        @include translate(50px,20px);
     }
 
     .home-callout a {
@@ -1429,7 +1492,8 @@ Hides the menu at `48em`, but modify this based on your app's needs.
     blockquote{
         padding: 0;
         width:100%;
-        transform: none;
+       // transform: none;
+        @include translate(0,0);
         &:before{
             content:none;
         }
@@ -1439,7 +1503,8 @@ Hides the menu at `48em`, but modify this based on your app's needs.
     .right-img{
         width: 100%;
         float: none;
-        transform: none;
+       // transform: none;
+        @include translate(0,0);
     }
 
     .left,
@@ -1462,7 +1527,8 @@ Hides the menu at `48em`, but modify this based on your app's needs.
     }
 
     .header-bkgd {
-        transform: translate(18px, 60px);
+       // transform: translate(18px, 60px);
+        @include translate(18px,60px);
         height: 62vw;
 
         .wallpaper {
@@ -1482,7 +1548,8 @@ Hides the menu at `48em`, but modify this based on your app's needs.
 
         img.desk {
             width: 90%;
-            transform: translateY(-90%);
+           // transform: translateY(-90%);
+            @include translate(0,-90%);
         }
 
         .frame-ballerina {
@@ -1561,12 +1628,14 @@ Hides the menu at `48em`, but modify this based on your app's needs.
     }
 
     .home-callout.books p {
-        transform: translate(0,10px);
+        //transform: translate(0,10px);
+        @include translate(0,10px);
     }
 
     .home-callout.projects p{
        // text-align:right;
-        transform: translate(64px, 10px);
+       // transform: translate(64px, 10px);
+        @include translate(64px,10px);
     }
 
     .home-callout.projects a,
@@ -1580,6 +1649,21 @@ Hides the menu at `48em`, but modify this based on your app's needs.
 
         .tweet-window{
             width: 96%;
+            height: auto;
+            position: relative;
+           // border: 2px solid green;
+           // padding: 0;
+           // overflow: auto;
+           // -webkit-overflow-scrolling:touch;
+
+           .tweet-mobile{
+                width: 100%;
+                height: 100%;
+             //   border: 2px solid red;
+                margin-left: -6%;
+            }
+
+
         }
 
 
@@ -1602,21 +1686,25 @@ Hides the menu at `48em`, but modify this based on your app's needs.
     }
 
     .contact-section .home-callout.author-contact{
-        transform: translateX(30px);
+        //transform: translateX(30px);
+        @include translate(30px,0);
     }
 
     .contact-section .home-callout.agent-contact{
-        transform: translateX(-30px);
+        //transform: translateX(-30px);
+        @include translate(-30px,0);
     }
 
     .contact-section .home-callout.agent-contact .textbox {
-        transform: translate(20px, 0);
+       // transform: translate(20px, 0);
+        @include translate(20px,0);
         text-align: right;
     }
 
     .footer .footer-band-one .middle-band .footer-img {
 
-        transform: translateY(-50px);
+      //  transform: translateY(-50px);
+        @include translate(0, -50px);
 
         img{
             width: 50%;
@@ -1646,7 +1734,8 @@ Hides the menu at `48em`, but modify this based on your app's needs.
     .right-img{
         width: 100%;
         float: none;
-        transform: none;
+       // transform: none;
+        @include translate(0,0);
     }
 
     .interlude{
@@ -1656,7 +1745,8 @@ Hides the menu at `48em`, but modify this based on your app's needs.
     .interlude:after{
         width: 100%;
         height: 300px;
-        transform: translateX(-50%);
+      //  transform: translateX(-50%);
+        @include translate(-50%,0);
     }
 
     .about-content blockquote:first-of-type{
@@ -1698,10 +1788,16 @@ Hides the menu at `48em`, but modify this based on your app's needs.
     blockquote{
         padding: 0;
         width:100%;
-        transform: none;
+      //  transform: none;
+        @include translate(0,0);
         &:before{
             content:none;
         }
+    }
+
+    .grav-youtube{
+        width: 100%;
+        height: 100%;
     }
 
 
@@ -1710,7 +1806,8 @@ Hides the menu at `48em`, but modify this based on your app's needs.
 
         width: 100%; 
         float: none;
-        transform: none;
+       // transform: none;
+        @include translate(0,0);
         margin:0;
 
         &:before{

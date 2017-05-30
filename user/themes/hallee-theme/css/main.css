@@ -1,10 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Cormorant+Garamond:600");
 @font-face {
-  font-family: 'Nueva Std Bold';
-  src: url("../fonts/NuevaStd-BoldItalic.eot");
-  src: url("../fonts/NuevaStd-BoldItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/NuevaStd-BoldItalic.woff") format("woff"), url("../fonts/NuevaStd-BoldItalic.ttf") format("truetype");
-  font-weight: bold;
-  font-style: italic; }
+  font-family: NuevaStdBold;
+  src: url(../fonts/NuevaStd-BoldItalic.eot);
+  src: url(../fonts/NuevaStd-BoldItalic.eot?#iefix) format("embedded-opentype"), url(../fonts/NuevaStd-BoldItalic.woff2) format("woff2"), url(../fonts/NuevaStd-BoldItalic.woff) format("woff"), url(../fonts/NuevaStd-BoldItalic.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal; }
 /* Core Stuff */
 * {
   -webkit-box-sizing: border-box;
@@ -59,7 +59,11 @@ blockquote {
   font-size: 40px;
   line-height: 42px;
   width: 70%;
-  transform: translateX(-50px); }
+  -moz-transform: translate(-50px, 0);
+  -o-transform: translate(-50px, 0);
+  -ms-transform: translate(-50px, 0);
+  -webkit-transform: translate(-50px, 0);
+  transform: translate(-50px, 0); }
   blockquote p {
     font-size: 40px;
     line-height: 42px; }
@@ -98,7 +102,7 @@ blockquote:before {
   text-align: left; }
 
 .bold {
-  font-family: "Nueva Std Bold", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+  font-family: NuevaStdBold, "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
   font-weight: 600; }
 
 .pure-img-responsive {
@@ -168,7 +172,11 @@ The content `<div>` is where all your content goes.
   text-transform: uppercase; }
 
 #logo {
-  transform: translateY(0px);
+  -moz-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  -webkit-transform: translate(0, 0);
+  transform: translate(0, 0);
   margin-top: 100px; }
   #logo h3 {
     font-size: 2rem;
@@ -181,7 +189,11 @@ The content `<div>` is where all your content goes.
       font-size: 0; }
     #logo h3 img {
       margin-left: 50%;
-      transform: translateX(-50%);
+      -moz-transform: translate(-50%, 0);
+      -o-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+      -webkit-transform: translate(-50%, 0);
+      transform: translate(-50%, 0);
       width: 90%; }
 
 .home .header-band {
@@ -216,7 +228,7 @@ appears on the left side of the page.
   z-index: 1000;
   /* so the menu or its navicon stays above all content */
   background: #fff;
-  overflow-y: auto;
+  overflow: hidden;
   -webkit-overflow-scrolling: touch;
   line-height: 1.7; }
 
@@ -283,8 +295,12 @@ This styles the menu heading.
   width: 150px;
   position: absolute;
   left: 50%;
-  transform: translateX(-50%);
-  bottom: 30px; }
+  -moz-transform: translate(-50%, 0);
+  -o-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  -webkit-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+  bottom: 40px; }
 
 #menu .social [class*="fa fa-"] {
   background-color: #a4943e;
@@ -317,8 +333,8 @@ small screens.
 .menu-link {
   position: fixed;
   display: block;
-  bottom: 10px;
-  right: 5px;
+  bottom: 35px;
+  right: 10px;
   background: #000;
   background: #e0daa7;
   font-size: 10px;
@@ -329,13 +345,14 @@ small screens.
   width: 50px;
   height: 50px;
   border-radius: 25px;
+  transition: all 300ms linear;
   -webkit-box-shadow: 3px 4px 10px 0px rgba(0, 0, 0, 0.34);
   -moz-box-shadow: 3px 4px 10px 0px rgba(0, 0, 0, 0.34);
   box-shadow: 3px 4px 10px 0px rgba(0, 0, 0, 0.34); }
 
 .menu-link:hover,
 .menu-link:focus {
-  background: #000; }
+  background: #fff; }
 
 .menu-link span {
   position: relative;
@@ -372,11 +389,19 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAFCAYAAABmWJ3mAAAAI0lEQVQYV2
     */ }
 
 .header-bkgd {
+  -moz-transform: translate(140px, 60px);
+  -o-transform: translate(140px, 60px);
+  -ms-transform: translate(140px, 60px);
+  -webkit-transform: translate(140px, 60px);
   transform: translate(140px, 60px);
   height: 43vw; }
   .header-bkgd img.desk {
     width: 70%;
-    transform: translateY(-90%); }
+    -moz-transform: translate(0, -90%);
+    -o-transform: translate(0, -90%);
+    -ms-transform: translate(0, -90%);
+    -webkit-transform: translate(0, -90%);
+    transform: translate(0, -90%); }
 
 .wallpaper {
   background-image: url("../images/wallpaper.png");
@@ -429,7 +454,11 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAFCAYAAABmWJ3mAAAAI0lEQVQYV2
   position: absolute;
   top: 20px;
   left: 50%;
-  transform: translateX(-50%);
+  -moz-transform: translate(-50%, 0);
+  -o-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  -webkit-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
   z-index: 9999;
   width: 70%; }
   .mainlogo img {
@@ -456,13 +485,13 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAFCAYAAABmWJ3mAAAAI0lEQVQYV2
   margin: 20px;
   position: relative;
   z-index: 1;
-  height: 250px; }
+  height: 280px; }
   .home-callout p {
     font-size: 24px;
     line-height: 32px;
     width: 105%; }
   .home-callout a {
-    font-family: "Nueva Std Bold", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+    font-family: NuevaStdBold, "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
     border-bottom: 6px solid #EACCCC;
     margin: 0 10px 10px 0;
     color: #423C35;
@@ -475,8 +504,8 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAFCAYAAABmWJ3mAAAAI0lEQVQYV2
 .home-callout:before {
   content: '';
   position: absolute;
-  width: 400px;
-  height: 240px;
+  width: 100%;
+  height: 280px;
   top: 0;
   left: 0;
   z-index: -1; }
@@ -488,9 +517,17 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAFCAYAAABmWJ3mAAAAI0lEQVQYV2
   background-color: #D9CD9C; }
 
 .home-callout.books p {
+  -moz-transform: translate(-60px, 10px);
+  -o-transform: translate(-60px, 10px);
+  -ms-transform: translate(-60px, 10px);
+  -webkit-transform: translate(-60px, 10px);
   transform: translate(-60px, 10px); }
 
 .home-callout.projects p {
+  -moz-transform: translate(40px, 20px);
+  -o-transform: translate(40px, 20px);
+  -ms-transform: translate(40px, 20px);
+  -webkit-transform: translate(40px, 20px);
   transform: translate(40px, 20px); }
 
 .twitter-section {
@@ -555,10 +592,18 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAFCAYAAABmWJ3mAAAAI0lEQVQYV2
     background-color: #f6f4a7;
     margin-top: -20px; }
     .contact-section .home-callout.author-contact .textbox {
+      -moz-transform: translate(-20px, -20px);
+      -o-transform: translate(-20px, -20px);
+      -ms-transform: translate(-20px, -20px);
+      -webkit-transform: translate(-20px, -20px);
       transform: translate(-20px, -20px); }
   .contact-section .home-callout.agent-contact {
     background-color: #F3DDB8; }
     .contact-section .home-callout.agent-contact .textbox {
+      -moz-transform: translate(80px, 0);
+      -o-transform: translate(80px, 0);
+      -ms-transform: translate(80px, 0);
+      -webkit-transform: translate(80px, 0);
       transform: translate(80px, 0); }
     .contact-section .home-callout.agent-contact a {
       right: -30px; }
@@ -576,7 +621,11 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAFCAYAAABmWJ3mAAAAI0lEQVQYV2
         width: 100%;
         margin: 0 auto;
         height: 60px;
-        transform: translateY(-70px); }
+        -moz-transform: translate(0, -70px);
+        -o-transform: translate(0, -70px);
+        -ms-transform: translate(0, -70px);
+        -webkit-transform: translate(0, -70px);
+        transform: translate(0, -70px); }
   .footer .footer-band-two {
     width: 100%;
     height: 60px;
@@ -591,7 +640,11 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAFCAYAAABmWJ3mAAAAI0lEQVQYV2
 /* --- About page ------- */
 .about-content #content > blockquote:first-of-type {
   width: 120%;
-  transform: translateX(0); }
+  -moz-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  -webkit-transform: translate(0, 0);
+  transform: translate(0, 0); }
 
 .bigquote {
   font-size: 40px;
@@ -612,12 +665,20 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAFCAYAAABmWJ3mAAAAI0lEQVQYV2
 
 .left-img {
   float: left;
+  -moz-transform: translate(-40px, -30px);
+  -o-transform: translate(-40px, -30px);
+  -ms-transform: translate(-40px, -30px);
+  -webkit-transform: translate(-40px, -30px);
   transform: translate(-40px, -30px);
   padding: 0; }
 
 .right-img {
   float: right;
-  transform: translate(40px, 0px);
+  -moz-transform: translate(40px, 0);
+  -o-transform: translate(40px, 0);
+  -ms-transform: translate(40px, 0);
+  -webkit-transform: translate(40px, 0);
+  transform: translate(40px, 0);
   padding: 0; }
 
 .interlude {
@@ -638,7 +699,11 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAFCAYAAABmWJ3mAAAAI0lEQVQYV2
   background-position: center;
   background-size: contain;
   left: 50%;
-  transform: translateX(-300px); }
+  -moz-transform: translate(-300px, 0);
+  -o-transform: translate(-300px, 0);
+  -ms-transform: translate(-300px, 0);
+  -webkit-transform: translate(-300px, 0);
+  transform: translate(-300px, 0); }
 
 /* ---- Blog -----------*/
 .blog-content-item,
@@ -726,7 +791,11 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAFCAYAAABmWJ3mAAAAI0lEQVQYV2
     z-index: -1;
     bottom: 0px;
     margin-bottom: -30px;
-    transform: translateX(-50%);
+    -moz-transform: translate(-50%, 0);
+    -o-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
     left: 50%;
     background: #EACCCC;
     /* top: 0; */
@@ -751,6 +820,12 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAFCAYAAABmWJ3mAAAAI0lEQVQYV2
   height: 100%;
   margin: 20px 0 10px; }
 
+/* Firefox 37+ */
+@supports (-moz-appearance: none) and (display: contents) {
+  .grav-youtube {
+    width: 100%;
+    margin: 20px 0 10px;
+    height: 400px !important; } }
 .videoWrapper {
   position: relative;
   padding-bottom: 56.25%;
@@ -825,6 +900,17 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAFCAYAAABmWJ3mAAAAI0lEQVQYV2
 .mobile-hide {
   display: inline-block; }
 
+.list-item blockquote {
+  padding: 0;
+  width: 100%;
+  -moz-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  -webkit-transform: translate(0, 0);
+  transform: translate(0, 0); }
+  .list-item blockquote:before {
+    content: none; }
+
 /*
 .news .p-summary > p:first-of-type:before{
 
@@ -875,8 +961,7 @@ Hides the menu at `48em`, but modify this based on your app's needs.
   #menu {
     left: 140px;
     width: 140px;
-    margin-left: -140px;
-    overflow: hidden; }
+    margin-left: -140px; }
 
   #menu .social {
     width: 120px; }
@@ -918,9 +1003,17 @@ Hides the menu at `48em`, but modify this based on your app's needs.
     line-height: 24px; }
 
   .home-callout.books p {
+    -moz-transform: translate(-30px, 10px);
+    -o-transform: translate(-30px, 10px);
+    -ms-transform: translate(-30px, 10px);
+    -webkit-transform: translate(-30px, 10px);
     transform: translate(-30px, 10px); }
 
   .home-callout.projects p {
+    -moz-transform: translate(50px, 20px);
+    -o-transform: translate(50px, 20px);
+    -ms-transform: translate(50px, 20px);
+    -webkit-transform: translate(50px, 20px);
     transform: translate(50px, 20px); }
 
   .home-callout a {
@@ -948,7 +1041,11 @@ Hides the menu at `48em`, but modify this based on your app's needs.
   blockquote {
     padding: 0;
     width: 100%;
-    transform: none; }
+    -moz-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0); }
     blockquote:before {
       content: none; }
 
@@ -956,7 +1053,11 @@ Hides the menu at `48em`, but modify this based on your app's needs.
   .right-img {
     width: 100%;
     float: none;
-    transform: none; }
+    -moz-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0); }
 
   .left,
   .right {
@@ -973,6 +1074,10 @@ Hides the menu at `48em`, but modify this based on your app's needs.
     width: 80%; }
 
   .header-bkgd {
+    -moz-transform: translate(18px, 60px);
+    -o-transform: translate(18px, 60px);
+    -ms-transform: translate(18px, 60px);
+    -webkit-transform: translate(18px, 60px);
     transform: translate(18px, 60px);
     height: 62vw; }
     .header-bkgd .wallpaper {
@@ -986,7 +1091,11 @@ Hides the menu at `48em`, but modify this based on your app's needs.
       margin-left: 50px; }
     .header-bkgd img.desk {
       width: 90%;
-      transform: translateY(-90%); }
+      -moz-transform: translate(0, -90%);
+      -o-transform: translate(0, -90%);
+      -ms-transform: translate(0, -90%);
+      -webkit-transform: translate(0, -90%);
+      transform: translate(0, -90%); }
     .header-bkgd .frame-ballerina {
       left: -30px; }
     .header-bkgd .frame-girlsketch {
@@ -1041,9 +1150,17 @@ Hides the menu at `48em`, but modify this based on your app's needs.
     left: -50px; }
 
   .home-callout.books p {
+    -moz-transform: translate(0, 10px);
+    -o-transform: translate(0, 10px);
+    -ms-transform: translate(0, 10px);
+    -webkit-transform: translate(0, 10px);
     transform: translate(0, 10px); }
 
   .home-callout.projects p {
+    -moz-transform: translate(64px, 10px);
+    -o-transform: translate(64px, 10px);
+    -ms-transform: translate(64px, 10px);
+    -webkit-transform: translate(64px, 10px);
     transform: translate(64px, 10px); }
 
   .home-callout.projects a,
@@ -1054,7 +1171,13 @@ Hides the menu at `48em`, but modify this based on your app's needs.
   .twitter-section {
     margin: 50px 0; }
     .twitter-section .tweet-window {
-      width: 96%; }
+      width: 96%;
+      height: auto;
+      position: relative; }
+      .twitter-section .tweet-window .tweet-mobile {
+        width: 100%;
+        height: 100%;
+        margin-left: -6%; }
 
   .contact-section h2 {
     text-align: center;
@@ -1068,17 +1191,33 @@ Hides the menu at `48em`, but modify this based on your app's needs.
       width: 100%; }
 
   .contact-section .home-callout.author-contact {
-    transform: translateX(30px); }
+    -moz-transform: translate(30px, 0);
+    -o-transform: translate(30px, 0);
+    -ms-transform: translate(30px, 0);
+    -webkit-transform: translate(30px, 0);
+    transform: translate(30px, 0); }
 
   .contact-section .home-callout.agent-contact {
-    transform: translateX(-30px); }
+    -moz-transform: translate(-30px, 0);
+    -o-transform: translate(-30px, 0);
+    -ms-transform: translate(-30px, 0);
+    -webkit-transform: translate(-30px, 0);
+    transform: translate(-30px, 0); }
 
   .contact-section .home-callout.agent-contact .textbox {
+    -moz-transform: translate(20px, 0);
+    -o-transform: translate(20px, 0);
+    -ms-transform: translate(20px, 0);
+    -webkit-transform: translate(20px, 0);
     transform: translate(20px, 0);
     text-align: right; }
 
   .footer .footer-band-one .middle-band .footer-img {
-    transform: translateY(-50px); }
+    -moz-transform: translate(0, -50px);
+    -o-transform: translate(0, -50px);
+    -ms-transform: translate(0, -50px);
+    -webkit-transform: translate(0, -50px);
+    transform: translate(0, -50px); }
     .footer .footer-band-one .middle-band .footer-img img {
       width: 50%; }
 
@@ -1099,7 +1238,11 @@ Hides the menu at `48em`, but modify this based on your app's needs.
   .right-img {
     width: 100%;
     float: none;
-    transform: none; }
+    -moz-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0); }
 
   .interlude {
     height: 300px; }
@@ -1107,7 +1250,11 @@ Hides the menu at `48em`, but modify this based on your app's needs.
   .interlude:after {
     width: 100%;
     height: 300px;
-    transform: translateX(-50%); }
+    -moz-transform: translate(-50%, 0);
+    -o-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0); }
 
   .about-content blockquote:first-of-type {
     padding: 0 2rem; }
@@ -1134,14 +1281,26 @@ Hides the menu at `48em`, but modify this based on your app's needs.
   blockquote {
     padding: 0;
     width: 100%;
-    transform: none; }
+    -moz-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0); }
     blockquote:before {
       content: none; }
+
+  .grav-youtube {
+    width: 100%;
+    height: 100%; }
 
   .about-content #content > blockquote:first-of-type {
     width: 100%;
     float: none;
-    transform: none;
+    -moz-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
     margin: 0; }
     .about-content #content > blockquote:first-of-type:before {
       content: none; } }
