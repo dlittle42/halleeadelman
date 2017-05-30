@@ -1,8 +1,8 @@
 <?php
 return [
     '@class' => 'Grav\\Common\\Config\\CompiledConfig',
-    'timestamp' => 1490670516,
-    'checksum' => 'fac37c353d3654a623744be73362c3f3',
+    'timestamp' => 1495765820,
+    'checksum' => '514a6b5766e7ce2b898b3d3a6989c302',
     'files' => [
         'user/config' => [
             'ganalytics' => [
@@ -31,7 +31,7 @@ return [
             ],
             'plugins/gravstrap' => [
                 'file' => 'user/config/plugins/gravstrap.yaml',
-                'modified' => 1490415824
+                'modified' => 1495765820
             ],
             'plugins/highlight' => [
                 'file' => 'user/config/plugins/highlight.yaml',
@@ -40,6 +40,10 @@ return [
             'plugins/langswitcher' => [
                 'file' => 'user/config/plugins/langswitcher.yaml',
                 'modified' => 1490415849
+            ],
+            'plugins/pagination' => [
+                'file' => 'user/config/plugins/pagination.yaml',
+                'modified' => 1495741022
             ],
             'plugins/shortcode-owl-carousel' => [
                 'file' => 'user/config/plugins/shortcode-owl-carousel.yaml',
@@ -63,25 +67,25 @@ return [
             ],
             'system' => [
                 'file' => 'user/config/system.yaml',
-                'modified' => 1490670514
+                'modified' => 1495555146
             ]
         ],
         'system/config' => [
             'media' => [
                 'file' => 'system/config/media.yaml',
-                'modified' => 1487354990
+                'modified' => 1495483911
             ],
             'site' => [
                 'file' => 'system/config/site.yaml',
-                'modified' => 1487354990
+                'modified' => 1495483911
             ],
             'streams' => [
                 'file' => 'system/config/streams.yaml',
-                'modified' => 1487354990
+                'modified' => 1495483911
             ],
             'system' => [
                 'file' => 'system/config/system.yaml',
-                'modified' => 1487354990
+                'modified' => 1495483911
             ]
         ],
         'user/plugins' => [
@@ -100,6 +104,10 @@ return [
             'plugins/breadcrumbs' => [
                 'file' => 'user/plugins/breadcrumbs/breadcrumbs.yaml',
                 'modified' => 1490411116
+            ],
+            'plugins/devtools' => [
+                'file' => 'user/plugins/devtools/devtools.yaml',
+                'modified' => 1495550611
             ],
             'plugins/email' => [
                 'file' => 'user/plugins/email/email.yaml',
@@ -266,6 +274,9 @@ return [
                 'icon_divider_classes' => 'fa fa-angle-right',
                 'link_trailing' => false
             ],
+            'devtools' => [
+                'enabled' => true
+            ],
             'email' => [
                 'enabled' => true,
                 'from' => 'halleehost@halleeadelman.com',
@@ -335,7 +346,7 @@ return [
                 'debugTrace' => false
             ],
             'gravstrap' => [
-                'enabled' => false
+                'enabled' => true
             ],
             'highlight' => [
                 'enabled' => false,
@@ -397,7 +408,7 @@ return [
             ],
             'pagination' => [
                 'enabled' => true,
-                'built_in_css' => true,
+                'built_in_css' => false,
                 'delta' => 0
             ],
             'problems' => [
@@ -488,7 +499,7 @@ return [
                 'enabled' => true,
                 'route' => '/sitemap',
                 'changefreq' => 'daily',
-                'priority' => 1.0,
+                'priority' => 1,
                 'ignores' => [
                     0 => '/blog/blog-post-to-ignore',
                     1 => '/ignore-this-route'
@@ -841,6 +852,8 @@ return [
             'reverse_proxy_setup' => false,
             'force_ssl' => false,
             'custom_base_url' => '',
+            'username_regex' => '^[a-z0-9_-]{3,16}$',
+            'pwd_regex' => '(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,}',
             'languages' => [
                 'supported' => [
                     
@@ -857,7 +870,7 @@ return [
                 'hide_in_urls' => false
             ],
             'pages' => [
-                'theme' => 'hallee',
+                'theme' => 'hallee-theme',
                 'order' => [
                     'by' => 'default',
                     'dir' => 'asc'
@@ -1006,7 +1019,8 @@ return [
                 'releases' => 'stable',
                 'proxy_url' => NULL,
                 'method' => 'auto',
-                'verify_peer' => true
+                'verify_peer' => true,
+                'official_gpm_only' => true
             ]
         ],
         'ganalytics' => [

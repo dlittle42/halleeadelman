@@ -8,9 +8,10 @@ content:
         dir: desc
     pagination: '1'
     url_taxonomy_filters: '1'
+summary:
+    enabled: '1'
+    format: short
 ---
-
-_by Hallee Adelman on May 2017_
 
 I interviewed Tina* for my YA novel involving heroin addiction. A week ago, Tina overdosed. She has overdosed before.  In fact, she had been in and out of over a dozen rehabs. Heroin’s pull is powerful.  So powerful, Tina once explained, that when she heard about a “laced” batch that was stronger or deadly, she’d seek it out, craving a “better high” and assuming the others who died from it were simply “rookie users.”  
 

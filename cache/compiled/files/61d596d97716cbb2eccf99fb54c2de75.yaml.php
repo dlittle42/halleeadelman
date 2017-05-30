@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Applications/MAMP/htdocs/halleeadelman.com/system/languages/cs.yaml',
-    'modified' => 1487354990,
+    'modified' => 1495483911,
     'data' => [
         'INFLECTOR_UNCOUNTABLE' => [
             0 => 'vybavení',

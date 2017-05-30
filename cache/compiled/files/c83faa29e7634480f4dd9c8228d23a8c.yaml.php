@@ -2,14 +2,22 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Applications/MAMP/htdocs/halleeadelman.com/user/config/system.yaml',
-    'modified' => 1490670514,
+    'modified' => 1495555146,
     'data' => [
         'absolute_urls' => false,
+        'timezone' => '',
+        'default_locale' => NULL,
         'param_sep' => ':',
         'wrapped_site' => false,
         'reverse_proxy_setup' => false,
         'force_ssl' => false,
+        'custom_base_url' => '',
+        'username_regex' => '^[a-z0-9_-]{3,16}$',
+        'pwd_regex' => '(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,}',
         'languages' => [
+            'supported' => [
+                
+            ],
             'include_default_lang' => true,
             'translations' => true,
             'translations_fallback' => true,
@@ -22,7 +30,7 @@ return [
             'hide_in_urls' => false
         ],
         'pages' => [
-            'theme' => 'hallee',
+            'theme' => 'hallee-theme',
             'order' => [
                 'by' => 'default',
                 'dir' => 'asc'
@@ -31,6 +39,7 @@ return [
                 'count' => 20
             ],
             'dateformat' => [
+                'default' => NULL,
                 'short' => 'jS M Y',
                 'long' => 'F jS \\a\\t g:ia'
             ],
@@ -64,6 +73,7 @@ return [
                 5 => 'rss',
                 6 => 'atom'
             ],
+            'append_url_extension' => '',
             'expires' => 604800,
             'last_modified' => false,
             'etag' => false,
@@ -98,7 +108,10 @@ return [
             'cli_compatibility' => false,
             'lifetime' => 604800,
             'gzip' => false,
-            'allow_webserver_gzip' => false
+            'allow_webserver_gzip' => false,
+            'redis' => [
+                'socket' => false
+            ]
         ],
         'twig' => [
             'cache' => false,
@@ -145,7 +158,13 @@ return [
         ],
         'media' => [
             'enable_media_timestamp' => false,
-            'upload_limit' => 0
+            'upload_limit' => 0,
+            'unsupported_inline_types' => [
+                
+            ],
+            'allowed_fallback_types' => [
+                
+            ]
         ],
         'session' => [
             'enabled' => true,
@@ -153,12 +172,15 @@ return [
             'name' => 'grav-site',
             'secure' => false,
             'httponly' => true,
-            'split' => true
+            'split' => true,
+            'path' => NULL
         ],
         'gpm' => [
             'releases' => 'stable',
+            'proxy_url' => NULL,
             'method' => 'auto',
-            'verify_peer' => true
+            'verify_peer' => true,
+            'official_gpm_only' => true
         ]
     ]
 ];

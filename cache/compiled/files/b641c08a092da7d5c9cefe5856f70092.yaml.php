@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Applications/MAMP/htdocs/halleeadelman.com/system/config/streams.yaml',
-    'modified' => 1487354990,
+    'modified' => 1495483911,
     'data' => [
         'schemes' => [
             'image' => [

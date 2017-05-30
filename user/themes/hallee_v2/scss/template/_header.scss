@@ -4,53 +4,17 @@ $dropdown-color: #f6f6f6;
 #header {
 	@extend .default-animation;
 	@extend .padding-horiz;
-	position: fixed;
+	//position: fixed;
 	z-index: 10;
-	width: 100%;
-	height: inherit;
+	width: 20%;
+	height: 100%;
+	min-height: 100vh;
+	max-width: 240px;
 	//min-height: $header-height;
-	background-color: rgba(255,255,255,0.90);
+	background-color: rgb(255,255,255);
+	padding:0;
+	//align-self: stretch;
 	//box-shadow: 0 0.05rem 1rem rgba(0,0,0, 0.15);
-
-	// scroll based changes
-	&.scrolled {
-		height: 80px;
-		background-color: rgba(255,255,255,0.90) !important;
-	//	box-shadow: 0 0.05rem 1rem rgba(0,0,0, 0.15) !important;
-
-		#logo{
-			transform: translateY(-100px);
-			opacity:0;
-			height: 0px;
-		}
-
-		#logo h3 {
-			color: $core-text !important;
-			font-size: 1.6rem !important;
-			
-
-			
-		}
-		#logo a, #navbar span {
-			color: $core-text !important;
-	
-		}
-		#navbar a {
-			color: $core-accent !important;
-            &:hover {
-                color: darken($core-accent, 20%) !important;
-            }
-		}
-		#navbar a:before, #navbar a:after {
-			background-color: $core-accent !important;
-		}
-
-		.navigation {
-			margin-top: 0.5rem !important;
-		}
-
-		
-	}
 
 	// set heights for vertical centering
 	> .grid, #logo, #navbar {
@@ -88,7 +52,8 @@ $dropdown-color: #f6f6f6;
 	}
 
 	#navbar {
-		font-size: $core-font-size ;
+		//font-size: $core-font-size ;
+		font-size: $nav-font-size ;
 
 		/* Child Indicator */
 		.has-children {
@@ -146,48 +111,63 @@ $dropdown-color: #f6f6f6;
 				margin-top: 1.4rem;
 
 				li {
-					float: left;
-					position: relative;
+					//float: left;
+					//position: relative;
 
 					a {
 						font-family: $font-family-header;
 						display: inline-block;
 						padding: 0.3rem 2rem;
 
+						color: $navbar-text;
+
+						transition: all 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+
 						-webkit-backface-visibility: hidden;
 
 
-						&:before, &:after {
-							content: "";
-							position: absolute;
-							width: 100%;
-							height: 1px;
-							bottom: 0;
-							left: 0;
-							background-color: $core-accent;
-							visibility: hidden;
-							@include transform(scaleX(0));
-							@include transition(all 0.2s ease);
 
-						}
+					}
 
-						&:hover:before {
-							visibility: visible;
-							@include transform(scaleX(0.75));
-						}
+					a:hover{
+						color: $light-pink;
+					}
 
-						&.active:after {
-							top: 0;
-							visibility: visible;
-							@include transform(scaleX(0.75));
-						}
+
+					a:before{
+					    content: '';
+					    position: absolute;
+					    width: 0%;
+					    height: 8px;
+					    /* top: 0; */
+					    z-index: -1;
+					    margin-left: -10px;
+					    margin-top: 18px;
+					    transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+				
+					  	background: $light-pink;
+					 // @include transform(scaleX(0));
 					}
 
 					&.active {
-						a:after {
-							top: 0;
+						a:before {
+							//top: 0;
 							visibility: visible;
-							@include transform(scaleX(0.75));
+							//@include transform(scaleX(0.75));
+	
+    						width: 70%;
+
+						}
+					}
+
+					&.active:hover {
+						a:before {
+							//top: 0;
+							visibility: visible;
+							//@include transform(scaleX(0.75));
+	
+    						width: 0%;
+
 						}
 					}
 

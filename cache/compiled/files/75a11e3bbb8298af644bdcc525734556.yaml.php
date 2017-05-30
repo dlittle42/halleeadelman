@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Applications/MAMP/htdocs/halleeadelman.com/system/config/system.yaml',
-    'modified' => 1487354990,
+    'modified' => 1495483911,
     'data' => [
         'absolute_urls' => false,
         'timezone' => '',
@@ -12,6 +12,8 @@ return [
         'reverse_proxy_setup' => false,
         'force_ssl' => false,
         'custom_base_url' => '',
+        'username_regex' => '^[a-z0-9_-]{3,16}$',
+        'pwd_regex' => '(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,}',
         'languages' => [
             'supported' => [
                 
@@ -176,7 +178,8 @@ return [
             'releases' => 'stable',
             'proxy_url' => NULL,
             'method' => 'auto',
-            'verify_peer' => true
+            'verify_peer' => true,
+            'official_gpm_only' => true
         ]
     ]
 ];

@@ -1,5 +1,6 @@
 ---
 title: News
+body_classes: news
 content:
     items: '@self.children'
     limit: '5'

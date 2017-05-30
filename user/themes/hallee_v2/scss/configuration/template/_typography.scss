@@ -1,7 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond:600|Courgette');
+
 // Font Family
-$font-family-default:  			"Raleway", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
-$font-family-header:  			"Montserrat", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
-$font-family-mono: 				"Inconsolata", monospace;
-$font-family-serif:				"Georgia", "Times", "Times New Roman", serif;
+
+$font-family-default:  			'Cormorant Garamond', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+$font-family-header:  			'Cormorant Garamond', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+$font-family-mono: 				'Cormorant Garamond', monospace;
+$font-family-serif:				'Cormorant Garamond', "Times", "Times New Roman", serif;
+
 
 $icons: 						"FontAwesome";
+
+
+//font-family: 'Cormorant Garamond', serif;
+//font-family: 'Courgette', cursive;

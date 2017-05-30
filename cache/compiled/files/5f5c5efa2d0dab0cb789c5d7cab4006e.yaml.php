@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Applications/MAMP/htdocs/halleeadelman.com/system/blueprints/config/site.yaml',
-    'modified' => 1487354990,
+    'modified' => 1495483911,
     'data' => [
         'title' => 'PLUGIN_ADMIN.SITE',
         'form' => [
@@ -23,7 +23,7 @@ return [
                         'default_lang' => [
                             'type' => 'text',
                             'label' => 'PLUGIN_ADMIN.SITE_DEFAULT_LANG',
-                            'size' => 'vsmall',
+                            'size' => 'x-small',
                             'placeholder' => 'PLUGIN_ADMIN.SITE_DEFAULT_LANG_PLACEHOLDER',
                             'help' => 'PLUGIN_ADMIN.SITE_DEFAULT_LANG_HELP'
                         ],

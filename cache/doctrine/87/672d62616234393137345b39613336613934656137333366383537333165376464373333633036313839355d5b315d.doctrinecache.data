@@ -1,0 +1,36 @@
+1496162258
+a:2:{s:7:"content";s:1201:"
+<div class="modular-row mainimage">
+
+    <img src="">
+
+
+
+</div>
+
+
+<div class="modular-row intro">
+CONTENT HERE
+	
+		<p>Hallee is an author who believes that all children and teens should have opportunities to imagine boundlessly, unlock their strengths, and discover their passions.</p>
+	
+	
+	
+</div>
+
+<div class="modular-row misc">
+	<div class="projects-col size-1-2 content">
+		<div class="books side-section">
+			<p>Currently, Hallee is writing zany picture books and a teen novel, <b><i>Frayed</i></b>, about twins in the worlds of fashion and addiction in search of beauty in an imperfect world.</p>
+			<a class="button" href="writing">Keep reading</a>
+		</div>
+		<div class="projects side-section">
+			<p>She is also developing DoYouHa.com, a children’s property that encourages creativity, social emotional learning, and laughter.</p>
+			<a class="button" href="http://doyouha.com" target="_blank">See more at DoYouHa</a>
+		</div>
+	</div>
+	<div class="tweet-col size-1-2 content">
+		<a class="twitter-timeline" data-height="400" href="https://twitter.com/HalleeAdelman">Tweets by HalleeAdelman</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+	</div>
+</div>
+";s:12:"content_meta";N;}

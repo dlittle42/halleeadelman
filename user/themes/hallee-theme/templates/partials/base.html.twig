@@ -1,0 +1,117 @@
+{% set theme_config = attribute(config.themes, config.system.pages.theme) %}
+<!DOCTYPE html>
+<html lang="{{ grav.language.getActive ?: theme_config.default_lang }}">
+<head>
+{% block head %}
+    <meta charset="utf-8" />
+    <title>{% if header.title %}{{ header.title|e('html') }} | {% endif %}{{ site.title|e('html') }}</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% include 'partials/metadata.html.twig' %}
+
+    <link rel="icon" type="image/png" href="{{ url('theme://images/logo.png') }}" />
+    <link rel="canonical" href="{{ page.url(true, true) }}" />
+
+    {% block stylesheets %}
+        {% do assets.addCss('http://yui.yahooapis.com/pure/0.6.0/pure-min.css', 100) %}
+      <!--  {% do assets.addCss('https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css', 99) %} -->
+       {% do assets.addCss('theme://css/font-awesome.min.css', 100) %}
+       {% do assets.addCss('theme://css/main.css', 98) %}
+    {% endblock %}
+    {{ assets.css() }}
+
+    {% block javascripts %}
+        {% do assets.addJs('jquery', 100) %}
+        {% do assets.addJs('theme://js/ui.js', 99) %}
+        {% do assets.addJs('theme://js/modernizr.custom.71422.js', 98) %}
+    {% endblock %}
+    {{ assets.js() }}
+
+{% endblock head%}
+</head>
+<body id="top" class="{{ page.header.body_classes }}">
+
+<div id="layout">
+
+    <!-- Menu toggle -->
+    <a href="#menu" id="menuLink" class="menu-link">
+        <!-- Hamburger icon -->
+        <span></span>
+    </a>
+{% block header %}
+
+
+    <div id="menu">
+        <div class="pure-menu">
+
+            <div id="logo">
+                <h3>
+                    <a href="{{ base_url == '' ? '/' : base_url }}" >
+                    {{ config.site.title }}
+                    <img src="{{url('theme://images/hallee_logo.png')}}" >
+                    </a>
+                </h3>
+            </div>
+            {% block header_navigation %}
+            <nav class="main-nav">
+                {% include 'partials/navigation.html.twig' %}
+            </nav>
+            {% endblock %}
+            <div class="social">
+              <a class="fa fa-envelope" title="" target="_blank" href="https://twitter.com/halleeadelman"></a>
+              <a class="fa fa-twitter" title="" target="_blank" href="https://twitter.com/halleeadelman"></a>
+              <a class="fa fa-facebook" title="" target="_blank" href="https://www.facebook.com/hallee"></a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+ <div id="main">
+    <div class="header-band">
+                <div class="wallpaper">
+
+                </div>
+            </div>
+     <!--   <div class="header">
+            <h1>Page Title</h1>
+            <h2>A subtitle for your page goes here</h2>
+        </div>
+    -->
+{% block body %}
+    
+        <div id="content" class="wrapper padding">
+
+        <div class="mainlogo">
+            <img src="{{url('theme://images/hallee-title-logo.png')}}">
+        </div>
+        {% block content %}{% endblock %}
+        </div>
+   
+{% endblock %}
+
+{% block footer %}
+    <div class="footer text-center">
+        
+            <div class="footer-band-one">
+                <div class="middle-band">
+                    <div class="footer-img">
+                        <img src="{{url('theme://images/sneakers.png')}}" >
+                    </div>
+                    <span class="copyright">&copy; Hallee Adelman 2017</span>
+                </div>
+            </div>
+            <div class="footer-band-two">
+                <div class="wallpaper middle-band"></div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+ </section>
+</div>
+{% block bottom %}
+    {{ assets.js('bottom') }}
+{% endblock %}
+
+</body>
+</html>

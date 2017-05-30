@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Applications/MAMP/htdocs/halleeadelman.com/system/languages/nb.yaml',
-    'modified' => 1487354990,
+    'modified' => 1495483911,
     'data' => [
         'MONTHS_OF_THE_YEAR' => [
             0 => 'januar',

@@ -1,0 +1,15 @@
+{
+   "project":"grav-theme-hallee3",
+   "platforms":{
+      "grav":{
+         "nodes":{
+            "theme":[
+               {
+                  "source":"/",
+                  "destination":"/user/themes/hallee3"
+               }
+            ]
+         }
+      }
+   }
+}

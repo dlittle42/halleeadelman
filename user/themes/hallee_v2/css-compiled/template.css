@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Cormorant+Garamond:600|Courgette");
 @import url(//fonts.googleapis.com/css?family=Montserrat:400|Raleway:300,400,600|Inconsolata);
 #header #logo h3 {
   position: relative;
@@ -19,7 +20,7 @@ html, body {
   height: 100%; }
 
 body {
-  background: #fff;
+  background: #FFFDE6;
   color: #444;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
@@ -41,9 +42,24 @@ b, strong, label, th {
   padding-right: 0; }
 
 #body {
-  background: #fff;
+  background: #FFFDE6;
   padding-top: 12rem;
   padding-bottom: 4rem; }
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin: 0;
+  padding: 0;
+  width: 100%; }
+
+.page-content {
+  margin: 0;
+  width: 100%;
+  padding: 0;
+  height: 100%;
+  flex-grow: 1; }
 
 .left {
   float: left; }
@@ -360,15 +376,15 @@ img.frame {
   -moz-transition: all 0.5s ease;
   transition: all 0.5s ease; }
 
-.padding-horiz, .fullwidth #header, .fullwidth #breadcrumbs, .fullwidth .blog-header, .fullwidth .blog-content-item, .fullwidth .content-wrapper, .fullwidth ul.pagination, .fullwidth #body > .modular-row, #body, #header, #footer {
+.padding-horiz, #header, #footer {
   padding-left: 7rem;
   padding-right: 7rem; }
   @media only all and (max-width: 59.938em) {
-    .padding-horiz, .fullwidth #header, .fullwidth #breadcrumbs, .fullwidth .blog-header, .fullwidth .blog-content-item, .fullwidth .content-wrapper, .fullwidth ul.pagination, .fullwidth #body > .modular-row, #body, #header, #footer {
+    .padding-horiz, #header, #footer {
       padding-left: 4rem;
       padding-right: 4rem; } }
   @media only all and (max-width: 47.938em) {
-    .padding-horiz, .fullwidth #header, .fullwidth #breadcrumbs, .fullwidth .blog-header, .fullwidth .blog-content-item, .fullwidth .content-wrapper, .fullwidth ul.pagination, .fullwidth #body > .modular-row, #body, #header, #footer {
+    .padding-horiz, #header, #footer {
       padding-left: 1rem;
       padding-right: 1rem; } }
 
@@ -377,31 +393,13 @@ img.frame {
   padding-bottom: 3rem; }
 
 #header {
-  position: fixed;
   z-index: 10;
-  width: 100%;
-  height: inherit;
-  background-color: rgba(255, 255, 255, 0.9); }
-  #header.scrolled {
-    height: 80px;
-    background-color: rgba(255, 255, 255, 0.9) !important; }
-    #header.scrolled #logo {
-      transform: translateY(-100px);
-      opacity: 0;
-      height: 0px; }
-    #header.scrolled #logo h3 {
-      color: #444 !important;
-      font-size: 1.6rem !important; }
-    #header.scrolled #logo a, #header.scrolled #navbar span {
-      color: #444 !important; }
-    #header.scrolled #navbar a {
-      color: #1BB3E9 !important; }
-      #header.scrolled #navbar a:hover {
-        color: #0e6e90 !important; }
-    #header.scrolled #navbar a:before, #header.scrolled #navbar a:after {
-      background-color: #1BB3E9 !important; }
-    #header.scrolled .navigation {
-      margin-top: 0.5rem !important; }
+  width: 20%;
+  height: 100%;
+  min-height: 100vh;
+  max-width: 240px;
+  background-color: white;
+  padding: 0; }
   #header #logo {
     height: 100px;
     transform: translateY(0px);
@@ -422,7 +420,7 @@ img.frame {
         margin-left: 50%;
         transform: translateX(-50%); }
   #header #navbar {
-    font-size: 1rem;
+    font-size: 1.25rem;
     /* Child Indicator */ }
     #header #navbar .has-children > a > span {
       display: inline-block;
@@ -455,56 +453,35 @@ img.frame {
         margin: 0 auto;
         margin-top: 1.4rem; }
         #header #navbar ul.navigation li {
-          float: left;
-          position: relative;
           /*Active dropdown nav item */
           /* Dropdown CSS */
           /* Active on Hover */ }
           #header #navbar ul.navigation li a {
-            font-family: "Montserrat", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+            font-family: "Cormorant Garamond", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
             display: inline-block;
             padding: 0.3rem 2rem;
+            color: #423C35;
+            transition: all 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
             -webkit-backface-visibility: hidden; }
-            #header #navbar ul.navigation li a:before, #header #navbar ul.navigation li a:after {
-              content: "";
-              position: absolute;
-              width: 100%;
-              height: 1px;
-              bottom: 0;
-              left: 0;
-              background-color: #1BB3E9;
-              visibility: hidden;
-              -webkit-transform: scaleX(0);
-              -moz-transform: scaleX(0);
-              -ms-transform: scaleX(0);
-              -o-transform: scaleX(0);
-              transform: scaleX(0);
-              -webkit-transition: all 0.2s ease;
-              -moz-transition: all 0.2s ease;
-              transition: all 0.2s ease; }
-            #header #navbar ul.navigation li a:hover:before {
-              visibility: visible;
-              -webkit-transform: scaleX(0.75);
-              -moz-transform: scaleX(0.75);
-              -ms-transform: scaleX(0.75);
-              -o-transform: scaleX(0.75);
-              transform: scaleX(0.75); }
-            #header #navbar ul.navigation li a.active:after {
-              top: 0;
-              visibility: visible;
-              -webkit-transform: scaleX(0.75);
-              -moz-transform: scaleX(0.75);
-              -ms-transform: scaleX(0.75);
-              -o-transform: scaleX(0.75);
-              transform: scaleX(0.75); }
-          #header #navbar ul.navigation li.active a:after {
-            top: 0;
+          #header #navbar ul.navigation li a:hover {
+            color: #EACCCC; }
+          #header #navbar ul.navigation li a:before {
+            content: '';
+            position: absolute;
+            width: 0%;
+            height: 8px;
+            /* top: 0; */
+            z-index: -1;
+            margin-left: -10px;
+            margin-top: 18px;
+            transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+            background: #EACCCC; }
+          #header #navbar ul.navigation li.active a:before {
             visibility: visible;
-            -webkit-transform: scaleX(0.75);
-            -moz-transform: scaleX(0.75);
-            -ms-transform: scaleX(0.75);
-            -o-transform: scaleX(0.75);
-            transform: scaleX(0.75); }
+            width: 70%; }
+          #header #navbar ul.navigation li.active:hover a:before {
+            visibility: visible;
+            width: 0%; }
           #header #navbar ul.navigation li ul {
             position: absolute;
             background-color: #f6f6f6;
@@ -550,17 +527,17 @@ img.frame {
 .header-image #breadcrumbs {
   margin-top: 1rem; }
 .header-image #header {
-  background-color: rgba(255, 255, 255, 0);
+  background-color: rgba(66, 60, 53, 0);
   box-shadow: none;
   height: inherit; }
   .header-image #header .navigation .has-children:hover a {
     color: #1BB3E9; }
   .header-image #header #logo h3, .header-image #header #logo a {
-    color: #FFFFFF; }
+    color: #423C35; }
   .header-image #header a, .header-image #header .menu-btn {
-    color: #FFFFFF; }
+    color: #423C35; }
   .header-image #header a:before, .header-image #header a:after {
-    background-color: rgba(255, 255, 255, 0.7) !important; }
+    background-color: rgba(66, 60, 53, 0.7) !important; }
 
 .mainimage {
   height: 100%;
@@ -724,11 +701,11 @@ img.frame {
       height: auto;
       margin: 0 auto; } }
 html, body, button, input, select, textarea, .pure-g, .pure-g [class*="pure-u"] {
-  font-family: "Raleway", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+  font-family: "Cormorant Garamond", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
   font-weight: 400; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Montserrat", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+  font-family: "Cormorant Garamond", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
   font-weight: 400;
   text-rendering: optimizeLegibility;
   letter-spacing: -0px; }
@@ -777,7 +754,7 @@ h1 + h2 {
   font-size: 2rem;
   line-height: 1;
   text-align: center;
-  font-family: "Raleway", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+  font-family: "Cormorant Garamond", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
   font-weight: 300; }
   @media only all and (min-width: 48em) and (max-width: 59.938em) {
     h1 + h2 {
@@ -791,7 +768,7 @@ h2 + h3 {
   font-size: 2rem;
   line-height: 1;
   text-align: center;
-  font-family: "Raleway", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+  font-family: "Cormorant Garamond", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
   font-weight: 300; }
   @media only all and (min-width: 48em) and (max-width: 59.938em) {
     h2 + h3 {
@@ -860,7 +837,7 @@ code,
 kbd,
 pre,
 samp {
-  font-family: "Inconsolata", monospace; }
+  font-family: "Cormorant Garamond", monospace; }
 
 code {
   background: #f9f2f4;
@@ -897,7 +874,7 @@ hr {
   display: inline-block;
   text-align: center;
   font-size: 0.7rem;
-  font-family: "Montserrat", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+  font-family: "Cormorant Garamond", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
   margin-right: 0.75rem; }
 
 fieldset {
@@ -1063,7 +1040,7 @@ td {
     background-size: cover;
     background-position: center; }
     .blog-header.blog-header-image h1, .blog-header.blog-header-image h2 {
-      color: #FFFFFF; }
+      color: #423C35; }
   .blog-header h1 {
     font-size: 4rem;
     margin-top: 0; }
@@ -1226,9 +1203,9 @@ ul.pagination {
   background-color: rgba(255, 255, 255, 0);
   box-shadow: none; }
   .modular.header-image #header #logo h3 {
-    color: #FFFFFF; }
+    color: #423C35; }
   .modular.header-image #header #navbar a {
-    color: #FFFFFF; }
+    color: #423C35; }
 .modular .showcase {
   padding-top: 4rem;
   padding-bottom: 4rem;
@@ -1236,7 +1213,7 @@ ul.pagination {
   background-size: cover;
   background-position: center;
   text-align: center;
-  color: #FFFFFF; }
+  color: #423C35; }
   .modular .showcase h1 {
     font-size: 4rem;
     margin-top: 0; }
@@ -1249,11 +1226,11 @@ ul.pagination {
         line-height: 1.2;
         margin-bottom: 2.5rem; } }
   .modular .showcase .button {
-    color: #FFFFFF;
+    color: #423C35;
     padding: 0.7rem 2rem;
     margin-top: 2rem;
     background: rgba(255, 255, 255, 0);
-    border: 1px solid #FFFFFF;
+    border: 1px solid #423C35;
     border-radius: 3px;
     box-shadow: none;
     font-size: 1.3rem; }

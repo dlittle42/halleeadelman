@@ -7,7 +7,7 @@ return [
         'enabled' => true,
         'route' => '/sitemap',
         'changefreq' => 'daily',
-        'priority' => 1.0,
+        'priority' => 1,
         'ignores' => [
             0 => '/blog/blog-post-to-ignore',
             1 => '/ignore-this-route'

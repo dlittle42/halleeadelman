@@ -33,20 +33,36 @@ b, strong {
 		padding-right: 0;
 	}
 	#header, #breadcrumbs, .blog-header, .blog-content-item, .content-wrapper, ul.pagination, #body > .modular-row {
-		@extend .padding-horiz;
+		//@extend .padding-horiz;
 	}
 }
 
 // Global body styling
 #body {
 	@extend .default-animation;
-	@extend .padding-horiz;
+	//@extend .padding-horiz;
 	
 	background: $page-bg;
 	padding-top: 12rem;//$header-height + $padding-vert;
 	padding-bottom: 4rem;//$footer-height + $padding-vert + 2rem;
 }
 
+.flex-container {
+    display: flex;
+    flex-direction: row;
+	flex-wrap: nowrap;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+.page-content{
+	margin: 0;
+    width: 100%;
+    padding: 0;
+    height: 100%;
+    flex-grow: 1;
+}
 // Alignment
 .left {
   float: left;

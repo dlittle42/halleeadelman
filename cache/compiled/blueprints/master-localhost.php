@@ -1,8 +1,8 @@
 <?php
 return [
     '@class' => 'Grav\\Common\\Config\\CompiledBlueprints',
-    'timestamp' => 1490672291,
-    'checksum' => '5b13d90b44388571e10e0c56a227adef',
+    'timestamp' => 1495767318,
+    'checksum' => '1ca0170090052ebed98c3963cdf37160',
     'files' => [
         'user/plugins/admin/blueprints/config' => [
             'media' => [
@@ -13,19 +13,19 @@ return [
         'system/blueprints/config' => [
             'media' => [
                 'file' => 'system/blueprints/config/media.yaml',
-                'modified' => 1487354990
+                'modified' => 1495483911
             ],
             'site' => [
                 'file' => 'system/blueprints/config/site.yaml',
-                'modified' => 1487354990
+                'modified' => 1495483911
             ],
             'streams' => [
                 'file' => 'system/blueprints/config/streams.yaml',
-                'modified' => 1487354990
+                'modified' => 1495483911
             ],
             'system' => [
                 'file' => 'system/blueprints/config/system.yaml',
-                'modified' => 1487354990
+                'modified' => 1495483911
             ]
         ],
         'user/plugins' => [
@@ -44,6 +44,10 @@ return [
             'plugins/breadcrumbs' => [
                 'file' => 'user/plugins/breadcrumbs/blueprints.yaml',
                 'modified' => 1490411116
+            ],
+            'plugins/devtools' => [
+                'file' => 'user/plugins/devtools/blueprints.yaml',
+                'modified' => 1495550611
             ],
             'plugins/email' => [
                 'file' => 'user/plugins/email/blueprints.yaml',
@@ -64,6 +68,10 @@ return [
             'plugins/ganalytics' => [
                 'file' => 'user/plugins/ganalytics/blueprints.yaml',
                 'modified' => 1489550191
+            ],
+            'plugins/grav-plugin-resize-images-master' => [
+                'file' => 'user/plugins/grav-plugin-resize-images-master/blueprints.yaml',
+                'modified' => 1488534302
             ],
             'plugins/gravstrap' => [
                 'file' => 'user/plugins/gravstrap/blueprints.yaml',
@@ -193,7 +201,7 @@ return [
             'site.default_lang' => [
                 'type' => 'text',
                 'label' => 'PLUGIN_ADMIN.SITE_DEFAULT_LANG',
-                'size' => 'vsmall',
+                'size' => 'x-small',
                 'name' => 'site.default_lang',
                 'validation' => 'loose'
             ],
@@ -331,12 +339,13 @@ return [
             ],
             'system.home.alias' => [
                 'type' => 'pages',
-                'size' => 'medium',
+                'size' => 'large',
                 'classes' => 'fancy',
                 'label' => 'PLUGIN_ADMIN.HOME_PAGE',
                 'show_all' => false,
                 'show_modular' => false,
                 'show_root' => false,
+                'show_slug' => true,
                 'name' => 'system.home.alias',
                 'validation' => 'loose'
             ],
@@ -457,7 +466,7 @@ return [
             ],
             'system.pages.order.by' => [
                 'type' => 'select',
-                'size' => 'long',
+                'size' => 'large',
                 'classes' => 'fancy',
                 'label' => 'PLUGIN_ADMIN.DEFAULT_ORDERING',
                 'options' => [
@@ -533,6 +542,7 @@ return [
             ],
             'system.pages.append_url_extension' => [
                 'type' => 'text',
+                'size' => 'x-small',
                 'label' => 'PLUGIN_ADMIN.APPEND_URL_EXT',
                 'name' => 'system.pages.append_url_extension',
                 'validation' => 'loose'
@@ -1399,12 +1409,11 @@ return [
                 'form_field' => false
             ],
             'system.images.default_image_quality' => [
-                'type' => 'text',
+                'type' => 'range',
                 'append' => '%',
                 'label' => 'PLUGIN_ADMIN.DEFAULT_IMAGE_QUALITY',
                 'classes' => 'x-small',
                 'validate' => [
-                    'type' => 'number',
                     'min' => 1,
                     'max' => 100
                 ],
@@ -1643,6 +1652,21 @@ return [
                 'name' => 'system.gpm.method',
                 'validation' => 'loose'
             ],
+            'system.gpm.official_gpm_only' => [
+                'type' => 'toggle',
+                'label' => 'PLUGIN_ADMIN.GPM_OFFICIAL_ONLY',
+                'highlight' => 'auto',
+                'options' => [
+                    1 => 'PLUGIN_ADMIN.YES',
+                    0 => 'PLUGIN_ADMIN.NO'
+                ],
+                'default' => true,
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'system.gpm.official_gpm_only',
+                'validation' => 'loose'
+            ],
             'system.gpm.verify_peer' => [
                 'type' => 'toggle',
                 'label' => 'PLUGIN_ADMIN.GPM_VERIFY_PEER',
@@ -1669,6 +1693,20 @@ return [
                     'type' => 'bool'
                 ],
                 'name' => 'system.reverse_proxy_setup',
+                'validation' => 'loose'
+            ],
+            'system.username_regex' => [
+                'type' => 'text',
+                'size' => 'large',
+                'label' => 'PLUGIN_ADMIN.USERNAME_REGEX',
+                'name' => 'system.username_regex',
+                'validation' => 'loose'
+            ],
+            'system.pwd_regex' => [
+                'type' => 'text',
+                'size' => 'large',
+                'label' => 'PLUGIN_ADMIN.PWD_REGEX',
+                'name' => 'system.pwd_regex',
                 'validation' => 'loose'
             ],
             'system.wrapped_site' => [
@@ -2447,6 +2485,28 @@ return [
                 'name' => 'plugins.breadcrumbs.link_trailing',
                 'validation' => 'strict'
             ],
+            'plugins.devtools' => [
+                'form' => [
+                    'validation' => 'strict'
+                ],
+                'type' => '_root',
+                'form_field' => false
+            ],
+            'plugins.devtools.enabled' => [
+                'type' => 'toggle',
+                'label' => 'PLUGIN_ADMIN.PLUGIN_STATUS',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'PLUGIN_ADMIN.ENABLED',
+                    0 => 'PLUGIN_ADMIN.DISABLED'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.devtools.enabled',
+                'validation' => 'strict'
+            ],
             'plugins.email' => [
                 'form' => [
                     'validation' => 'loose'
@@ -2984,6 +3044,83 @@ return [
                     'type' => 'bool'
                 ],
                 'name' => 'plugins.ganalytics.debugTrace',
+                'validation' => 'strict'
+            ],
+            'plugins.grav-plugin-resize-images-master' => [
+                'form' => [
+                    'validation' => 'strict'
+                ],
+                'type' => '_root',
+                'form_field' => false
+            ],
+            'plugins.grav-plugin-resize-images-master.enabled' => [
+                'type' => 'toggle',
+                'label' => 'Plugin status',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.grav-plugin-resize-images-master.enabled',
+                'validation' => 'strict'
+            ],
+            'plugins.grav-plugin-resize-images-master.adapter' => [
+                'type' => 'select',
+                'label' => 'Image editing module',
+                'default' => 'imagick',
+                'options' => [
+                    'imagick' => 'Imagick',
+                    'gd' => 'GD'
+                ],
+                'name' => 'plugins.grav-plugin-resize-images-master.adapter',
+                'validation' => 'strict'
+            ],
+            'plugins.grav-plugin-resize-images-master.remove_original' => [
+                'type' => 'toggle',
+                'label' => 'Remove original after resizing',
+                'highlight' => 0,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.grav-plugin-resize-images-master.remove_original',
+                'validation' => 'strict'
+            ],
+            'plugins.grav-plugin-resize-images-master.sizes' => [
+                'type' => 'list',
+                'label' => 'Image sizes',
+                'btnLabel' => 'Add image size',
+                'name' => 'plugins.grav-plugin-resize-images-master.sizes',
+                'validation' => 'strict',
+                'array' => true
+            ],
+            'plugins.grav-plugin-resize-images-master.sizes.*' => [
+                'type' => '_parent',
+                'name' => 'plugins.grav-plugin-resize-images-master.sizes.*',
+                'form_field' => false
+            ],
+            'plugins.grav-plugin-resize-images-master.sizes.*.width' => [
+                'type' => 'number',
+                'label' => 'Width',
+                'min' => 1,
+                'name' => 'plugins.grav-plugin-resize-images-master.sizes.*.width',
+                'validation' => 'strict'
+            ],
+            'plugins.grav-plugin-resize-images-master.sizes.*.quality' => [
+                'type' => 'number',
+                'label' => 'JPEG quality',
+                'min' => 0,
+                'max' => 100,
+                'default' => 82,
+                'name' => 'plugins.grav-plugin-resize-images-master.sizes.*.quality',
                 'validation' => 'strict'
             ],
             'plugins.gravstrap' => [
@@ -4619,9 +4756,12 @@ return [
                     'releases' => 'system.gpm.releases',
                     'proxy_url' => 'system.gpm.proxy_url',
                     'method' => 'system.gpm.method',
+                    'official_gpm_only' => 'system.gpm.official_gpm_only',
                     'verify_peer' => 'system.gpm.verify_peer'
                 ],
                 'reverse_proxy_setup' => 'system.reverse_proxy_setup',
+                'username_regex' => 'system.username_regex',
+                'pwd_regex' => 'system.pwd_regex',
                 'wrapped_site' => 'system.wrapped_site',
                 'absolute_urls' => 'system.absolute_urls',
                 'param_sep' => 'system.param_sep',
@@ -4707,6 +4847,9 @@ return [
                     'icon_divider_classes' => 'plugins.breadcrumbs.icon_divider_classes',
                     'link_trailing' => 'plugins.breadcrumbs.link_trailing'
                 ],
+                'devtools' => [
+                    'enabled' => 'plugins.devtools.enabled'
+                ],
                 'email' => [
                     'enabled' => 'plugins.email.enabled',
                     'mailer' => [
@@ -4770,6 +4913,17 @@ return [
                     'cookieExpires' => 'plugins.ganalytics.cookieExpires',
                     'debugStatus' => 'plugins.ganalytics.debugStatus',
                     'debugTrace' => 'plugins.ganalytics.debugTrace'
+                ],
+                'grav-plugin-resize-images-master' => [
+                    'enabled' => 'plugins.grav-plugin-resize-images-master.enabled',
+                    'adapter' => 'plugins.grav-plugin-resize-images-master.adapter',
+                    'remove_original' => 'plugins.grav-plugin-resize-images-master.remove_original',
+                    'sizes' => [
+                        '*' => [
+                            'width' => 'plugins.grav-plugin-resize-images-master.sizes.*.width',
+                            'quality' => 'plugins.grav-plugin-resize-images-master.sizes.*.quality'
+                        ]
+                    ]
                 ],
                 'gravstrap' => [
                     'enabled' => 'plugins.gravstrap.enabled'

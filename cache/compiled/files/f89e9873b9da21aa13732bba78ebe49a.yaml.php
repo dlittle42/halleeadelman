@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Applications/MAMP/htdocs/halleeadelman.com/system/blueprints/config/system.yaml',
-    'modified' => 1487354990,
+    'modified' => 1495483911,
     'data' => [
         'title' => 'PLUGIN_ADMIN.SYSTEM',
         'form' => [
@@ -15,12 +15,13 @@ return [
                     'fields' => [
                         'home.alias' => [
                             'type' => 'pages',
-                            'size' => 'medium',
+                            'size' => 'large',
                             'classes' => 'fancy',
                             'label' => 'PLUGIN_ADMIN.HOME_PAGE',
                             'show_all' => false,
                             'show_modular' => false,
                             'show_root' => false,
+                            'show_slug' => true,
                             'help' => 'PLUGIN_ADMIN.HOME_PAGE_HELP'
                         ],
                         'home.hide_in_urls' => [
@@ -119,7 +120,7 @@ return [
                         ],
                         'pages.order.by' => [
                             'type' => 'select',
-                            'size' => 'long',
+                            'size' => 'large',
                             'classes' => 'fancy',
                             'label' => 'PLUGIN_ADMIN.DEFAULT_ORDERING',
                             'help' => 'PLUGIN_ADMIN.DEFAULT_ORDERING_HELP',
@@ -185,6 +186,7 @@ return [
                         ],
                         'pages.append_url_extension' => [
                             'type' => 'text',
+                            'size' => 'x-small',
                             'placeholder' => 'e.g. .html',
                             'label' => 'PLUGIN_ADMIN.APPEND_URL_EXT',
                             'help' => 'PLUGIN_ADMIN.APPEND_URL_EXT_HELP'
@@ -993,13 +995,12 @@ return [
                     'underline' => true,
                     'fields' => [
                         'images.default_image_quality' => [
-                            'type' => 'text',
+                            'type' => 'range',
                             'append' => '%',
                             'label' => 'PLUGIN_ADMIN.DEFAULT_IMAGE_QUALITY',
                             'help' => 'PLUGIN_ADMIN.DEFAULT_IMAGE_QUALITY_HELP',
                             'classes' => 'x-small',
                             'validate' => [
-                                'type' => 'number',
                                 'min' => 1,
                                 'max' => 100
                             ]
@@ -1218,6 +1219,20 @@ return [
                                 'curl' => 'PLUGIN_ADMIN.CURL'
                             ]
                         ],
+                        'gpm.official_gpm_only' => [
+                            'type' => 'toggle',
+                            'label' => 'PLUGIN_ADMIN.GPM_OFFICIAL_ONLY',
+                            'highlight' => 'auto',
+                            'help' => 'PLUGIN_ADMIN.GPM_OFFICIAL_ONLY_HELP',
+                            'options' => [
+                                1 => 'PLUGIN_ADMIN.YES',
+                                0 => 'PLUGIN_ADMIN.NO'
+                            ],
+                            'default' => true,
+                            'validate' => [
+                                'type' => 'bool'
+                            ]
+                        ],
                         'gpm.verify_peer' => [
                             'type' => 'toggle',
                             'label' => 'PLUGIN_ADMIN.GPM_VERIFY_PEER',
@@ -1243,6 +1258,18 @@ return [
                             'validate' => [
                                 'type' => 'bool'
                             ]
+                        ],
+                        'username_regex' => [
+                            'type' => 'text',
+                            'size' => 'large',
+                            'label' => 'PLUGIN_ADMIN.USERNAME_REGEX',
+                            'help' => 'PLUGIN_ADMIN.USERNAME_REGEX_HELP'
+                        ],
+                        'pwd_regex' => [
+                            'type' => 'text',
+                            'size' => 'large',
+                            'label' => 'PLUGIN_ADMIN.PWD_REGEX',
+                            'help' => 'PLUGIN_ADMIN.PWD_REGEX_HELP'
                         ],
                         'wrapped_site' => [
                             'type' => 'toggle',

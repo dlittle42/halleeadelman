@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Applications/MAMP/htdocs/halleeadelman.com/system/blueprints/pages/default.yaml',
-    'modified' => 1487354990,
+    'modified' => 1495483911,
     'data' => [
         'title' => 'PLUGIN_ADMIN.DEFAULT',
         'rules' => [
@@ -125,19 +125,6 @@ return [
                                                     'title' => 'PLUGIN_ADMIN.SETTINGS',
                                                     'underline' => true
                                                 ],
-                                                'ordering' => [
-                                                    'type' => 'toggle',
-                                                    'label' => 'PLUGIN_ADMIN.FOLDER_NUMERIC_PREFIX',
-                                                    'help' => 'PLUGIN_ADMIN.FOLDER_NUMERIC_PREFIX_HELP',
-                                                    'highlight' => 1,
-                                                    'options' => [
-                                                        1 => 'PLUGIN_ADMIN.ENABLED',
-                                                        0 => 'PLUGIN_ADMIN.DISABLED'
-                                                    ],
-                                                    'validate' => [
-                                                        'type' => 'bool'
-                                                    ]
-                                                ],
                                                 'folder' => [
                                                     'type' => 'text',
                                                     'label' => 'PLUGIN_ADMIN.FOLDER_NAME',
@@ -146,14 +133,9 @@ return [
                                                     ]
                                                 ],
                                                 'route' => [
-                                                    'type' => 'select',
+                                                    'type' => 'parents',
                                                     'label' => 'PLUGIN_ADMIN.PARENT',
-                                                    'classes' => 'fancy',
-                                                    'data-options@' => '\\Grav\\Common\\Page\\Pages::parentsRawRoutes',
-                                                    'data-default@' => '\\Grav\\Plugin\\Admin\\Admin::rawRoute',
-                                                    'options' => [
-                                                        '/' => 'PLUGIN_ADMIN.DEFAULT_OPTION_ROOT'
-                                                    ]
+                                                    'classes' => 'fancy'
                                                 ],
                                                 'name' => [
                                                     'type' => 'select',
@@ -177,9 +159,22 @@ return [
                                                     'title' => 'PLUGIN_ADMIN.ORDERING',
                                                     'underline' => true
                                                 ],
+                                                'ordering' => [
+                                                    'type' => 'toggle',
+                                                    'label' => 'PLUGIN_ADMIN.FOLDER_NUMERIC_PREFIX',
+                                                    'help' => 'PLUGIN_ADMIN.FOLDER_NUMERIC_PREFIX_HELP',
+                                                    'highlight' => 1,
+                                                    'options' => [
+                                                        1 => 'PLUGIN_ADMIN.ENABLED',
+                                                        0 => 'PLUGIN_ADMIN.DISABLED'
+                                                    ],
+                                                    'validate' => [
+                                                        'type' => 'bool'
+                                                    ]
+                                                ],
                                                 'order' => [
                                                     'type' => 'order',
-                                                    'label' => 'PLUGIN_ADMIN.PAGE_ORDER',
+                                                    'label' => 'PLUGIN_ADMIN.SORTABLE_PAGES',
                                                     'sitemap' => NULL
                                                 ]
                                             ]
@@ -320,6 +315,20 @@ return [
                                                 'type' => 'bool'
                                             ]
                                         ],
+                                        'header.debugger' => [
+                                            'type' => 'toggle',
+                                            'toggleable' => true,
+                                            'label' => 'PLUGIN_ADMIN.DEBUGGER',
+                                            'help' => 'PLUGIN_ADMIN.DEBUGGER_HELP',
+                                            'highlight' => 1,
+                                            'options' => [
+                                                1 => 'PLUGIN_ADMIN.ENABLED',
+                                                0 => 'PLUGIN_ADMIN.DISABLED'
+                                            ],
+                                            'validate' => [
+                                                'type' => 'bool'
+                                            ]
+                                        ],
                                         'header.template' => [
                                             'type' => 'text',
                                             'toggleable' => true,
@@ -330,6 +339,25 @@ return [
                                             'label' => 'PLUGIN_ADMIN.APPEND_URL_EXT',
                                             'toggleable' => true,
                                             'help' => 'PLUGIN_ADMIN.APPEND_URL_EXT_HELP'
+                                        ]
+                                    ]
+                                ],
+                                'admin_only' => [
+                                    'type' => 'section',
+                                    'title' => 'PLUGIN_ADMIN.ADMIN_SPECIFIC_OVERRIDES',
+                                    'underline' => true,
+                                    'fields' => [
+                                        'header.admin.children_display_order' => [
+                                            'type' => 'select',
+                                            'label' => 'PLUGIN_ADMIN.ADMIN_CHILDREN_DISPLAY_ORDER',
+                                            'help' => 'PLUGIN_ADMIN.ADMIN_CHILDREN_DISPLAY_ORDER_HELP',
+                                            'toggleable' => true,
+                                            'classes' => 'fancy',
+                                            'default' => 'collection',
+                                            'options' => [
+                                                'default' => 'Ordered by Folder name (default)',
+                                                'collection' => 'Ordered by Collection definition'
+                                            ]
                                         ],
                                         'header.order_by' => [
                                             'type' => 'hidden'

@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Applications/MAMP/htdocs/halleeadelman.com/system/languages/th.yaml',
-    'modified' => 1487354990,
+    'modified' => 1495483911,
     'data' => [
         'FRONTMATTER_ERROR_PAGE' => '---
 ชื่อเรื่อง: %1$s

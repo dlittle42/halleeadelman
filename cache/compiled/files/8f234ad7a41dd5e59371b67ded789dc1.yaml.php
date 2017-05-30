@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Applications/MAMP/htdocs/halleeadelman.com/system/blueprints/user/account.yaml',
-    'modified' => 1487354990,
+    'modified' => 1495483911,
     'data' => [
         'title' => 'Account',
         'form' => [
@@ -11,6 +11,13 @@ return [
                 'info' => [
                     'type' => 'userinfo',
                     'size' => 'large'
+                ],
+                'avatar' => [
+                    'type' => 'file',
+                    'size' => 'large',
+                    'destination' => 'user://accounts/avatars',
+                    'multiple' => false,
+                    'random_name' => true
                 ],
                 'content' => [
                     'type' => 'section',
@@ -41,7 +48,7 @@ return [
                     'validate' => [
                         'required' => false,
                         'message' => 'PLUGIN_ADMIN.PASSWORD_VALIDATION_MESSAGE',
-                        'pattern' => '(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,}'
+                        'config-pattern@' => 'system.pwd_regex'
                     ]
                 ],
                 'fullname' => [
