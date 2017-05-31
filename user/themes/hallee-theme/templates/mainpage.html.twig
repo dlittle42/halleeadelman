@@ -1,3 +1,9 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+
+
+
 
 
 <div class="modular-row mainimage">
@@ -26,7 +32,7 @@
 	<div class="modular-row intro wrapper padding">
 
 		
-			{{ content }}
+			{{ page.content }}
 	
 		
 		
@@ -36,11 +42,12 @@
 	<div class="modular-row callouts flexcontainer wrapper padding">
 	
 		<div class="home-callout books">
-			<p>Currently, Hallee is writing zany picture books and a teen novel, <b><i>Frayed</i></b>, about twins in the worlds of fashion and addiction in search of beauty in an imperfect world.</p>
+
+			{{header.custom.callout1|markdown}}
 			<a class="button" href="writing">read on</a>
 		</div>
 		<div class="home-callout projects">
-			<p>She is also developing DoYouHa.com, a children’s property that encourages creativity, social emotional learning, and laughter.</p>
+			{{header.custom.callout2|markdown}}
 			<a class="button" href="http://doyouha.com" target="_blank">learn more</a>
 		</div>
 	</div>
@@ -72,20 +79,16 @@
 	
 			<div class="home-callout author-contact">
 				<div class="textbox">
-					<h1>Hallee Adelman</h1>
-					<p>author and founder, World of Ha</p>
+					{{header.custom.contact1|markdown}}
 				</div>
-				<a class="button" href="writing">hallee@adelmans.net</a>
 			</div>
 			<div class="home-callout agent-contact">
 				<div class="textbox">
-					<h1>Jill Corcoran</h1>
-					<p>literary agent, Jill Corcoran Literary</p>
+					{{header.custom.contact2|markdown}}
 				</div>
-				<a class="button" href="http://doyouha.com" target="_blank">jill@jillcorcoranliteraryagency.com</a>
 			</div>
 		</div>
 	</div>
 
-
+{% endblock %}
 

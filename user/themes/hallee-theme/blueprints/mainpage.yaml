@@ -1,0 +1,51 @@
+title: Mainpage Content
+@extends: 
+  type: default
+  context: blueprints://pages 
+
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+
+      fields:
+        content:
+          type: tab
+
+          #
+          # Add your custom fields here.
+          # These fields will be available in the page's Content tab
+          # inside the Admin Panel.
+          #
+          fields:
+
+            #
+            # Custom text field
+            #
+            header.custom.callout1:
+              label: Homepage Callout Left
+              type: markdown
+              validate:
+                type: textarea
+
+            header.custom.callout2:
+              label: Homepage Callout Right
+              type: markdown
+              validate:
+                type: textarea
+
+            header.custom.contact1:
+              label: Homepage Contact Left
+              type: markdown
+              validate:
+                type: textarea
+
+
+            header.custom.contact2:
+              label: Homepage Contact Right
+              type: markdown
+              validate:
+                type: textarea
+              
+

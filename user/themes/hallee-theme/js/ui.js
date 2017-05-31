@@ -1,3 +1,14 @@
+if(location.hash){
+    $(window).scrollTop(0); //stop jump to hash straight away
+    setTimeout(function(){
+        //stop jump to hash again a bit later
+        //for browser compatibility
+        $(window).scrollTop(0);
+    },1);
+ 
+}
+
+
 $(window).load(function(){ 
 
 
@@ -5,9 +16,18 @@ $(window).load(function(){
     var layout   = document.getElementById('layout'),
         menu     = document.getElementById('menu'),
         menuLink = document.getElementById('menuLink'),
+        mailLink = document.getElementById('mailLink'),
         content  = document.getElementById('main');
 
-    console.log(menuLink)
+
+
+    if(location.hash){
+
+        $('html, body').animate({
+               'scrollTop':   $('#contact').offset().top
+             }, 500);
+            
+        }
 
     function toggleClass(element, className) {
         var classes = element.className.split(/\s+/),
@@ -58,5 +78,25 @@ $(window).load(function(){
         } 
        // $(this).append('<div class="caption">' + alt + '</div>');
     });
+
+    mailLink.onclick = function (e) {
+        
+        if ($('body').hasClass('home')){
+            e.preventDefault();
+           
+            $('html, body').animate({
+               'scrollTop':   $('#contact').offset().top
+             }, {
+                duration: 500,
+                complete: function () {
+                     location.hash = "#contact";
+
+                 }
+            });
+        }
+
+        
+    }
+
 
 })

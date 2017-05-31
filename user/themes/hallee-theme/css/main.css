@@ -127,7 +127,8 @@ This is the parent `<div>` that contains the menu and the content area.
 #layout {
   position: relative;
   left: 0;
-  padding-left: 0; }
+  padding-left: 0;
+  overflow: hidden; }
 
 #layout.active #menu {
   left: 240px; }
@@ -580,14 +581,31 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAFCAYAAABmWJ3mAAAAI0lEQVQYV2
   .contact-section .home-callout {
     width: 44%;
     min-width: 240px;
-    height: 240px; }
+    height: 240px;
+    /*
+            .textbox{
+                margin: 60px 0;
+                height: 130px;
+    
+                h1{
+                    margin: 10px 0;
+                }
+    
+                p{
+                    margin: 0;
+                }
+            }
+    */ }
     .contact-section .home-callout .textbox {
-      margin: 60px 0;
-      height: 130px; }
-      .contact-section .home-callout .textbox h1 {
-        margin: 10px 0; }
-      .contact-section .home-callout .textbox p {
-        margin: 0; }
+      height: inherit; }
+    .contact-section .home-callout h1 {
+      margin: 60px 0 0; }
+    .contact-section .home-callout p {
+      margin: 0; }
+    .contact-section .home-callout a {
+      font-size: 1.2rem;
+      bottom: 50px;
+      right: 0; }
   .contact-section .home-callout.author-contact {
     background-color: #f6f4a7;
     margin-top: -20px; }
@@ -606,7 +624,8 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAFCAYAAABmWJ3mAAAAI0lEQVQYV2
       -webkit-transform: translate(80px, 0);
       transform: translate(80px, 0); }
     .contact-section .home-callout.agent-contact a {
-      right: -30px; }
+      bottom: 70px;
+      right: 50px; }
 
 .footer {
   margin-top: 60px; }
@@ -1211,6 +1230,8 @@ Hides the menu at `48em`, but modify this based on your app's needs.
     -webkit-transform: translate(20px, 0);
     transform: translate(20px, 0);
     text-align: right; }
+    .contact-section .home-callout.agent-contact .textbox a {
+      right: 0; }
 
   .footer .footer-band-one .middle-band .footer-img {
     -moz-transform: translate(0, -50px);
