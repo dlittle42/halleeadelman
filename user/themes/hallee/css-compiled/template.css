@@ -166,7 +166,7 @@ img.frame {
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
   //opacity: 0;
   transition: opacity 0.3s ease-in-out;
-  background: url('../images/wallpaper2.jpg') repeat-x top center; 
+  background: url('../images/wallpaper2.jpg') repeat-x top center;
   transform: rotate(30deg);
   //z-index: -1;
   position: absolute;
@@ -182,7 +182,7 @@ img.frame {
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
   //opacity: 0;
   transition: opacity 0.3s ease-in-out;
-  background: url('../images/wallpaper2.jpg') repeat-x top center; 
+  background: url('../images/wallpaper2.jpg') repeat-x top center;
 
 }
 */
@@ -344,7 +344,8 @@ img.frame {
     display: none; }
 
   .list-blog-date {
-    padding-left: 10px; }
+    padding-left: 10px;
+    display:none; }
 
   .writing .photo {
     margin-left: 0;

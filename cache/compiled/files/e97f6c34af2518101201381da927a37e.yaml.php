@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Applications/MAMP/htdocs/halleeadelman.com/user/plugins/email/blueprints.yaml',
-    'modified' => 1487354990,
+    'modified' => 1490591843,
     'data' => [
         'name' => 'Email',
         'version' => '2.5.3',

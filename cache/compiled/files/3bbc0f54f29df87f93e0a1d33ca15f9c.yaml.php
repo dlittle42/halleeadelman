@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Applications/MAMP/htdocs/halleeadelman.com/user/plugins/ganalytics/languages/en.yaml',
-    'modified' => 1489550191,
+    'modified' => 1490581020,
     'data' => [
         'PLUGIN_GANALYTICS' => [
             '_YES' => 'Yes',

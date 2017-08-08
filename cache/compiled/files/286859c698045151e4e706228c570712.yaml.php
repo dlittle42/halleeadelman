@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Applications/MAMP/htdocs/halleeadelman.com/user/plugins/grav-plugin-resize-images-master/blueprints.yaml',
-    'modified' => 1488534302,
+    'modified' => 1496151198,
     'data' => [
         'name' => 'Resize Images',
         'version' => '0.2.2',

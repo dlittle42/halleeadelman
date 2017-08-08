@@ -1,5 +1,6 @@
 ---
 title: 'Writing to Scream'
+published: true
 content:
     items: '@self.children'
     limit: '5'

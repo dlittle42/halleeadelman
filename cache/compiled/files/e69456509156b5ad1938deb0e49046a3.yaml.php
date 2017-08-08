@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Applications/MAMP/htdocs/halleeadelman.com/user/plugins/taxonomylist/blueprints.yaml',
-    'modified' => 1490411113,
+    'modified' => 1490591858,
     'data' => [
         'name' => 'Taxonomy List',
         'version' => '1.2.7',

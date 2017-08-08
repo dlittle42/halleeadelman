@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Applications/MAMP/htdocs/halleeadelman.com/user/plugins/gravstrap/blueprints.yaml',
-    'modified' => 1490411016,
+    'modified' => 1496151197,
     'data' => [
         'name' => 'Gravstrap',
         'version' => '1.2.3',

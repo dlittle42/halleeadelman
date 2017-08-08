@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Applications/MAMP/htdocs/halleeadelman.com/user/plugins/langswitcher/blueprints.yaml',
-    'modified' => 1490411100,
+    'modified' => 1490591853,
     'data' => [
         'name' => 'LangSwitcher',
         'version' => '1.3.0',

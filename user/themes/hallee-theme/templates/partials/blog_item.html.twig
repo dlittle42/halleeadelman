@@ -37,10 +37,16 @@
         {% if header_image %}
             {% if header_image_file %}
                 {% set header_image_media = page.media.images[header_image_file] %}
+                    <h1>Step one</h1>
             {% else %}
                 {% set header_image_media = page.media.images|first %}
+                {% if header_image_media %}
+               <div class="featured">
+                    <img src={{ header_image_media.url }} />
+               </div>
+               {% endif %}
             {% endif %}
-            {{ header_image_media.cropZoom(header_image_width, header_image_height).html }}
+         <!--   {{ header_image_media.cropZoom(header_image_width, header_image_height).html }} -->
         {% endif %}
 
     </div>

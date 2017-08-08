@@ -1,21 +1,25 @@
 <?php
 return [
     '@class' => 'Grav\\Common\\Config\\CompiledConfig',
-    'timestamp' => 1495765820,
-    'checksum' => '514a6b5766e7ce2b898b3d3a6989c302',
+    'timestamp' => 1502029969,
+    'checksum' => '78f4d5b7bdb7ce29e95faede9c1774d3',
     'files' => [
         'user/config' => [
             'ganalytics' => [
                 'file' => 'user/config/ganalytics.yaml',
-                'modified' => 1489550497
+                'modified' => 1489550544
             ],
             'media' => [
                 'file' => 'user/config/media.yaml',
-                'modified' => 1488752882
+                'modified' => 1489180722
+            ],
+            'plugins/archives' => [
+                'file' => 'user/config/plugins/archives.yaml',
+                'modified' => 1490592398
             ],
             'plugins/breadcrumbs' => [
                 'file' => 'user/config/plugins/breadcrumbs.yaml',
-                'modified' => 1490443686
+                'modified' => 1490592394
             ],
             'plugins/email' => [
                 'file' => 'user/config/plugins/email.yaml',
@@ -29,6 +33,10 @@ return [
                 'file' => 'user/config/plugins/form.yaml',
                 'modified' => 1490411765
             ],
+            'plugins/ganalytics' => [
+                'file' => 'user/config/plugins/ganalytics.yaml',
+                'modified' => 1489550798
+            ],
             'plugins/gravstrap' => [
                 'file' => 'user/config/plugins/gravstrap.yaml',
                 'modified' => 1495765820
@@ -39,11 +47,15 @@ return [
             ],
             'plugins/langswitcher' => [
                 'file' => 'user/config/plugins/langswitcher.yaml',
-                'modified' => 1490415849
+                'modified' => 1490592606
             ],
             'plugins/pagination' => [
                 'file' => 'user/config/plugins/pagination.yaml',
                 'modified' => 1495741022
+            ],
+            'plugins/relatedpages' => [
+                'file' => 'user/config/plugins/relatedpages.yaml',
+                'modified' => 1490592409
             ],
             'plugins/shortcode-owl-carousel' => [
                 'file' => 'user/config/plugins/shortcode-owl-carousel.yaml',
@@ -53,21 +65,29 @@ return [
                 'file' => 'user/config/plugins/simplesearch.yaml',
                 'modified' => 1490411622
             ],
+            'plugins/sitemap' => [
+                'file' => 'user/config/plugins/sitemap.yaml',
+                'modified' => 1489550827
+            ],
+            'plugins/taxonomylist' => [
+                'file' => 'user/config/plugins/taxonomylist.yaml',
+                'modified' => 1490592414
+            ],
             'security' => [
                 'file' => 'user/config/security.yaml',
-                'modified' => 1488752881
+                'modified' => 1489180722
             ],
             'site' => [
                 'file' => 'user/config/site.yaml',
-                'modified' => 1490669399
+                'modified' => 1490756271
             ],
             'streams' => [
                 'file' => 'user/config/streams.yaml',
-                'modified' => 1488752882
+                'modified' => 1489180722
             ],
             'system' => [
                 'file' => 'user/config/system.yaml',
-                'modified' => 1495555146
+                'modified' => 1498143803
             ]
         ],
         'system/config' => [
@@ -91,99 +111,99 @@ return [
         'user/plugins' => [
             'plugins/admin' => [
                 'file' => 'user/plugins/admin/admin.yaml',
-                'modified' => 1487354990
+                'modified' => 1490591842
             ],
             'plugins/archives' => [
                 'file' => 'user/plugins/archives/archives.yaml',
-                'modified' => 1490411115
+                'modified' => 1490591850
             ],
             'plugins/blog-injector' => [
                 'file' => 'user/plugins/blog-injector/blog-injector.yaml',
-                'modified' => 1490411102
+                'modified' => 1490591850
             ],
             'plugins/breadcrumbs' => [
                 'file' => 'user/plugins/breadcrumbs/breadcrumbs.yaml',
-                'modified' => 1490411116
+                'modified' => 1490591850
             ],
             'plugins/devtools' => [
                 'file' => 'user/plugins/devtools/devtools.yaml',
-                'modified' => 1495550611
+                'modified' => 1496151177
             ],
             'plugins/email' => [
                 'file' => 'user/plugins/email/email.yaml',
-                'modified' => 1487354990
+                'modified' => 1490591843
             ],
             'plugins/error' => [
                 'file' => 'user/plugins/error/error.yaml',
-                'modified' => 1487354990
+                'modified' => 1490591844
             ],
             'plugins/feed' => [
                 'file' => 'user/plugins/feed/feed.yaml',
-                'modified' => 1490411106
+                'modified' => 1490591852
             ],
             'plugins/form' => [
                 'file' => 'user/plugins/form/form.yaml',
-                'modified' => 1490411765
+                'modified' => 1490591848
             ],
             'plugins/ganalytics' => [
                 'file' => 'user/plugins/ganalytics/ganalytics.yaml',
-                'modified' => 1489550191
+                'modified' => 1490591849
             ],
             'plugins/gravstrap' => [
                 'file' => 'user/plugins/gravstrap/gravstrap.yaml',
-                'modified' => 1490411016
+                'modified' => 1496151197
             ],
             'plugins/highlight' => [
                 'file' => 'user/plugins/highlight/highlight.yaml',
-                'modified' => 1490411118
+                'modified' => 1490591853
             ],
             'plugins/langswitcher' => [
                 'file' => 'user/plugins/langswitcher/langswitcher.yaml',
-                'modified' => 1490411100
+                'modified' => 1490591854
             ],
             'plugins/login' => [
                 'file' => 'user/plugins/login/login.yaml',
-                'modified' => 1487354990
+                'modified' => 1490591852
             ],
             'plugins/markdown-notices' => [
                 'file' => 'user/plugins/markdown-notices/markdown-notices.yaml',
-                'modified' => 1487354990
+                'modified' => 1490591853
             ],
             'plugins/pagination' => [
                 'file' => 'user/plugins/pagination/pagination.yaml',
-                'modified' => 1490411111
+                'modified' => 1490591854
             ],
             'plugins/problems' => [
                 'file' => 'user/plugins/problems/problems.yaml',
-                'modified' => 1487354990
+                'modified' => 1490591855
             ],
             'plugins/relatedpages' => [
                 'file' => 'user/plugins/relatedpages/relatedpages.yaml',
-                'modified' => 1490411108
+                'modified' => 1490591856
             ],
             'plugins/shortcode-core' => [
                 'file' => 'user/plugins/shortcode-core/shortcode-core.yaml',
-                'modified' => 1490322489
+                'modified' => 1490591856
             ],
             'plugins/shortcode-owl-carousel' => [
                 'file' => 'user/plugins/shortcode-owl-carousel/shortcode-owl-carousel.yaml',
-                'modified' => 1490322490
+                'modified' => 1490591856
             ],
             'plugins/simplesearch' => [
                 'file' => 'user/plugins/simplesearch/simplesearch.yaml',
-                'modified' => 1490411104
+                'modified' => 1490591857
             ],
             'plugins/sitemap' => [
                 'file' => 'user/plugins/sitemap/sitemap.yaml',
-                'modified' => 1489550596
+                'modified' => 1490591858
             ],
             'plugins/taxonomylist' => [
                 'file' => 'user/plugins/taxonomylist/taxonomylist.yaml',
-                'modified' => 1490411113
+                'modified' => 1490591859
             ],
             'plugins/youtube' => [
                 'file' => 'user/plugins/youtube/youtube.yaml',
-                'modified' => 1490442634
+                'modified' => 1490591859
             ]
         ]
     ],
@@ -241,7 +261,7 @@ return [
                 ]
             ],
             'archives' => [
-                'enabled' => true,
+                'enabled' => false,
                 'built_in_css' => true,
                 'date_display_format' => 'F Y',
                 'show_count' => true,
@@ -267,9 +287,9 @@ return [
             ],
             'breadcrumbs' => [
                 'enabled' => false,
-                'show_all' => false,
-                'built_in_css' => false,
-                'include_home' => false,
+                'show_all' => true,
+                'built_in_css' => true,
+                'include_home' => true,
                 'icon_home' => '',
                 'icon_divider_classes' => 'fa fa-angle-right',
                 'link_trailing' => false
@@ -329,7 +349,7 @@ return [
             ],
             'ganalytics' => [
                 'enabled' => true,
-                'trackingId' => '',
+                'trackingId' => 'UA-93777014-1',
                 'position' => 'head',
                 'objectName' => 'ga',
                 'forceSsl' => false,
@@ -354,7 +374,7 @@ return [
             ],
             'langswitcher' => [
                 'enabled' => false,
-                'built_in_css' => true
+                'built_in_css' => false
             ],
             'login' => [
                 'enabled' => true,
@@ -416,7 +436,7 @@ return [
                 'built_in_css' => true
             ],
             'relatedpages' => [
-                'enabled' => true,
+                'enabled' => false,
                 'limit' => 5,
                 'show_score' => true,
                 'score_threshold' => 20,
@@ -506,7 +526,7 @@ return [
                 ]
             ],
             'taxonomylist' => [
-                'enabled' => true,
+                'enabled' => false,
                 'route' => '/blog'
             ],
             'youtube' => [
@@ -796,8 +816,8 @@ return [
             'title' => 'Hallee Adelman',
             'default_lang' => 'en',
             'author' => [
-                'name' => 'Derek Little',
-                'email' => 'dlittle42@gmail.com'
+                'name' => 'Hallee Adelman',
+                'email' => 'hallee@adelmans.net'
             ],
             'taxonomies' => [
                 0 => 'year',
@@ -806,7 +826,7 @@ return [
                 3 => 'tag'
             ],
             'metadata' => [
-                'description' => 'Grav is an easy to use, yet powerful, open source flat-file CMS'
+                'description' => 'Website of Hallee Adelman, Author and Founder of World of Ha'
             ],
             'summary' => [
                 'enabled' => true,
@@ -897,7 +917,7 @@ return [
                 'markdown' => [
                     'extra' => true,
                     'auto_line_breaks' => false,
-                    'auto_url_links' => true,
+                    'auto_url_links' => false,
                     'escape_markup' => false,
                     'special_chars' => [
                         '>' => 'gt',
@@ -919,7 +939,7 @@ return [
                 'etag' => false,
                 'vary_accept_encoding' => false,
                 'redirect_default_route' => false,
-                'redirect_default_code' => '301',
+                'redirect_default_code' => 301,
                 'redirect_trailing_slash' => true,
                 'ignore_files' => [
                     0 => '.DS_Store'
@@ -954,7 +974,7 @@ return [
                 ]
             ],
             'twig' => [
-                'cache' => false,
+                'cache' => true,
                 'debug' => true,
                 'auto_reload' => true,
                 'autoescape' => false,
@@ -979,7 +999,7 @@ return [
                 ]
             ],
             'errors' => [
-                'display' => '1',
+                'display' => true,
                 'log' => true
             ],
             'debugger' => [

@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Applications/MAMP/htdocs/halleeadelman.com/user/plugins/breadcrumbs/breadcrumbs.yaml',
-    'modified' => 1490411116,
+    'modified' => 1490591850,
     'data' => [
         'enabled' => true,
         'show_all' => true,

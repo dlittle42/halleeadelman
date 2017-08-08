@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Applications/MAMP/htdocs/halleeadelman.com/user/config/system.yaml',
-    'modified' => 1495555146,
+    'modified' => 1498143803,
     'data' => [
         'absolute_urls' => false,
         'timezone' => '',
@@ -57,7 +57,7 @@ return [
             'markdown' => [
                 'extra' => true,
                 'auto_line_breaks' => false,
-                'auto_url_links' => true,
+                'auto_url_links' => false,
                 'escape_markup' => false,
                 'special_chars' => [
                     '>' => 'gt',
@@ -79,7 +79,7 @@ return [
             'etag' => false,
             'vary_accept_encoding' => false,
             'redirect_default_route' => false,
-            'redirect_default_code' => '301',
+            'redirect_default_code' => 301,
             'redirect_trailing_slash' => true,
             'ignore_files' => [
                 0 => '.DS_Store'
@@ -114,7 +114,7 @@ return [
             ]
         ],
         'twig' => [
-            'cache' => false,
+            'cache' => true,
             'debug' => true,
             'auto_reload' => true,
             'autoescape' => false,
@@ -139,7 +139,7 @@ return [
             ]
         ],
         'errors' => [
-            'display' => '1',
+            'display' => true,
             'log' => true
         ],
         'debugger' => [

@@ -1,15 +1,15 @@
 title: 'Hallee Adelman'
 default_lang: en
 author:
-  name: 'Derek Little'
-  email: dlittle42@gmail.com
+  name: 'Hallee Adelman'
+  email: hallee@adelmans.net
 taxonomies:
   - year
   - author
   - category
   - tag
 metadata:
-  description: 'Grav is an easy to use, yet powerful, open source flat-file CMS'
+  description: 'Website of Hallee Adelman, Author and Founder of World of Ha'
 summary:
   enabled: true
   format: short

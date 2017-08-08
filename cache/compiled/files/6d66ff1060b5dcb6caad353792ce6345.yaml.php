@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Applications/MAMP/htdocs/halleeadelman.com/user/plugins/shortcode-core/shortcode-core.yaml',
-    'modified' => 1490322489,
+    'modified' => 1490591856,
     'data' => [
         'enabled' => true,
         'active' => true,

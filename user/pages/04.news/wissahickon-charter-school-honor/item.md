@@ -11,4 +11,4 @@ summary:
 
 [plugin:youtube](https://www.youtube.com/watch?v=BUH20PhuNow)
 
-![](WCSPhoto.jpg?cropResize=300,300){.left} On May 13, 2017, Hallee will be honored for her work with students and her efforts to build a school library at WCS in Philadelphia. For more information , [click here](https://www.youtube.com/watch?v=BUH20PhuNow).
+![](WCSPhoto.jpg?cropResize=300,300){.left} On May 13, 2017, Hallee was honored for her work with students and her efforts to help build a school library at WCS in Philadelphia. For more information , [click here](https://www.youtube.com/watch?v=BUH20PhuNow).

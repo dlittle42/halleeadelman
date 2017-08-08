@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Applications/MAMP/htdocs/halleeadelman.com/user/plugins/pagination/blueprints.yaml',
-    'modified' => 1490411111,
+    'modified' => 1490591854,
     'data' => [
         'name' => 'Pagination',
         'version' => '1.3.2',

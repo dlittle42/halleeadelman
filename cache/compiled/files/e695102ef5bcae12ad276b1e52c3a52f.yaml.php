@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Applications/MAMP/htdocs/halleeadelman.com/user/plugins/login/languages.yaml',
-    'modified' => 1487354990,
+    'modified' => 1490591852,
     'data' => [
         'en' => [
             'PLUGIN_LOGIN' => [

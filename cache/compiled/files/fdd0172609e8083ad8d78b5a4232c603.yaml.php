@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => 'plugins://blog-injector/blog-injector.yaml',
-    'modified' => 1490411102,
+    'modified' => 1490591850,
     'data' => [
         'enabled' => true,
         'framework' => 'pure',

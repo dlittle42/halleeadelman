@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Applications/MAMP/htdocs/halleeadelman.com/user/plugins/admin/blueprints/admin/pages/move.yaml',
-    'modified' => 1487354990,
+    'modified' => 1490581080,
     'data' => [
         'form' => [
             'validation' => 'loose',

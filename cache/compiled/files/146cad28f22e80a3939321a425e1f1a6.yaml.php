@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Applications/MAMP/htdocs/halleeadelman.com/user/plugins/feed/blueprints.yaml',
-    'modified' => 1490411106,
+    'modified' => 1490591852,
     'data' => [
         'name' => 'Feed',
         'version' => '1.5.2',

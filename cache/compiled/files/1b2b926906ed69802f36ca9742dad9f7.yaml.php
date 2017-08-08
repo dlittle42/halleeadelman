@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Applications/MAMP/htdocs/halleeadelman.com/user/plugins/markdown-notices/markdown-notices.yaml',
-    'modified' => 1487354990,
+    'modified' => 1490591853,
     'data' => [
         'enabled' => true,
         'built_in_css' => true,

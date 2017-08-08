@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Applications/MAMP/htdocs/halleeadelman.com/user/themes/hallee-theme/blueprints.yaml',
-    'modified' => 1495550693,
+    'modified' => 1496151147,
     'data' => [
         'name' => 'Hallee Theme',
         'version' => '0.1.0',

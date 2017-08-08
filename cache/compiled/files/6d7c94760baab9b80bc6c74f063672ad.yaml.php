@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Applications/MAMP/htdocs/halleeadelman.com/user/accounts/dlittle.yaml',
-    'modified' => 1488752915,
+    'modified' => 1489182273,
     'data' => [
         'email' => 'dlittle42@gmail.com',
         'fullname' => 'Derek Little',
@@ -10,13 +10,14 @@ return [
         'state' => 'enabled',
         'access' => [
             'admin' => [
-                'login' => true,
-                'super' => true
+                'super' => 'true',
+                'login' => 'true'
             ],
             'site' => [
-                'login' => true
+                'login' => 'true'
             ]
         ],
-        'hashed_password' => '$2y$10$DTiy1/ay/XDdJp5m7CXhkOznf4ZRTGqfAlaKOnOnWNE.8SoFAzd.i'
+        'hashed_password' => '$2y$10$OlZC7CCM5RO/T7SVZ2N4JOvrz8ENn5tg7FGJWWAf/Lmt7bEksdYoC',
+        'language' => 'en'
     ]
 ];

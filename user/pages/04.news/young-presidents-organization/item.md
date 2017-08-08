@@ -11,4 +11,5 @@ summary:
     format: long
 ---
 
-After receiving an international award for chairing a Kids for Kids event for the Young President's Organization (YPO), Hallee will co-chair another YPO event for families. She will be partnering with the Belmont School and the Sixers Youth Foundation. More to come... 
+Hallee's co-chairing "The Great Game," a family event for the Young President's Organization (YPO) supporting quality education for children/teens. Partners include the Sixers Youth  Foundation and the Belmont School. Hallee's last event for YPO, "Kids-for-Kids" received an international award. More to come... 
+ 

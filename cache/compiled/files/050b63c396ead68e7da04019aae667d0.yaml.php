@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Applications/MAMP/htdocs/halleeadelman.com/user/plugins/blog-injector/blueprints.yaml',
-    'modified' => 1490411102,
+    'modified' => 1490591850,
     'data' => [
         'name' => 'BlogInjector',
         'version' => '1.2.3',

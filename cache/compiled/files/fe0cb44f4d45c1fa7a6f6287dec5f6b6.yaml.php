@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => 'themes://hallee-theme/hallee-theme.yaml',
-    'modified' => 1495550693,
+    'modified' => 1496151147,
     'data' => [
         'enabled' => true,
         'dropdown' => [

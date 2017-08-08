@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Applications/MAMP/htdocs/halleeadelman.com/user/themes/halcyon/blueprints.yaml',
-    'modified' => 1487355068,
+    'modified' => 1489181161,
     'data' => [
         'name' => 'Halcyon',
         'version' => '1.1.0',

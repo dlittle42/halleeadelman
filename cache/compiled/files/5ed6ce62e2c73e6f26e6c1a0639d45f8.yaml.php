@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Applications/MAMP/htdocs/halleeadelman.com/user/plugins/shortcode-owl-carousel/blueprints.yaml',
-    'modified' => 1490322490,
+    'modified' => 1490591856,
     'data' => [
         'name' => 'Shortcode Owl Carousel',
         'version' => '1.0.1',

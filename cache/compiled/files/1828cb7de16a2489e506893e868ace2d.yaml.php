@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Applications/MAMP/htdocs/halleeadelman.com/user/plugins/simplesearch/simplesearch.yaml',
-    'modified' => 1490411104,
+    'modified' => 1490591857,
     'data' => [
         'enabled' => true,
         'built_in_css' => true,

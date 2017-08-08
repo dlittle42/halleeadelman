@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Applications/MAMP/htdocs/halleeadelman.com/user/plugins/ganalytics/ganalytics.yaml',
-    'modified' => 1489550191,
+    'modified' => 1490591849,
     'data' => [
         'enabled' => true,
         'trackingId' => '',

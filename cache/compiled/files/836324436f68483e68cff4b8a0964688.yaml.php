@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Applications/MAMP/htdocs/halleeadelman.com/user/plugins/sitemap/blueprints.yaml',
-    'modified' => 1489550596,
+    'modified' => 1490591858,
     'data' => [
         'name' => 'Sitemap',
         'version' => '1.8.0',
