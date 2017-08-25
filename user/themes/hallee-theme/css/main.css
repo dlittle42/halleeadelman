@@ -706,6 +706,12 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAFCAYAAABmWJ3mAAAAI0lEQVQYV2
 .news .blog-content-list {
   text-align: center; }
 
+.poem .list-item p {
+  width: 100%;
+  margin: 20px 0;
+  line-height: 46px;
+  text-align: center; }
+
 .e-content {
   display: flex;
   flex-wrap: wrap; }

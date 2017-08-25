@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Applications/MAMP/htdocs/halleeadelman.com/system/config/system.yaml',
-    'modified' => 1495483911,
+    'modified' => 1503668838,
     'data' => [
         'absolute_urls' => false,
         'timezone' => '',
