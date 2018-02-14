@@ -26,7 +26,7 @@
                 </time>
        
         </div>
-        
+       {# 
         {% if page.taxonomy.tag %}
         <span class="tags">
             {% for tag in page.taxonomy.tag %}
@@ -34,6 +34,7 @@
             {% endfor %}
         </span>
         {% endif %}
+        #}
         {% if header_image %}
             {% if header_image_file %}
                 {% set header_image_media = page.media.images[header_image_file] %}

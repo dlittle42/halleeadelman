@@ -1,6 +1,10 @@
 {% embed 'partials/base.html.twig' %}
 
+
 	{% set collection = page.collection() %}
+	{% set ordered_collection = collection.order('date','desc') %}
+
+		
 
 	{% block content %}
 		{% set blog_image = page.media.images|first.grayscale().contrast(20).brightness(-100).colorize(-35,81,122) %}
@@ -18,9 +22,36 @@
 			{% endif %}
 
 		<div class="content-wrapper blog-content-list grid">
+		
 			<div id="listing" class="block h-feed">
-				{% for child in collection %}
-			        {% include 'partials/blog_item.html.twig' with {'blog':page, 'page':child, 'truncate':true} %}
+
+
+				{% for post in taxonomy.findTaxonomy({'tag':'featured'}) %}
+				    {% include 'partials/blog_item.html.twig' with {'blog':page, 'page':post, 'truncate':true} %}
+				    <hr>
+				{% endfor %}
+
+				{% for child in ordered_collection %}
+
+					{{dump(child.taxonomy.tag)}}
+				{#	{{ child.tags }} #}
+				{#	{% if loop.index == 1  %} #}
+
+				{% if child.taxonomy.tag == null %} 
+					<div class="news_headline">
+						<h2><a href="{{ child.url }}" class="u-url">{{ child.title }}</a></h2>
+			        	<div class="list-blog-date">
+
+				                <time class="dt-published" datetime="{{ child.date|date("c") }}">
+				                    <span>{{ child.date|date("M") }}</span>
+				                    <em>{{ child.date|date("Y") }}</em>
+				                </time>
+				       
+				        </div>
+				       </div>
+			        {% endif %}
+					
+
 			    {% endfor %}
 
                 {% if config.plugins.pagination.enabled and collection.params.pagination %}
