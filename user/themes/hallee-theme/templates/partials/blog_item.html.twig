@@ -63,11 +63,14 @@
         {% endif %}
     {% elseif truncate and page.summary != page.content %}
         <div class="p-summary e-content clearfix">
+            <div id="background"></div>
             {{ page.summary }}
             <p><a href="{{ page.url }}">{{ 'BLOG.ITEM.CONTINUE_READING'|t }}</a></p>
         </div>
     {% elseif truncate %}
+
         <div class="p-summary e-content clearfix">
+            <div id="background"></div>
             {{ page.content }}
           <!--  <p><a href="{{ page.url }}">{{ 'BLOG.ITEM.CONTINUE_READING'|t }}</a></p> -->
         </div>
@@ -82,7 +85,7 @@
 
         {% set show_prev_next = true %}
     {% endif %}
-
+    <div id="background"></div>
     {% if show_prev_next %}
 
         <p class="prev-next">

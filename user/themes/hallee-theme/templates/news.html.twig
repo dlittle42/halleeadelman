@@ -22,15 +22,19 @@
 			{% endif %}
 
 		<div class="content-wrapper blog-content-list grid">
-		
+			
 			<div id="listing" class="block h-feed">
 
 
 				{% for post in taxonomy.findTaxonomy({'tag':'featured'}) %}
 				    {% include 'partials/blog_item.html.twig' with {'blog':page, 'page':post, 'truncate':true} %}
+
 				    <hr>
 				{% endfor %}
 
+				<h3>More news and events</h3>
+				<div id="morenews">
+				<div id="background"></div>
 				{% for child in ordered_collection %}
 
 					{{dump(child.taxonomy.tag)}}
@@ -39,8 +43,7 @@
 
 				{% if child.taxonomy.tag == null %} 
 					<div class="news_headline">
-						<h2><a href="{{ child.url }}" class="u-url">{{ child.title }}</a></h2>
-			        	<div class="list-blog-date">
+						<div class="list-blog-date">
 
 				                <time class="dt-published" datetime="{{ child.date|date("c") }}">
 				                    <span>{{ child.date|date("M") }}</span>
@@ -48,12 +51,17 @@
 				                </time>
 				       
 				        </div>
+				        <div class="title-block">
+							<h2><a href="{{ child.url }}" class="u-url">{{ child.title }}</a></h2>
+							<p>{{child.header.custom.textField |markdown}}</p>
+						</div>
+			        	
 				       </div>
 			        {% endif %}
 					
 
 			    {% endfor %}
-
+				</div>
                 {% if config.plugins.pagination.enabled and collection.params.pagination %}
                     {% include 'partials/pagination.html.twig' with {'base_url':page.url, 'pagination':collection.params.pagination} %}
                 {% endif %}
